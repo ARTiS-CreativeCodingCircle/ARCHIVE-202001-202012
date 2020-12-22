@@ -34,7 +34,7 @@ void draw() {
   
   if (isExportPDF) {
     beginRecord(PDF, "Page.pdf");
-    Page p = new Page(images);
+    PersonalCover p = new PersonalCover(images);
     p.draw();
     endRecord();
     exit();

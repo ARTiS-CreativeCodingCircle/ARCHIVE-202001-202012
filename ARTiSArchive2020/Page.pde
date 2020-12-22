@@ -1,9 +1,9 @@
 public class Page {
   
-  TextType textType;
-  String title;
+  private TextType textType;
+  private String title;
   
-  Image[] images;
+  protected Image[] images;
   
   public Page(Image[] images) {
     title = "Title";
