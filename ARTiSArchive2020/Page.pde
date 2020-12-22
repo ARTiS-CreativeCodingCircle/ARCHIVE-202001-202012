@@ -3,11 +3,14 @@ public class Page {
   TextType textType;
   String title;
   
-  public Page() {
+  Image[] images;
+  
+  public Page(Image[] images) {
     title = "Title";
+    this.images = images;
   }
   
-  void draw() {
+  public void draw() {
     if (isVisibleGrid) {
       imageMode(CENTER);
       image(grid, width/2, height/2, areaWidth, areaHeight);
