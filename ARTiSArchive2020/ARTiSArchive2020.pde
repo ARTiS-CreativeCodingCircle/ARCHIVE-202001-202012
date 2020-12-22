@@ -3,10 +3,6 @@ import processing.pdf.*;
 boolean isExportPDF = true;
 boolean isVisibleGrid = true;
 
-PFont notoSansCjkJp;
-PFont notoSerifCjkJp;
-PFont notoMono;
-
 PImage grid;
 
 ArrayList<Page> pages;
@@ -23,10 +19,7 @@ void setup() {
   size(595, 842); // Screen: 72dpi
   background(255);
   
-  // フォント3種類を読み込む
-  notoSansCjkJp = createFont("NotoSansCJKjp-Regular", 48);
-  notoSerifCjkJp = createFont("NotoSerifCJKjp-Regular", 48);
-  notoMono = createFont("NotoMono", 48);
+  textAlign(LEFT, TOP);
   
   areaWidth = width - marginHorizontal*2;
   areaHeight = height - marginVertical*2;
@@ -42,6 +35,9 @@ void draw() {
     Page p = new Page();
     p.draw();
     endRecord();
+    exit();
+  } else {
+    Page p = new Page();
+    p.draw();
   }
-  exit();
 }
