@@ -30,16 +30,14 @@ void setup() {
 }
 
 void draw() {
-  Image[] images = {};
-  
   if (isExportPDF) {
     beginRecord(PDF, "Page.pdf");
-    PersonalCover p = new PersonalCover(images);
+    PersonalCover p = new PersonalCover(loadImage("Silk_freesize_02.png"));
     p.draw();
     endRecord();
     exit();
   } else {
-    Page p = new Page(images);
-    p.draw();
+    //Page p = new Page(images);
+    //p.draw();
   }
 }

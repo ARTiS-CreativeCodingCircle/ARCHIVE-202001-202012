@@ -1,11 +1,12 @@
 public class PersonalCover extends Page {
   
-  public PersonalCover(Image[] images) {
-    super(images);
+  public PersonalCover(PImage image) {
+    super(new Image(image));
   }
   
-  void draw() {
-    image(images[0].image, 0, 0, width, height);
+  public void draw() {
+    Image i = images[0];
+    image(i.image, i.imageCornerX, i.imageCornerY, i.imageWidth, i.imageHeight);
   }
   
 }

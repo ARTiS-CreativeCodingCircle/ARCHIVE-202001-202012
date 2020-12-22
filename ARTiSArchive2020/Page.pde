@@ -1,9 +1,14 @@
 public class Page {
   
   private TextType textType;
-  private String title;
+  protected String title;
   
   protected Image[] images;
+  
+  public Page(Image image) {
+    title = "";
+    this.images = new Image[]{ image };
+  }
   
   public Page(Image[] images) {
     title = "Title";
