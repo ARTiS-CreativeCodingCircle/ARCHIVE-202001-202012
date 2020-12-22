@@ -32,8 +32,13 @@ void setup() {
 void draw() {
   if (isExportPDF) {
     beginRecord(PDF, "Page.pdf");
-    PersonalCover p = new PersonalCover(loadImage("Silk_freesize_02.png"));
-    p.draw();
+    PersonalCoverRight pL = new PersonalCoverRight(loadImage("Silk_freesize_01.png"));
+    pL.draw();
+    endRecord();
+    clear();
+    beginRecord(PDF, "Page.pdf");
+    PersonalCoverRight pR = new PersonalCoverRight(loadImage("Silk_freesize_02.png"));
+    pR.draw();
     endRecord();
     exit();
   } else {
