@@ -34,7 +34,18 @@ void generatePages() {
   String path = "";
   PersonalCoverLeft pL;
   PersonalCoverRight pR;
+  Page p;
   
+  /* -------- 表紙 -------- */
+  
+  
+  /* -------- まえがき -------- */
+  
+  
+  /* -------- 目次 -------- */
+  
+  
+  /* -------- 個人作品（ohayota） -------- */
   
   // ohayota個人表紙左
   pL = new PersonalCoverLeft(loadImage(Section.works_ohayota_cover.getPath() + "left.png"));
@@ -44,6 +55,13 @@ void generatePages() {
   pR = new PersonalCoverRight(Author.ohayota, loadImage(Section.works_ohayota_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
   
+  // ジェネラティブトランプ見開き1ページ
+  //path = Section.works_ohayota.getPath() + "generative/description.txt";
+  //p = new Page("ジェネラティブトランプ（スペードA）", );
+  //pages.add(p);
+  
+  
+  /* -------- 個人作品（Tomoka） -------- */
   
   // Tomoka個人表紙左
   pL = new PersonalCoverLeft(loadImage(Section.works_tomoka_cover.getPath() + "left.png"));
@@ -53,6 +71,11 @@ void generatePages() {
   pR = new PersonalCoverRight(Author.tomoka, loadImage(Section.works_tomoka_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
   
+  //p = new Page();
+  //pages.add(p);
+  
+  
+  /* -------- 個人作品（Ikanoshiokara） -------- */
   
   // Ikanoshiokara個人表紙左
   pL = new PersonalCoverLeft(loadImage(Section.works_ikano_cover.getPath() + "left.png"));
@@ -62,6 +85,11 @@ void generatePages() {
   pR = new PersonalCoverRight(Author.ikano, loadImage(Section.works_ikano_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
   
+  //p = new Page();
+  //pages.add(p);
+  
+  
+  /* -------- 個人作品（あきっち） -------- */
   
   // あきっち個人表紙左
   pL = new PersonalCoverLeft(loadImage(Section.works_akitch_cover.getPath() + "left.png"));
@@ -71,6 +99,11 @@ void generatePages() {
   pR = new PersonalCoverRight(Author.akitch, loadImage(Section.works_akitch_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
   
+  //p = new Page();
+  //pages.add(p);
+  
+  
+  /* -------- 個人作品（eboshidori） -------- */
   
   // eboshidori個人表紙左
   pL = new PersonalCoverLeft(loadImage(Section.works_eboshi_cover.getPath() + "left.png"));
@@ -79,6 +112,36 @@ void generatePages() {
   path = Section.works_eboshi_cover.getPath() + "selfintro.txt";
   pR = new PersonalCoverRight(Author.eboshi, loadImage(Section.works_eboshi_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
+  
+  //p = new Page();
+  //pages.add(p);
+  
+  
+  /* -------- 活動アーカイブ（ロゴ）-------- */
+  
+  //p = new Page();
+  //pages.add(p);
+  
+  
+  /* -------- 活動アーカイブ（サイト）-------- */
+  
+  //p = new Page();
+  //pages.add(p);
+  
+  
+  /* -------- 活動アーカイブ（作品展）-------- */
+  
+  //p = new Page();
+  //pages.add(p);
+  
+  
+  /* -------- あとがき -------- */
+  
+  //p = new Page();
+  //pages.add(p);
+  
+  
+  /* -------- 裏表紙 -------- */
 }
 
 String txtToString(String path) {
@@ -100,8 +163,5 @@ void draw() {
       clear();
     }
     exit();
-  } else {
-    //Page p = new Page(images);
-    //p.draw();
   }
 }

@@ -5,13 +5,13 @@ public class Page {
   
   protected Image[] images;
   
-  public Page(Image image) {
-    title = "";
+  public Page(String title, Image image) {
+    this.title = title;
     this.images = new Image[]{ image };
   }
   
-  public Page(Image[] images) {
-    title = "Title";
+  public Page(String title, Image[] images) {
+    this.title = title;
     this.images = images;
   }
   

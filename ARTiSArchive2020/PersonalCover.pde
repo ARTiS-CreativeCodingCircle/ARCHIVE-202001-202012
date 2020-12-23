@@ -3,7 +3,7 @@ public class PersonalCoverLeft extends Page {
   String sectionNumber;
   
   public PersonalCoverLeft(PImage image) {
-    super(new Image(image));
+    super("", new Image(image));
     sectionNumber = "P.4";
   }
   
@@ -28,7 +28,7 @@ public class PersonalCoverRight extends Page {
   String text;
   
   public PersonalCoverRight(Author author, PImage image, String text) {
-    super(new Image(image));
+    super("", new Image(image));
     this.author = author;
     this.text = text;
   }
