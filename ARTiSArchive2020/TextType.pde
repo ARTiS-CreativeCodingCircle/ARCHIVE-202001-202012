@@ -1,4 +1,5 @@
 enum TextType {
+  section("Bahnschrift", 48),
   author("NotoSansCJKjp-Bold", 48),
   title("NotoSansCJKjp-Regular", 22),
   belonging("NotoSansCJKjp-Bold", 16),
