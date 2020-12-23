@@ -32,12 +32,12 @@ void setup() {
 
 void generatePages() {
   // ohayota個人表紙左
-  PersonalCoverLeft pL = new PersonalCoverLeft(loadImage("Silk_freesize_01.png"));
+  PersonalCoverLeft pL = new PersonalCoverLeft(loadImage(Section.works_ohayota.getPath() + "cover_left.png"));
   pages.add(pL);
   
   // ohayota個人表紙右
   String text = "線で構成されるものが好きです。\n複雑で繊細な構造と、不確実性に惹かれます。\nネイティブ言語はProcessing、第一外国語は日本語。\nARTiSの代表。プログラムアートに興味を持つ人を増やしたい。";
-  PersonalCoverRight pR = new PersonalCoverRight(Author.ohayota, loadImage("Silk_freesize_02.png"), text);
+  PersonalCoverRight pR = new PersonalCoverRight(Author.ohayota, loadImage(Section.works_ohayota.getPath() + "cover_right.png"), text);
   pages.add(pR);
 }
 
