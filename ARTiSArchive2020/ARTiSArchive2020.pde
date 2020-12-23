@@ -119,6 +119,12 @@ void generatePages() {
   // Four colors シリーズ
   
   // WAVE
+  img = loadImage(Section.works_tomoka.getPath() + "wave/image.png");
+  p = new DescriptionPage(txtToString(Section.works_tomoka.getPath() + "wave/title.txt"),
+                          txtToString(Section.works_tomoka.getPath() + "wave/main.txt"),
+                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+  pages.add(p);
   
   
   /* -------- 個人作品（Ikanoshiokara） -------- */
