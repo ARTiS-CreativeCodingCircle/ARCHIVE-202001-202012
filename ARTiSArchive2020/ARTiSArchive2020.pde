@@ -56,9 +56,11 @@ void generatePages() {
   pages.add(pR);
   
   // ジェネラティブトランプ見開き1ページ
-  //path = Section.works_ohayota.getPath() + "generative/description.txt";
-  //p = new Page("ジェネラティブトランプ（スペードA）", );
-  //pages.add(p);
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "generative/title.txt"),
+                          txtToString(Section.works_ohayota.getPath() + "generative/main.txt"));
+  pages.add(p);
+  p = new LargeImagePage(loadImage(Section.works_ohayota.getPath() + "generative/image.png"));
+  pages.add(p);
   
   
   /* -------- 個人作品（Tomoka） -------- */

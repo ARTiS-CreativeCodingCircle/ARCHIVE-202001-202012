@@ -1,16 +1,23 @@
 public class PersonalCoverLeft extends Page {
   
   String sectionNumber;
+  Image backImage;
   
-  public PersonalCoverLeft(PImage image) {
-    super("", new Image(image));
+  public PersonalCoverLeft(PImage backImage) {
+    super();
+    this.backImage = new Image(backImage);
+    sectionNumber = "P.4";
+  }
+  
+  public PersonalCoverLeft(Image backImage) {
+    super();
+    this.backImage = backImage;
     sectionNumber = "P.4";
   }
   
   public void draw() {
     // 画面いっぱいに背景画像を表示する
-    Image i = images[0];
-    image(i.image, i.imageCornerX, i.imageCornerY, i.imageWidth, i.imageHeight);
+    image(backImage.image, backImage.imageCornerX, backImage.imageCornerY, backImage.imageWidth, backImage.imageHeight);
     
     textFont(createFont(TextType.section.getFontName(), TextType.section.getFontSize()));
     textAlign(RIGHT);
@@ -21,22 +28,27 @@ public class PersonalCoverLeft extends Page {
 
 public class PersonalCoverRight extends Page {
   
-  // 自己紹介テキスト用のテキストボックスも必要
-  
   Author author;
-  
   String text;
+  Image backImage;
   
-  public PersonalCoverRight(Author author, PImage image, String text) {
-    super("", new Image(image));
+  public PersonalCoverRight(Author author, PImage backImage, String text) {
+    super();
     this.author = author;
+    this.backImage = new Image(backImage);
+    this.text = text;
+  }
+  
+  public PersonalCoverRight(Author author, Image backImage, String text) {
+    super();
+    this.author = author;
+    this.backImage = backImage;
     this.text = text;
   }
   
   public void draw() {
     // 画面いっぱいに背景画像を表示する
-    Image i = images[0];
-    image(i.image, i.imageCornerX, i.imageCornerY, i.imageWidth, i.imageHeight);
+    image(backImage.image, backImage.imageCornerX, backImage.imageCornerY, backImage.imageWidth, backImage.imageHeight);
     
     textFont(createFont(TextType.author.getFontName(), TextType.author.getFontSize()));
     text(author.getName(), 100, 290);
@@ -45,7 +57,6 @@ public class PersonalCoverRight extends Page {
     
     textFont(createFont(TextType.main.getFontName(), TextType.main.getFontSize()));
     text(text, 100, 620);
-    
   }
   
 }
