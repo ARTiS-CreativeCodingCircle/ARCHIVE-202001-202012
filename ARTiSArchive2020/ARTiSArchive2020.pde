@@ -81,6 +81,28 @@ void generatePages() {
                                              int(areaWidth*(0.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))));
   pages.add(p);
   
+  // Silk
+  
+  // Clear Triangle & Cyan and Magenta
+  
+  // Flag
+  
+  // Prism Scope
+  
+  // Prism Scope (Overwrite)
+  
+  // 遠ざかる
+  
+  // リアルタイム
+  
+  // 破裂
+  
+  // 虹吹雪
+  
+  // DIFFERENCE
+  
+  // 今日と過去の風
+  
   
   /* -------- 個人作品（Tomoka） -------- */
   
@@ -91,6 +113,12 @@ void generatePages() {
   path = Section.works_tomoka_cover.getPath() + "selfintro.txt";
   pR = new PersonalCoverRight(Author.tomoka, loadImage(Section.works_tomoka_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
+  
+  // Pegboard
+  
+  // Four colors シリーズ
+  
+  // WAVE
   
   
   /* -------- 個人作品（Ikanoshiokara） -------- */
@@ -103,6 +131,10 @@ void generatePages() {
   pR = new PersonalCoverRight(Author.ikano, loadImage(Section.works_ikano_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
   
+  // LoopLiner & rollingBoll
+  
+  // circuit & CLIもどきライブラリ
+  
   
   /* -------- 個人作品（あきっち） -------- */
   
@@ -114,6 +146,39 @@ void generatePages() {
   pR = new PersonalCoverRight(Author.akitch, loadImage(Section.works_akitch_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
   
+  // 「200」見開き1ページ
+  p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "200/title.txt"),
+                          txtToString(Section.works_akitch.getPath() + "200/main.txt"),
+                          new CodeBlock(txtToString(Section.works_akitch.getPath() + "200/code.txt"),
+                                        marginHorizontal, 262, int(areaWidth*(1.99/3.0)), areaHeight-(262-marginVertical)),
+                          new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "200/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 262, int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)));
+  pages.add(p);
+  p = new LargeImagePage(loadImage(Section.works_akitch.getPath() + "200/image.png"));
+  pages.add(p);
+  
+  // 蕾 (#つぶやきProcessing) / 凝視
+  
+  // 銀菊 / 夏色
+  
+  // 色雫 / 標的 (#つぶやきProcessing)
+  
+  // 炎 / 羽
+  
+  // 詰め合わせ
+  
+  // 猫と雨
+  img = loadImage(Section.works_akitch.getPath() + "cat/image.png");
+  p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "cat/title.txt"),
+                          txtToString(Section.works_akitch.getPath() + "cat/main.txt"),
+                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+  pages.add(p);
+  
+  // 炎
+  
+  // 200
+  
   
   /* -------- 個人作品（eboshidori） -------- */
   
@@ -124,6 +189,12 @@ void generatePages() {
   path = Section.works_eboshi_cover.getPath() + "selfintro.txt";
   pR = new PersonalCoverRight(Author.eboshi, loadImage(Section.works_eboshi_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
+  
+  // 作品名不明
+  
+  // Rose
+  
+  // Movie
   
   
   /* -------- 活動アーカイブ（ロゴ）-------- */
