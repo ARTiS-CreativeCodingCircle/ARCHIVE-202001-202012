@@ -147,14 +147,14 @@ void generatePages() {
                           new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
   pages.add(p);
   
-  //p = new Page();
-  //pages.add(p);
-  
   
   /* -------- 活動アーカイブ（サイト）-------- */
   
-  //p = new Page();
-  //pages.add(p);
+  p = new DescriptionPage(txtToString(Section.artis_website.getPath() + "title.txt"),
+                          txtToString(Section.artis_website.getPath() + "main.txt"));
+  pages.add(p);
+  p = new LargeImagePage(loadImage(Section.artis_website.getPath() + "image.png"));
+  pages.add(p);
   
   
   /* -------- 活動アーカイブ（作品展）-------- */
