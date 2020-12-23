@@ -31,13 +31,53 @@ void setup() {
 }
 
 void generatePages() {
-  // ohayota個人表紙左
-  PersonalCoverLeft pL = new PersonalCoverLeft(loadImage(Section.works_ohayota_cover.getPath() + "left.png"));
-  pages.add(pL);
+  String path = "";
+  PersonalCoverLeft pL;
+  PersonalCoverRight pR;
   
+  
+  // ohayota個人表紙左
+  pL = new PersonalCoverLeft(loadImage(Section.works_ohayota_cover.getPath() + "left.png"));
+  pages.add(pL);
   // ohayota個人表紙右
-  String path = Section.works_ohayota_cover.getPath() + "selfintro.txt";
-  PersonalCoverRight pR = new PersonalCoverRight(Author.ohayota, loadImage(Section.works_ohayota_cover.getPath() + "right.png"), txtToString(path));
+  path = Section.works_ohayota_cover.getPath() + "selfintro.txt";
+  pR = new PersonalCoverRight(Author.ohayota, loadImage(Section.works_ohayota_cover.getPath() + "right.png"), txtToString(path));
+  pages.add(pR);
+  
+  
+  // Tomoka個人表紙左
+  pL = new PersonalCoverLeft(loadImage(Section.works_tomoka_cover.getPath() + "left.png"));
+  pages.add(pL);
+  // Tomoka個人表紙右
+  path = Section.works_tomoka_cover.getPath() + "selfintro.txt";
+  pR = new PersonalCoverRight(Author.tomoka, loadImage(Section.works_tomoka_cover.getPath() + "right.png"), txtToString(path));
+  pages.add(pR);
+  
+  
+  // Ikanoshiokara個人表紙左
+  pL = new PersonalCoverLeft(loadImage(Section.works_ikano_cover.getPath() + "left.png"));
+  pages.add(pL);
+  // Ikanoshiokara個人表紙右
+  path = Section.works_ikano_cover.getPath() + "selfintro.txt";
+  pR = new PersonalCoverRight(Author.ikano, loadImage(Section.works_ikano_cover.getPath() + "right.png"), txtToString(path));
+  pages.add(pR);
+  
+  
+  // あきっち個人表紙左
+  pL = new PersonalCoverLeft(loadImage(Section.works_akitch_cover.getPath() + "left.png"));
+  pages.add(pL);
+  // あきっち個人表紙右
+  path = Section.works_akitch_cover.getPath() + "selfintro.txt";
+  pR = new PersonalCoverRight(Author.akitch, loadImage(Section.works_akitch_cover.getPath() + "right.png"), txtToString(path));
+  pages.add(pR);
+  
+  
+  // eboshidori個人表紙左
+  pL = new PersonalCoverLeft(loadImage(Section.works_eboshi_cover.getPath() + "left.png"));
+  pages.add(pL);
+  // eboshidori個人表紙右
+  path = Section.works_eboshi_cover.getPath() + "selfintro.txt";
+  pR = new PersonalCoverRight(Author.eboshi, loadImage(Section.works_eboshi_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
 }
 
@@ -52,15 +92,13 @@ String txtToString(String path) {
 
 void draw() {
   if (isExportPDF) {
-    beginRecord(PDF, "output/Page1.pdf");
-    background(255);
-    pages.get(0).draw();
-    endRecord();
-    clear();
-    beginRecord(PDF, "output/Page2.pdf");
-    background(255);
-    pages.get(1).draw();
-    endRecord();
+    for (int i = 0; i < pages.size(); i++) {
+      beginRecord(PDF, "output/Page" + i + ".pdf");
+      background(255);
+      pages.get(i).draw();
+      endRecord();
+      clear();
+    }
     exit();
   } else {
     //Page p = new Page(images);
