@@ -35,6 +35,7 @@ void generatePages() {
   PersonalCoverLeft pL;
   PersonalCoverRight pR;
   Page p;
+  PImage img;
   
   /* -------- 表紙 -------- */
   
@@ -138,6 +139,13 @@ void generatePages() {
   
   
   /* -------- 活動アーカイブ（ロゴ）-------- */
+  
+  img = loadImage(Section.artis_logo.getPath() + "image.png");
+  p = new DescriptionPage(txtToString(Section.artis_logo.getPath() + "title.txt"),
+                          txtToString(Section.artis_logo.getPath() + "main.txt"),
+                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+  pages.add(p);
   
   //p = new Page();
   //pages.add(p);
