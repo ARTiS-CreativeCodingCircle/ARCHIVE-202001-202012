@@ -159,8 +159,29 @@ void generatePages() {
   
   /* -------- 活動アーカイブ（作品展）-------- */
   
-  //p = new Page();
-  //pages.add(p);
+  // Unity
+  img = loadImage(Section.artis_exhibition.getPath() + "unity/image.png");
+  p = new DescriptionPage(txtToString(Section.artis_exhibition.getPath() + "unity/title.txt"),
+                          txtToString(Section.artis_exhibition.getPath() + "unity/main.txt"),
+                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+  pages.add(p);
+  
+  // STYLY
+  img = loadImage(Section.artis_exhibition.getPath() + "styly/image1.png");
+  p = new DescriptionPage(txtToString(Section.artis_exhibition.getPath() + "styly/title.txt"),
+                          txtToString(Section.artis_exhibition.getPath() + "styly/main.txt"),
+                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+  pages.add(p);
+  
+  // Mozilla Hubs
+  img = loadImage(Section.artis_exhibition.getPath() + "mozilla/image.png");
+  p = new DescriptionPage(txtToString(Section.artis_exhibition.getPath() + "mozilla/title.txt"),
+                          txtToString(Section.artis_exhibition.getPath() + "mozilla/main.txt"),
+                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+  pages.add(p);
   
   
   /* -------- あとがき -------- */
