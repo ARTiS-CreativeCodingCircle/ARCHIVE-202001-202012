@@ -66,6 +66,20 @@ void generatePages() {
   p = new LargeImagePage(loadImage(Section.works_ohayota.getPath() + "generative/image.png"));
   pages.add(p);
   
+  // Glass Planet
+  PImage img1 = loadImage(Section.works_ohayota.getPath() + "glass/image1.png");
+  PImage img2 = loadImage(Section.works_ohayota.getPath() + "glass/image2.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "glass/title.txt"),
+                          txtToString(Section.works_ohayota.getPath() + "glass/main.txt"),
+                          marginVertical+56 + int(img1.height*(areaWidth/(float)img1.width)) + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56, areaWidth, int(img1.height*(areaWidth/(float)img1.width))),
+                                       new Image(img2, marginHorizontal, height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
+                                                 int(areaWidth*(1.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))) },
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "glass/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
+                                             int(areaWidth*(0.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))));
+  pages.add(p);
+  
   
   /* -------- 個人作品（Tomoka） -------- */
   

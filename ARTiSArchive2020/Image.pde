@@ -24,6 +24,7 @@ public class Image {
   }
   
   public void draw() {
+    imageMode(CORNER);
     image(image, imageCornerX, imageCornerY, imageWidth, imageHeight);
   }
   
