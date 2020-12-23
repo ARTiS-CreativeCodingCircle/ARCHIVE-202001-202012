@@ -32,13 +32,22 @@ void setup() {
 
 void generatePages() {
   // ohayota個人表紙左
-  PersonalCoverLeft pL = new PersonalCoverLeft(loadImage(Section.works_ohayota.getPath() + "cover_left.png"));
+  PersonalCoverLeft pL = new PersonalCoverLeft(loadImage(Section.works_ohayota_cover.getPath() + "left.png"));
   pages.add(pL);
   
   // ohayota個人表紙右
-  String text = "線で構成されるものが好きです。\n複雑で繊細な構造と、不確実性に惹かれます。\nネイティブ言語はProcessing、第一外国語は日本語。\nARTiSの代表。プログラムアートに興味を持つ人を増やしたい。";
-  PersonalCoverRight pR = new PersonalCoverRight(Author.ohayota, loadImage(Section.works_ohayota.getPath() + "cover_right.png"), text);
+  String path = Section.works_ohayota_cover.getPath() + "selfintro.txt";
+  PersonalCoverRight pR = new PersonalCoverRight(Author.ohayota, loadImage(Section.works_ohayota_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
+}
+
+String txtToString(String path) {
+  String text = "";
+  String[] lines = loadStrings(path);
+  for (int i = 0 ; i < lines.length; i++) {
+    text += lines[i] + "\n";
+  }
+  return text;
 }
 
 void draw() {

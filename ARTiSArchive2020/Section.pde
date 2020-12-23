@@ -3,6 +3,7 @@ enum Section {
   foreword("foreafter/foreword/", ""),
   contents("contents_table/", ""),
   works_ohayota("personal_works/ohayota/", ""),
+  works_ohayota_cover("personal_works/ohayota/cover/", ""),
   works_tomoka("personal_works/tomoka/", ""),
   works_ikano("personal_works/ikanoshiokara/", ""),
   works_akitch("personal_works/akitch/", ""),
