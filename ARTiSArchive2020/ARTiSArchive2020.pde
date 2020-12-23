@@ -17,7 +17,6 @@ int areaHeight;
 
 void setup() {
   size(595, 842); // Screen: 72dpi
-  background(255);
   
   textAlign(LEFT, TOP);
   
@@ -37,17 +36,20 @@ void generatePages() {
   pages.add(pL);
   
   // ohayota個人表紙右
-  PersonalCoverRight pR = new PersonalCoverRight(Author.ohayota, loadImage("Silk_freesize_02.png"));
+  String text = "線で構成されるものが好きです。\n複雑で繊細な構造と、不確実性に惹かれます。\nネイティブ言語はProcessing、第一外国語は日本語。\nARTiSの代表。プログラムアートに興味を持つ人を増やしたい。";
+  PersonalCoverRight pR = new PersonalCoverRight(Author.ohayota, loadImage("Silk_freesize_02.png"), text);
   pages.add(pR);
 }
 
 void draw() {
   if (isExportPDF) {
-    beginRecord(PDF, "Page1.pdf");
+    beginRecord(PDF, "output/Page1.pdf");
+    background(255);
     pages.get(0).draw();
     endRecord();
     clear();
-    beginRecord(PDF, "Page2.pdf");
+    beginRecord(PDF, "output/Page2.pdf");
+    background(255);
     pages.get(1).draw();
     endRecord();
     exit();

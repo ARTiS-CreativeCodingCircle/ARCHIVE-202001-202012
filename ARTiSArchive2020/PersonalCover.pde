@@ -18,9 +18,12 @@ public class PersonalCoverRight extends Page {
   
   Author author;
   
-  public PersonalCoverRight(Author author, PImage image) {
+  String text;
+  
+  public PersonalCoverRight(Author author, PImage image, String text) {
     super(new Image(image));
     this.author = author;
+    this.text = text;
   }
   
   public void draw() {
@@ -29,9 +32,13 @@ public class PersonalCoverRight extends Page {
     image(i.image, i.imageCornerX, i.imageCornerY, i.imageWidth, i.imageHeight);
     
     textFont(createFont(TextType.author.getFontName(), TextType.author.getFontSize()));
-    text(author.getName(), 100, 200);
+    text(author.getName(), 100, 250);
     textFont(createFont(TextType.belonging.getFontName(), TextType.belonging.getFontSize()));
-    text(author.getBelonging(), 100, 250);
+    text(author.getBelonging(), 100, 300);
+    
+    textFont(createFont(TextType.main.getFontName(), TextType.main.getFontSize()));
+    text(text, 100, 600);
+    
   }
   
 }
