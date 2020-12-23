@@ -27,18 +27,28 @@ void setup() {
   grid = loadImage("grid.png");
   
   pages = new ArrayList<Page>(); // これ以降はページをここに追加していく
+  
+  generatePages();
+}
+
+void generatePages() {
+  // ohayota個人表紙左
+  PersonalCoverLeft pL = new PersonalCoverLeft(loadImage("Silk_freesize_01.png"));
+  pages.add(pL);
+  
+  // ohayota個人表紙右
+  PersonalCoverRight pR = new PersonalCoverRight(Author.ohayota, loadImage("Silk_freesize_02.png"));
+  pages.add(pR);
 }
 
 void draw() {
   if (isExportPDF) {
-    beginRecord(PDF, "Page.pdf");
-    PersonalCoverRight pL = new PersonalCoverRight(loadImage("Silk_freesize_01.png"));
-    pL.draw();
+    beginRecord(PDF, "Page1.pdf");
+    pages.get(0).draw();
     endRecord();
     clear();
-    beginRecord(PDF, "Page.pdf");
-    PersonalCoverRight pR = new PersonalCoverRight(loadImage("Silk_freesize_02.png"));
-    pR.draw();
+    beginRecord(PDF, "Page2.pdf");
+    pages.get(1).draw();
     endRecord();
     exit();
   } else {

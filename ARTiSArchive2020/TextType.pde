@@ -1,5 +1,7 @@
 enum TextType {
+  author("NotoSansCJKjp-Regular", 48),
   title("NotoSansCJKjp-Regular", 22),
+  belonging("NotoSansCJKjp-Regular", 16),
   main("NotoSerifCJKjp-Regular", 12),
   code("NotoSerifCJKjp-Regular", 10.5);
   
