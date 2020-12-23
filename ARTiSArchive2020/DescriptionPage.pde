@@ -7,42 +7,51 @@ public class DescriptionPage extends Page {
   private Image[] images;
   
   private CodeBlock codeBlock;
+  private SmallTextBlock smallTextBlock;
   
   public DescriptionPage(String title, String mainText) {
     this.title = title;
     this.mainText = mainText;
   }
   
-  public DescriptionPage(String title, String mainText, CodeBlock codeBlock) {
+  // Overload
+  public DescriptionPage(String title, String mainText, CodeBlock codeBlock, SmallTextBlock smallTextBlock) {
     this.title = title;
     this.mainText = mainText;
     this.codeBlock = codeBlock;
+    this.smallTextBlock = smallTextBlock;
   }
   
+  // Overload
   public DescriptionPage(String title, String mainText, Image[] images) {
     this.title = title;
     this.mainText = mainText;
     this.images = images;
   }
   
-  public DescriptionPage(String title, String mainText, Image[] images, CodeBlock codeBlock) {
+  // Overload
+  public DescriptionPage(String title, String mainText, Image[] images, CodeBlock codeBlock, SmallTextBlock smallTextBlock) {
     this.title = title;
     this.mainText = mainText;
     this.images = images;
     this.codeBlock = codeBlock;
+    this.smallTextBlock = smallTextBlock;
   }
   
+  // Overload
   public DescriptionPage(String title, String mainText, Image image) {
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
   }
   
-  public DescriptionPage(String title, String mainText, Image image, CodeBlock codeBlock) {
+  // Overload
+  public DescriptionPage(String title, String mainText, Image image, CodeBlock codeBlock, SmallTextBlock smallTextBlock) {
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
     this.codeBlock = codeBlock;
+    this.smallTextBlock = smallTextBlock;
   }
   
   public void draw() {
@@ -67,7 +76,9 @@ public class DescriptionPage extends Page {
     text(mainText, marginHorizontal, marginVertical+56, areaWidth, areaHeight);
     
     // コードブロックの表示
-    codeBlock.draw();
+    if (codeBlock != null) codeBlock.draw();
+    // コード説明ブロックの表示
+    if (smallTextBlock != null) smallTextBlock.draw();
   }
   
 }

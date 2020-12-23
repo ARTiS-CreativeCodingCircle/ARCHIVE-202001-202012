@@ -12,21 +12,23 @@ public class CodeBlock {
   int codeWidth;
   int codeHeight;
   
+  int padding = 8;
+  
   public CodeBlock(String code, int blockCornerX, int blockCornerY, int blockWidth, int blockHeight) {
     this.code = code;
     this.blockCornerX = blockCornerX;
     this.blockCornerY = blockCornerY;
     this.blockWidth = blockWidth;
     this.blockHeight = blockHeight;
-    this.codeCornerX = blockCornerX+8;
-    this.codeCornerY = blockCornerY+8;
-    this.codeWidth = blockWidth-16;
-    this.codeHeight = blockHeight-16;
+    this.codeCornerX = blockCornerX + padding;
+    this.codeCornerY = blockCornerY + padding;
+    this.codeWidth = blockWidth - padding*2;
+    this.codeHeight = blockHeight - padding*2;
   }
   
   public void draw() {
     // コード背景のグレーエリア
-    fill(220);
+    fill(240);
     noStroke();
     rect(blockCornerX, blockCornerY, blockWidth, blockHeight);
     

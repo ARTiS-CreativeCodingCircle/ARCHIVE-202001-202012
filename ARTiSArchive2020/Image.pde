@@ -14,6 +14,7 @@ public class Image {
     this.imageHeight = height;
   }
   
+  // Overload
   public Image(PImage image, int imageCornerX, int imageCornerY, int imageWidth, int imageHeight) {
     this.image = image;
     this.imageCornerX = imageCornerX;

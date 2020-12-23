@@ -4,6 +4,7 @@ enum TextType {
   title("NotoSansCJKjp-Bold", 22),
   belonging("NotoSansCJKjp-Bold", 16),
   main("NotoSerifCJKjp-Regular", 12),
+  small("NotoSansCJKjp-Regular", 10),
   code("NotoMono", 10);
   
   private TextType(String fontName, float fontSize) {

@@ -59,7 +59,9 @@ void generatePages() {
   p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "generative/title.txt"),
                           txtToString(Section.works_ohayota.getPath() + "generative/main.txt"),
                           new CodeBlock(txtToString(Section.works_ohayota.getPath() + "generative/code.txt"),
-                                        marginHorizontal, 262, int(areaWidth*(1.9/3.0)), areaHeight-(262-marginVertical)));
+                                        marginHorizontal, 262, int(areaWidth*(1.99/3.0)), areaHeight-(262-marginVertical)),
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "generative/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 262, int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)));
   pages.add(p);
   p = new LargeImagePage(loadImage(Section.works_ohayota.getPath() + "generative/image.png"));
   pages.add(p);

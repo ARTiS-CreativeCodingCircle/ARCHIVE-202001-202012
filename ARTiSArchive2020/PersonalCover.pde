@@ -9,6 +9,7 @@ public class PersonalCoverLeft extends Page {
     sectionNumber = "P.4";
   }
   
+  // Overload
   public PersonalCoverLeft(Image backImage) {
     super();
     this.backImage = backImage;
