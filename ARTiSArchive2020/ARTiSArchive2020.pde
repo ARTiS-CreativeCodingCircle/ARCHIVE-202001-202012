@@ -92,9 +92,6 @@ void generatePages() {
   pR = new PersonalCoverRight(Author.tomoka, loadImage(Section.works_tomoka_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
   
-  //p = new Page();
-  //pages.add(p);
-  
   
   /* -------- 個人作品（Ikanoshiokara） -------- */
   
@@ -105,9 +102,6 @@ void generatePages() {
   path = Section.works_ikano_cover.getPath() + "selfintro.txt";
   pR = new PersonalCoverRight(Author.ikano, loadImage(Section.works_ikano_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
-  
-  //p = new Page();
-  //pages.add(p);
   
   
   /* -------- 個人作品（あきっち） -------- */
@@ -120,9 +114,6 @@ void generatePages() {
   pR = new PersonalCoverRight(Author.akitch, loadImage(Section.works_akitch_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
   
-  //p = new Page();
-  //pages.add(p);
-  
   
   /* -------- 個人作品（eboshidori） -------- */
   
@@ -133,9 +124,6 @@ void generatePages() {
   path = Section.works_eboshi_cover.getPath() + "selfintro.txt";
   pR = new PersonalCoverRight(Author.eboshi, loadImage(Section.works_eboshi_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
-  
-  //p = new Page();
-  //pages.add(p);
   
   
   /* -------- 活動アーカイブ（ロゴ）-------- */
@@ -186,11 +174,10 @@ void generatePages() {
   
   /* -------- あとがき -------- */
   
-  //p = new Page();
-  //pages.add(p);
-  
   
   /* -------- 裏表紙 -------- */
+  
+  
 }
 
 String txtToString(String path) {
