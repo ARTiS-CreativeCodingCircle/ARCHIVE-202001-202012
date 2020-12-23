@@ -57,7 +57,9 @@ void generatePages() {
   
   // ジェネラティブトランプ見開き1ページ
   p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "generative/title.txt"),
-                          txtToString(Section.works_ohayota.getPath() + "generative/main.txt"));
+                          txtToString(Section.works_ohayota.getPath() + "generative/main.txt"),
+                          new CodeBlock(txtToString(Section.works_ohayota.getPath() + "generative/code.txt"),
+                                        marginHorizontal, 262, int(areaWidth*(1.9/3.0)), areaHeight-(262-marginVertical)));
   pages.add(p);
   p = new LargeImagePage(loadImage(Section.works_ohayota.getPath() + "generative/image.png"));
   pages.add(p);

@@ -6,9 +6,17 @@ public class DescriptionPage extends Page {
   
   private Image[] images;
   
+  private CodeBlock codeBlock;
+  
   public DescriptionPage(String title, String mainText) {
     this.title = title;
     this.mainText = mainText;
+  }
+  
+  public DescriptionPage(String title, String mainText, CodeBlock codeBlock) {
+    this.title = title;
+    this.mainText = mainText;
+    this.codeBlock = codeBlock;
   }
   
   public DescriptionPage(String title, String mainText, Image[] images) {
@@ -17,10 +25,24 @@ public class DescriptionPage extends Page {
     this.images = images;
   }
   
+  public DescriptionPage(String title, String mainText, Image[] images, CodeBlock codeBlock) {
+    this.title = title;
+    this.mainText = mainText;
+    this.images = images;
+    this.codeBlock = codeBlock;
+  }
+  
   public DescriptionPage(String title, String mainText, Image image) {
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
+  }
+  
+  public DescriptionPage(String title, String mainText, Image image, CodeBlock codeBlock) {
+    this.title = title;
+    this.mainText = mainText;
+    this.images = new Image[]{ image };
+    this.codeBlock = codeBlock;
   }
   
   public void draw() {
@@ -43,6 +65,9 @@ public class DescriptionPage extends Page {
     fill(0);
     // 自動改行（日本語の場合は改行位置に半角スペースが必要）
     text(mainText, marginHorizontal, marginVertical+56, areaWidth, areaHeight);
+    
+    // コードブロックの表示
+    codeBlock.draw();
   }
   
 }

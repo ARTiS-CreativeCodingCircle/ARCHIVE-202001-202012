@@ -1,0 +1,39 @@
+PGraphics mask, graphic, lines;
+PImage img, suit;
+int offsetX = 1;
+void setup() {
+  size(1000, 1618);
+  img = loadImage("img.png");
+  suit = loadShape("spade.svg");
+  mask = createGraphics(width, height);
+  mask.beginDraw();
+  // 省略：小さいスペードと「A」を描画
+  mask.endDraw();
+  graphic = createGraphics(width, height);
+  graphic.beginDraw();
+  // 省略：スペードと「A」をマスクするの画像を描画
+  graphic.endDraw();
+  graphic.mask(mask);
+  image(graphic, 0, 0);
+  lines = createGraphics(width, height);
+}
+void draw() {
+  background(0);
+  image(graphic, 0, 0);
+  lines.beginDraw();
+  lines.clear();
+  lines.translate(width/2, height/2);
+  for (int x = -width; x < width*2; x++) {
+    float r = map(noise((x+offsetX)/800.0),
+                  0, 1, -PI, PI);
+    float h1 = radians(x/12.0-180*sin(r));
+    float h2 = radians(x/12.0+180*sin(r));
+    lines.stroke(x/8, 10+90*cos(r), 100, 50);
+    int qW = width/3;
+    lines.line(qW*3*cos(h1), qW*3*sin(h1),
+               -qW*3*cos(h2), qW*3*sin(h2));
+  }
+  offsetX += 10;
+  lines.endDraw();
+  image(lines, 0, 0);
+}
