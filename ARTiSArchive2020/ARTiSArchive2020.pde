@@ -29,6 +29,20 @@ void setup() {
   generatePages();
 }
 
+ArrayList<Page> generatePersonalCover(Section section) {
+  ArrayList<Page> pages = new ArrayList<Page>();
+  
+  // 個人表紙左
+  Page pL = new PersonalCoverLeft(loadImage(section.getPath() + "left.png"));
+  pages.add(pL);
+  // 個人表紙右
+  String path = section.getPath() + "selfintro.txt";
+  Page pR = new PersonalCoverRight(Author.ohayota, loadImage(section.getPath() + "right.png"), txtToString(path));
+  pages.add(pR);
+  
+  return pages;
+}
+
 void generatePages() {
   Section section;
   String path = "";
@@ -60,15 +74,9 @@ void generatePages() {
   
   /* -------- 個人作品（ohayota） -------- */
   
-  section = Section.works_ohayota_cover;
-  
-  // ohayota個人表紙左
-  pL = new PersonalCoverLeft(loadImage(section.getPath() + "left.png"));
-  pages.add(pL);
-  // ohayota個人表紙右
-  path = section.getPath() + "selfintro.txt";
-  pR = new PersonalCoverRight(Author.ohayota, loadImage(section.getPath() + "right.png"), txtToString(path));
-  pages.add(pR);
+  // ohayota個人表紙
+  section = Section.works_ohayota_cover; 
+  pages.addAll(generatePersonalCover(section));
   
   section = Section.works_ohayota;
   
@@ -515,15 +523,9 @@ void generatePages() {
   
   /* -------- 個人作品（Tomoka） -------- */
   
-  section = Section.works_tomoka_cover;
-  
-  // Tomoka個人表紙左
-  pL = new PersonalCoverLeft(loadImage(section.getPath() + "left.png"));
-  pages.add(pL);
-  // Tomoka個人表紙右
-  path = section.getPath() + "selfintro.txt";
-  pR = new PersonalCoverRight(Author.tomoka, loadImage(section.getPath() + "right.png"), txtToString(path));
-  pages.add(pR);
+  // Tomoka個人表紙
+  section = Section.works_tomoka_cover; 
+  pages.addAll(generatePersonalCover(section));
   
   section = Section.works_tomoka;
   
@@ -542,15 +544,9 @@ void generatePages() {
   
   /* -------- 個人作品（Ikanoshiokara） -------- */
   
-  section = Section.works_ikano_cover;
-  
-  // Ikanoshiokara個人表紙左
-  pL = new PersonalCoverLeft(loadImage(section.getPath() + "left.png"));
-  pages.add(pL);
-  // Ikanoshiokara個人表紙右
-  path = section.getPath() + "selfintro.txt";
-  pR = new PersonalCoverRight(Author.ikano, loadImage(section.getPath() + "right.png"), txtToString(path));
-  pages.add(pR);
+  // Ikanoshiokara個人表紙
+  section = Section.works_ikano_cover; 
+  pages.addAll(generatePersonalCover(section));
   
   section = Section.works_ikano;
   
@@ -561,15 +557,9 @@ void generatePages() {
   
   /* -------- 個人作品（あきっち） -------- */
   
-  section = Section.works_akitch_cover;
-  
-  // あきっち個人表紙左
-  pL = new PersonalCoverLeft(loadImage(Section.works_akitch_cover.getPath() + "left.png"));
-  pages.add(pL);
-  // あきっち個人表紙右
-  path = Section.works_akitch_cover.getPath() + "selfintro.txt";
-  pR = new PersonalCoverRight(Author.akitch, loadImage(Section.works_akitch_cover.getPath() + "right.png"), txtToString(path));
-  pages.add(pR);
+  // あきっち個人表紙
+  section = Section.works_akitch_cover; 
+  pages.addAll(generatePersonalCover(section));
   
   section = Section.works_akitch;
   
@@ -786,15 +776,9 @@ void generatePages() {
   
   /* -------- 個人作品（eboshidori） -------- */
   
-  section = Section.works_eboshi_cover;
-  
-  // eboshidori個人表紙左
-  pL = new PersonalCoverLeft(loadImage(section.getPath() + "left.png"));
-  pages.add(pL);
-  // eboshidori個人表紙右
-  path = section.getPath() + "selfintro.txt";
-  pR = new PersonalCoverRight(Author.eboshi, loadImage(section.getPath() + "right.png"), txtToString(path));
-  pages.add(pR);
+  // eboshidori個人表紙
+  section = Section.works_eboshi_cover; 
+  pages.addAll(generatePersonalCover(section));
   
   section = Section.works_eboshi;
   
