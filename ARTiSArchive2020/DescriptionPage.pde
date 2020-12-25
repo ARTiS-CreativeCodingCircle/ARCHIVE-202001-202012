@@ -9,7 +9,7 @@ public class DescriptionPage extends Page {
   private Image[] images;
   
   private CodeBlock codeBlock;
-  private SmallTextBlock smallTextBlock;
+  private SmallTextBlock[] smallTextBlocks;
   
   public DescriptionPage(String title, String mainText) {
     this.title = title;
@@ -23,7 +23,7 @@ public class DescriptionPage extends Page {
     this.title = title;
     this.mainText = mainText;
     this.codeBlock = codeBlock;
-    this.smallTextBlock = smallTextBlock;
+    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
     this.mainTextCornerY = marginVertical+56;
     this.images = new Image[]{};
   }
@@ -42,7 +42,7 @@ public class DescriptionPage extends Page {
     this.mainText = mainText;
     this.images = images;
     this.codeBlock = codeBlock;
-    this.smallTextBlock = smallTextBlock;
+    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
     this.mainTextCornerY = marginVertical+56;
   }
   
@@ -60,7 +60,7 @@ public class DescriptionPage extends Page {
     this.mainText = mainText;
     this.images = new Image[]{ image };
     this.codeBlock = codeBlock;
-    this.smallTextBlock = smallTextBlock;
+    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
     this.mainTextCornerY = marginVertical+56;
   }
   
@@ -70,7 +70,7 @@ public class DescriptionPage extends Page {
     this.mainText = mainText;
     this.images = new Image[]{ image };
     this.codeBlock = codeBlock;
-    this.smallTextBlock = smallTextBlock;
+    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
     this.mainTextCornerY = mainTextCornerY;
   }
   
@@ -88,7 +88,16 @@ public class DescriptionPage extends Page {
     this.mainText = mainText;
     this.images = images;
     this.mainTextCornerY = mainTextCornerY;
-    this.smallTextBlock = smallTextBlock;
+    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
+  }
+  
+  // Overload
+  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, SmallTextBlock[] smallTextBlocks) {
+    this.title = title;
+    this.mainText = mainText;
+    this.images = images;
+    this.mainTextCornerY = mainTextCornerY;
+    this.smallTextBlocks = smallTextBlocks;
   }
   
   // Overload
@@ -127,7 +136,11 @@ public class DescriptionPage extends Page {
     // コードブロックの表示
     if (codeBlock != null) codeBlock.draw();
     // コード説明ブロックの表示
-    if (smallTextBlock != null) smallTextBlock.draw();
+    if (smallTextBlocks != null) {
+      for (SmallTextBlock stb: smallTextBlocks) {
+        stb.draw();
+      }
+    }
   }
   
 }

@@ -36,6 +36,18 @@ void generatePages() {
   PersonalCoverRight pR;
   Page p;
   PImage img;
+  PImage img1;
+  PImage img2;
+  PImage img3;
+  PImage img4;
+  PImage img5;
+  PImage img6;
+  PImage img7;
+  PImage img8;
+  PImage img9;
+  PImage img10;
+  PImage img11;
+  PImage img12;
   
   /* -------- 表紙 -------- */
   
@@ -68,8 +80,8 @@ void generatePages() {
   pages.add(p);
   
   // Glass Planet
-  PImage img1 = loadImage(Section.works_ohayota.getPath() + "glass/image1.png");
-  PImage img2 = loadImage(Section.works_ohayota.getPath() + "glass/image2.png");
+  img1 = loadImage(Section.works_ohayota.getPath() + "glass/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "glass/image2.png");
   p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "glass/title.txt"),
                           txtToString(Section.works_ohayota.getPath() + "glass/main.txt"),
                           marginVertical+56 + int(img1.height*(areaWidth/(float)img1.width)) + 24,
@@ -152,18 +164,52 @@ void generatePages() {
   pR = new PersonalCoverRight(Author.akitch, loadImage(Section.works_akitch_cover.getPath() + "right.png"), txtToString(path));
   pages.add(pR);
   
-  // 「200」見開き1ページ
-  p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "200/title.txt"),
-                          txtToString(Section.works_akitch.getPath() + "200/main.txt"),
-                          new CodeBlock(txtToString(Section.works_akitch.getPath() + "200/code.txt"),
+  // 「200」見開き1ページ（200_all）
+  p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "200_all/title.txt"),
+                          txtToString(Section.works_akitch.getPath() + "200_all/main.txt"),
+                          new CodeBlock(txtToString(Section.works_akitch.getPath() + "200_all/code.txt"),
                                         marginHorizontal, 262, int(areaWidth*(1.99/3.0)), areaHeight-(262-marginVertical)),
-                          new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "200/small.txt"),
+                          new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "200_all/small.txt"),
                                              width-marginHorizontal-int(areaWidth*(0.99/3.0)), 262, int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)));
   pages.add(p);
-  p = new LargeImagePage(loadImage(Section.works_akitch.getPath() + "200/image.png"));
+  p = new LargeImagePage(loadImage(Section.works_akitch.getPath() + "200_all/image.png"));
+  pages.add(p);
+  
+  // 200（格子状に4枚）
+  img1 = loadImage(Section.works_akitch.getPath() + "200/image1.png");
+  img2 = loadImage(Section.works_akitch.getPath() + "200/image2.png");
+  img3 = loadImage(Section.works_akitch.getPath() + "200/image3.png");
+  img4 = loadImage(Section.works_akitch.getPath() + "200/image4.png");
+  p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "200/title.txt"),
+                          txtToString(Section.works_akitch.getPath() + "200/main.txt"),
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.015/2.0)), marginVertical+56,
+                                                 int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))),
+                                       new Image(img3, marginHorizontal, marginVertical+56+int(areaWidth*(1.015/2.0)),
+                                                 int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))),
+                                       new Image(img4, marginHorizontal+int(areaWidth*(1.015/2.0)), marginVertical+56+int(areaWidth*(1.015/2.0)),
+                                                 int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))) });
   pages.add(p);
   
   // 蕾 (#つぶやきProcessing) / 凝視
+  img1 = loadImage(Section.works_akitch.getPath() + "tsubomi/image1.png");
+  img2 = loadImage(Section.works_akitch.getPath() + "tsubomi/image2.png");
+  p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "tsubomi/title.txt"),
+                          "",
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
+                          new SmallTextBlock[] { new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "tsubomi/small1.txt"),
+                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
+                                                 new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "tsubomi/small2.txt"),
+                                                                    marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  pages.add(p);
   
   // 銀菊 / 夏色
   
@@ -182,8 +228,6 @@ void generatePages() {
   pages.add(p);
   
   // 炎
-  
-  // 200
   
   
   /* -------- 個人作品（eboshidori） -------- */
