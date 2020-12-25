@@ -74,16 +74,16 @@ ArrayList<Page> generatePages() {
   pages.addAll( generatePersonalWorks(Section.works_eboshi) ); // eboshidori個人作品ページ
   
   /* -------- 活動アーカイブ（ロゴ）-------- */
-  generateActivityPages(Section.artis_logo);
+  pages.addAll( generateActivityPages(Section.artis_logo) );
   
   /* -------- 活動アーカイブ（サイト）-------- */
-  generateActivityPages(Section.artis_website);
+  pages.addAll( generateActivityPages(Section.artis_website) );
   
   /* -------- 活動アーカイブ（作品展）-------- */
-  generateActivityPages(Section.artis_exhibition);
+  pages.addAll( generateActivityPages(Section.artis_exhibition) );
   
   /* -------- 活動アーカイブ（ワークショップ）-------- */
-  generateActivityPages(Section.artis_workshop);
+  pages.addAll( generateActivityPages(Section.artis_workshop) );
   
   /* -------- あとがき -------- */
   
