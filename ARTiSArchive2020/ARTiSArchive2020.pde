@@ -93,6 +93,18 @@ void generatePages() {
   pages.add(p);
   
   // Silk
+  img1 = loadImage(Section.works_ohayota.getPath() + "silk/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "silk/image2.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "silk/title.txt"),
+                          txtToString(Section.works_ohayota.getPath() + "silk/main.txt"),
+                          marginVertical+56 + int(img1.height*(areaWidth/(float)img1.width)) + 16,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56, areaWidth, int(img1.height*(areaWidth/(float)img1.width))),
+                                       new Image(img2, marginHorizontal, height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
+                                                 int(areaWidth*(1.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))) },
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "silk/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
+                                             int(areaWidth*(0.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))));
+  pages.add(p);
   
   // Clear Triangle & Cyan and Magenta
   
