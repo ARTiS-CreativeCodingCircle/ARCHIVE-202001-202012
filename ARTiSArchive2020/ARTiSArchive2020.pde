@@ -197,7 +197,7 @@ void generatePages() {
   img1 = loadImage(Section.works_akitch.getPath() + "tsubomi/image1.png");
   img2 = loadImage(Section.works_akitch.getPath() + "tsubomi/image2.png");
   p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "tsubomi/title.txt"),
-                          "",
+                          "", // 本文なし
                           marginVertical+56 + areaWidth + 24,
                           new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
                                                  int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
@@ -211,9 +211,25 @@ void generatePages() {
                                                                     int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
   pages.add(p);
   
-  // 銀菊 / 夏色
+  // 色雫 / 銀菊
+  img1 = loadImage(Section.works_akitch.getPath() + "iro/image1.png");
+  img2 = loadImage(Section.works_akitch.getPath() + "iro/image2.png");
+  p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "iro/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
+                          new SmallTextBlock[] { new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "iro/small1.txt"),
+                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
+                                                 new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "iro/small2.txt"),
+                                                                    marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  pages.add(p);
   
-  // 色雫 / 標的 (#つぶやきProcessing)
+  // 夏色 / 標的 (#つぶやきProcessing)
   
   // 炎 / 羽
   
