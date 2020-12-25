@@ -15,6 +15,7 @@ enum Section {
   artis_logo("artis_activity/logo/", ""),
   artis_website("artis_activity/website/", ""),
   artis_exhibition("artis_activity/exhibition/", ""),
+  artis_workshop("artis_activity/workshop/", ""),
   afterword("foreafter/afterword/", ""),
   backcover("cover/backcover.png", "");
   
