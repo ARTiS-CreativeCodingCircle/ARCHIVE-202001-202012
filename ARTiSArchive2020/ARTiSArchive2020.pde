@@ -107,6 +107,22 @@ void generatePages() {
   pages.add(p);
   
   // Clear Triangle & Cyan and Magenta
+  img1 = loadImage(Section.works_ohayota.getPath() + "clear/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "clear/image2.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "clear/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
+                          new TextBlock[] { new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "clear/small1.txt"),
+                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
+                                            new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "clear/small2.txt"),
+                                                               marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                               int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  pages.add(p);
   
   // Flag
   
