@@ -2,16 +2,14 @@ public class LargeImagePage extends Page {
   
   private Image largeImage;
   
-  public LargeImagePage(PImage largeImage) {
+  public LargeImagePage(Section section, PImage largeImage) {
+    super(section);
     float ratio = largeImage.width/(float)largeImage.height;
     this.largeImage = new Image(largeImage, width/2-int(areaHeight*ratio)/2, height/2-areaHeight/2, int(areaHeight*ratio), areaHeight);
   }
   
   public void draw() {
-    if (isVisibleGrid) {
-      imageMode(CENTER);
-      image(grid, width/2, height/2, areaWidth, areaHeight);
-    }
+    super.draw();
     
     largeImage.draw();
   }

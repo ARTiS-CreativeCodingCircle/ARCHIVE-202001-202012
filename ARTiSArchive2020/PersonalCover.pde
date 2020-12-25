@@ -3,15 +3,15 @@ public class PersonalCoverLeft extends Page {
   String sectionNumber;
   Image backImage;
   
-  public PersonalCoverLeft(PImage backImage) {
-    super();
+  public PersonalCoverLeft(Section section, PImage backImage) {
+    super(section);
     this.backImage = new Image(backImage);
     sectionNumber = "P.4";
   }
   
   // Overload
-  public PersonalCoverLeft(Image backImage) {
-    super();
+  public PersonalCoverLeft(Section section, Image backImage) {
+    super(section);
     this.backImage = backImage;
     sectionNumber = "P.4";
   }
@@ -33,16 +33,16 @@ public class PersonalCoverRight extends Page {
   String text;
   Image backImage;
   
-  public PersonalCoverRight(Author author, PImage backImage, String text) {
-    super();
-    this.author = author;
+  public PersonalCoverRight(Section section, PImage backImage, String text) {
+    super(section);
+    this.author = section.getPrimaryAuthor();
     this.backImage = new Image(backImage);
     this.text = text;
   }
   
-  public PersonalCoverRight(Author author, Image backImage, String text) {
-    super();
-    this.author = author;
+  public PersonalCoverRight(Section section, Image backImage, String text) {
+    super(section);
+    this.author = section.getPrimaryAuthor();
     this.backImage = backImage;
     this.text = text;
   }
