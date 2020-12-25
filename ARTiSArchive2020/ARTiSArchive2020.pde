@@ -93,27 +93,420 @@ void generatePages() {
   pages.add(p);
   
   // Silk
+  img1 = loadImage(Section.works_ohayota.getPath() + "silk/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "silk/image2.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "silk/title.txt"),
+                          txtToString(Section.works_ohayota.getPath() + "silk/main.txt"),
+                          marginVertical+56 + int(img1.height*(areaWidth/(float)img1.width)) + 16,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56, areaWidth, int(img1.height*(areaWidth/(float)img1.width))),
+                                       new Image(img2, marginHorizontal, height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
+                                                 int(areaWidth*(1.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))) },
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "silk/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
+                                             int(areaWidth*(0.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))));
+  pages.add(p);
   
   // Clear Triangle & Cyan and Magenta
+  img1 = loadImage(Section.works_ohayota.getPath() + "clear/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "clear/image2.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "clear/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
+                          new TextBlock[] { new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "clear/small1.txt"),
+                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
+                                            new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "clear/small2.txt"),
+                                                               marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                               int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  pages.add(p);
   
   // Flag
+  img1 = loadImage(Section.works_ohayota.getPath() + "flag/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "flag/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "flag/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "flag/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "flag/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "flag/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "flag/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "flag/image8.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "flag/title.txt"),
+                          txtToString(Section.works_ohayota.getPath() + "flag/main.txt"),
+                          new Image[]{ new Image(img1, marginHorizontal,
+                                                 marginVertical+56+148,
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.015/2.0)),
+                                                 marginVertical+56+148,
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img3, marginHorizontal,
+                                                 marginVertical+56+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img4, marginHorizontal+int(areaWidth*(1.015/2.0)),
+                                                 marginVertical+56+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img5, marginHorizontal,
+                                                 marginVertical+56+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(1.015/2.0)),
+                                                 marginVertical+56+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img7, marginHorizontal,
+                                                 marginVertical+56+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.015/2.0)),
+                                                 marginVertical+56+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))) },
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "flag/small.txt"),
+                                             marginHorizontal, height-marginVertical-24,
+                                             areaWidth, 32));
+  pages.add(p);
   
   // Prism Scope
+  img1 = loadImage(Section.works_ohayota.getPath() + "prism/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "prism/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "prism/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "prism/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "prism/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "prism/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "prism/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "prism/image8.png");
+  img9 = loadImage(Section.works_ohayota.getPath() + "prism/image9.png");
+  img10 = loadImage(Section.works_ohayota.getPath() + "prism/image10.png");
+  img11 = loadImage(Section.works_ohayota.getPath() + "prism/image11.png");
+  img12 = loadImage(Section.works_ohayota.getPath() + "prism/image12.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "prism/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "prism/small.txt"),
+                                                         marginHorizontal, height-marginVertical-24,
+                                                         areaWidth, 32));
+  pages.add(p);
   
   // Prism Scope (Overwrite)
+  img1 = loadImage(Section.works_ohayota.getPath() + "prism_over/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "prism_over/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "prism_over/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "prism_over/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "prism_over/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "prism_over/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "prism_over/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "prism_over/image8.png");
+  img9 = loadImage(Section.works_ohayota.getPath() + "prism_over/image9.png");
+  img10 = loadImage(Section.works_ohayota.getPath() + "prism_over/image10.png");
+  img11 = loadImage(Section.works_ohayota.getPath() + "prism_over/image11.png");
+  img12 = loadImage(Section.works_ohayota.getPath() + "prism_over/image12.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "prism_over/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "prism_over/small.txt"),
+                                                         marginHorizontal, height-marginVertical-24,
+                                                         areaWidth, 32));
+  pages.add(p);
   
   // 遠ざかる
+  img1 = loadImage(Section.works_ohayota.getPath() + "goaway/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "goaway/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "goaway/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "goaway/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "goaway/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "goaway/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "goaway/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "goaway/image8.png");
+  img9 = loadImage(Section.works_ohayota.getPath() + "goaway/image9.png");
+  img10 = loadImage(Section.works_ohayota.getPath() + "goaway/image10.png");
+  img11 = loadImage(Section.works_ohayota.getPath() + "goaway/image11.png");
+  img12 = loadImage(Section.works_ohayota.getPath() + "goaway/image12.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "goaway/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "goaway/small.txt"),
+                                                         marginHorizontal, height-marginVertical-24,
+                                                         areaWidth, 32));
+  pages.add(p);
   
   // リアルタイム
+  img1 = loadImage(Section.works_ohayota.getPath() + "real/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "real/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "real/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "real/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "real/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "real/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "real/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "real/image8.png");
+  img9 = loadImage(Section.works_ohayota.getPath() + "real/image9.png");
+  img10 = loadImage(Section.works_ohayota.getPath() + "real/image10.png");
+  img11 = loadImage(Section.works_ohayota.getPath() + "real/image11.png");
+  img12 = loadImage(Section.works_ohayota.getPath() + "real/image12.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "real/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "real/small.txt"),
+                                                         marginHorizontal, height-marginVertical-24,
+                                                         areaWidth, 32));
+  pages.add(p);
   
   // 破裂
+  img1 = loadImage(Section.works_ohayota.getPath() + "rupture/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "rupture/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "rupture/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "rupture/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "rupture/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "rupture/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "rupture/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "rupture/image8.png");
+  img9 = loadImage(Section.works_ohayota.getPath() + "rupture/image9.png");
+  img10 = loadImage(Section.works_ohayota.getPath() + "rupture/image10.png");
+  img11 = loadImage(Section.works_ohayota.getPath() + "rupture/image11.png");
+  img12 = loadImage(Section.works_ohayota.getPath() + "rupture/image12.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "rupture/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "rupture/small.txt"),
+                                                         marginHorizontal, height-marginVertical-24,
+                                                         areaWidth, 32));
+  pages.add(p);
   
   // 虹吹雪
+  img1 = loadImage(Section.works_ohayota.getPath() + "rainbow/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "rainbow/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "rainbow/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "rainbow/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "rainbow/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "rainbow/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "rainbow/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "rainbow/image8.png");
+  img9 = loadImage(Section.works_ohayota.getPath() + "rainbow/image9.png");
+  img10 = loadImage(Section.works_ohayota.getPath() + "rainbow/image10.png");
+  img11 = loadImage(Section.works_ohayota.getPath() + "rainbow/image11.png");
+  img12 = loadImage(Section.works_ohayota.getPath() + "rainbow/image12.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "rainbow/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "rainbow/small.txt"),
+                                                         marginHorizontal, height-marginVertical-24,
+                                                         areaWidth, 32));
+  pages.add(p);
   
   // DIFFERENCE
+  img1 = loadImage(Section.works_ohayota.getPath() + "diff/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "diff/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "diff/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "diff/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "diff/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "diff/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "diff/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "diff/image8.png");
+  img9 = loadImage(Section.works_ohayota.getPath() + "diff/image9.png");
+  img10 = loadImage(Section.works_ohayota.getPath() + "diff/image10.png");
+  img11 = loadImage(Section.works_ohayota.getPath() + "diff/image11.png");
+  img12 = loadImage(Section.works_ohayota.getPath() + "diff/image12.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "diff/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "diff/small.txt"),
+                                                         marginHorizontal, height-marginVertical-24,
+                                                         areaWidth, 32));
+  pages.add(p);
   
   // 今日と過去の風
-  
+  img1 = loadImage(Section.works_ohayota.getPath() + "wind/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "wind/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "wind/image3.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "wind/title.txt"),
+                          txtToString(Section.works_ohayota.getPath() + "wind/main.txt"),
+                          new Image[]{ new Image(img1, marginHorizontal+int(areaWidth*(1.01/3.0)),
+                                                 marginVertical+56 + 104,
+                                                 int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)),
+                                                 marginVertical+56 + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                 int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(1.01/3.0)),
+                                                 marginVertical+56 + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                 int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))) },
+                          new TextBlock[] { new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "wind/small1.txt"),
+                                                               marginHorizontal,
+                                                               marginVertical+56 + 104,
+                                                               int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                            new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "wind/small2.txt"),
+                                                               marginHorizontal,
+                                                               marginVertical+56 + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                               int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                            new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "wind/small3.txt"),
+                                                               marginHorizontal,
+                                                               marginVertical+56 + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                               int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))) });
+  pages.add(p);
   
   /* -------- 個人作品（Tomoka） -------- */
   
@@ -259,9 +652,9 @@ void generatePages() {
                           new TextBlock[] { new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "fire/small1.txt"),
                                                                     width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
                                                                     int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
-                                                 new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "fire/small2.txt"),
-                                                                    marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+                                            new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "fire/small2.txt"),
+                                                               marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                               int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
   pages.add(p);
   
   // 炎

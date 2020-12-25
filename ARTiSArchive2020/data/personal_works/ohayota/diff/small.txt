@@ -1,0 +1,1 @@
+blendModeのDIFFERENCEを使用することで、円が重なった部分の色を変化させています。

@@ -92,11 +92,29 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
+  public DescriptionPage(String title, String mainText, Image[] images, TextBlock textBlock) {
+    this.title = title;
+    this.mainText = mainText;
+    this.images = images;
+    this.mainTextCornerY = marginVertical+56;
+    this.textBlocks = new TextBlock[]{ textBlock };
+  }
+  
+  // Overload
   public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, TextBlock[] textBlocks) {
     this.title = title;
     this.mainText = mainText;
     this.images = images;
     this.mainTextCornerY = mainTextCornerY;
+    this.textBlocks = textBlocks;
+  }
+  
+  // Overload
+  public DescriptionPage(String title, String mainText, Image[] images, TextBlock[] textBlocks) {
+    this.title = title;
+    this.mainText = mainText;
+    this.images = images;
+    this.mainTextCornerY = marginVertical+56;
     this.textBlocks = textBlocks;
   }
   
