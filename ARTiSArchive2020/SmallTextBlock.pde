@@ -1,4 +1,4 @@
-public class SmallTextBlock {
+public class SmallTextBlock extends TextBlock {
   
   TextType textType;
   
@@ -15,6 +15,7 @@ public class SmallTextBlock {
   int padding = 8;
   
   public SmallTextBlock(String text, int blockCornerX, int blockCornerY, int blockWidth, int blockHeight) {
+    super();
     this.text = text;
     this.blockCornerX = blockCornerX;
     this.blockCornerY = blockCornerY;

@@ -9,7 +9,7 @@ public class DescriptionPage extends Page {
   private Image[] images;
   
   private CodeBlock codeBlock;
-  private SmallTextBlock[] smallTextBlocks;
+  private TextBlock[] textBlocks;
   
   public DescriptionPage(String title, String mainText) {
     this.title = title;
@@ -19,11 +19,11 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, CodeBlock codeBlock, SmallTextBlock smallTextBlock) {
+  public DescriptionPage(String title, String mainText, CodeBlock codeBlock, TextBlock textBlock) {
     this.title = title;
     this.mainText = mainText;
     this.codeBlock = codeBlock;
-    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
+    this.textBlocks = new TextBlock[]{ textBlock };
     this.mainTextCornerY = marginVertical+56;
     this.images = new Image[]{};
   }
@@ -37,12 +37,12 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, Image[] images, CodeBlock codeBlock, SmallTextBlock smallTextBlock) {
+  public DescriptionPage(String title, String mainText, Image[] images, CodeBlock codeBlock, TextBlock textBlock) {
     this.title = title;
     this.mainText = mainText;
     this.images = images;
     this.codeBlock = codeBlock;
-    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
+    this.textBlocks = new TextBlock[]{ textBlock };
     this.mainTextCornerY = marginVertical+56;
   }
   
@@ -55,22 +55,22 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, Image image, CodeBlock codeBlock, SmallTextBlock smallTextBlock) {
+  public DescriptionPage(String title, String mainText, Image image, CodeBlock codeBlock, TextBlock textBlock) {
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
     this.codeBlock = codeBlock;
-    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
+    this.textBlocks = new TextBlock[]{ textBlock };
     this.mainTextCornerY = marginVertical+56;
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image image, CodeBlock codeBlock, SmallTextBlock smallTextBlock) {
+  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image image, CodeBlock codeBlock, TextBlock textBlock) {
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
     this.codeBlock = codeBlock;
-    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
+    this.textBlocks = new TextBlock[]{ textBlock };
     this.mainTextCornerY = mainTextCornerY;
   }
   
@@ -83,21 +83,21 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, SmallTextBlock smallTextBlock) {
+  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, TextBlock textBlock) {
     this.title = title;
     this.mainText = mainText;
     this.images = images;
     this.mainTextCornerY = mainTextCornerY;
-    this.smallTextBlocks = new SmallTextBlock[]{ smallTextBlock };
+    this.textBlocks = new TextBlock[]{ textBlock };
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, SmallTextBlock[] smallTextBlocks) {
+  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, TextBlock[] textBlocks) {
     this.title = title;
     this.mainText = mainText;
     this.images = images;
     this.mainTextCornerY = mainTextCornerY;
-    this.smallTextBlocks = smallTextBlocks;
+    this.textBlocks = textBlocks;
   }
   
   // Overload
@@ -136,9 +136,9 @@ public class DescriptionPage extends Page {
     // コードブロックの表示
     if (codeBlock != null) codeBlock.draw();
     // コード説明ブロックの表示
-    if (smallTextBlocks != null) {
-      for (SmallTextBlock stb: smallTextBlocks) {
-        stb.draw();
+    if (textBlocks != null) {
+      for (TextBlock textBlock: textBlocks) {
+        textBlock.draw();
       }
     }
   }
