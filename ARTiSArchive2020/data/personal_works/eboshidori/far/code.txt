@@ -1,0 +1,29 @@
+void setup(){
+  size(900,900,P3D);
+  background(0,13,35);
+  noStroke();
+  smooth();
+}
+
+void draw(){
+  float x,y,z,c; 
+  
+  translate(width/2,height/2);
+  
+  for(int i = 0; i <= 360; i += 2){ 
+    for(int j = 0; j <= 360; j += 2){ 
+      x = 400 * sin(i) * cos(j);
+      y = 400 * sin(i) * sin(j);
+      z = 400 * cos(i);
+      
+      pushMatrix();
+      translate(x, y, z);
+      c = noise(y * 0.007);
+      fill(255 * c,255 * c,255,80);
+      box(1.3);
+      popMatrix();
+　　　
+      rotateY(80);
+    }
+  }
+}
