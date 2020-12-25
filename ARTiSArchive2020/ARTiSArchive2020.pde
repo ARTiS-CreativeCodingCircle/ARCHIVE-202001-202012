@@ -1,11 +1,10 @@
 import processing.pdf.*;
 
-boolean isExportPDF = true;
+boolean isExportPDF = false;
 boolean isVisibleGrid = true;
 
 PImage grid;
-
-ArrayList<Page> pages;
+ArrayList<Page> allPages;
 
 // 上下（垂直：Vertical）と左右（水平：Horizontal）のマージン
 int marginVertical = 74; // (72dpi) 26.2mm = 74px
@@ -16,7 +15,7 @@ int areaWidth;
 int areaHeight;
 
 void setup() {
-  size(595, 842); // Screen: 72dpi
+  size(595, 842); // Screen: A4 72dpi
   
   textAlign(LEFT, TOP);
   
@@ -25,11 +24,25 @@ void setup() {
   
   grid = loadImage("grid.png");
   
-  pages = new ArrayList<Page>(); // これ以降はページをここに追加していく
-  generatePages();
+  allPages = generatePages();
+  
+  if (isExportPDF) {
+    for (int i = 0; i < allPages.size(); i++) {
+      beginRecord(PDF, "output/Page" + i + ".pdf");
+      background(255);
+      allPages.get(i).draw();
+      endRecord();
+      clear();
+    }
+  }
+  exit();
 }
 
-void generatePages() {
+
+
+ArrayList<Page> generatePages() {
+  
+  ArrayList<Page> pages = new ArrayList<Page>();
   
   /* -------- 表紙 -------- */
   
@@ -78,6 +91,7 @@ void generatePages() {
   /* -------- 裏表紙 -------- */
   
   
+  return pages;
 }
 
 String txtToString(String path) {
@@ -87,17 +101,4 @@ String txtToString(String path) {
     text += lines[i] + "\n";
   }
   return text;
-}
-
-void draw() {
-  if (isExportPDF) {
-    for (int i = 0; i < pages.size(); i++) {
-      beginRecord(PDF, "output/Page" + i + ".pdf");
-      background(255);
-      pages.get(i).draw();
-      endRecord();
-      clear();
-    }
-    exit();
-  }
 }
