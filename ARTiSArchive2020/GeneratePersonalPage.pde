@@ -296,11 +296,30 @@ ArrayList<Page> generateTomokaWorks(Section section) {
   ArrayList<Page> pages = new ArrayList<Page>();
   
   Page p;
-  PImage img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
+  PImage img;
   
-  // Pegboard
+  // Lines
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "lines/title.txt"),
+                          txtToString(section.getPath() + "lines/main.txt"),
+                          new CodeBlock(txtToString(section.getPath() + "lines/code.txt"),
+                                        marginHorizontal, 424, int(areaWidth*(1.99/3.0)), areaHeight-(424-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "lines/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 424, int(areaWidth*(0.99/3.0)), areaHeight-(424-marginVertical)));
+  pages.add(p);
+  p = new LargeImagePage2(section,
+                          new PImage[]{ loadImage(section.getPath() + "lines/image1.png"),
+                                        loadImage(section.getPath() + "lines/image2.png") });
+  pages.add(p);
   
   // Four colors シリーズ
+  p = new DescriptionPage2(section,
+                           txtToString(section.getPath() + "four/title.txt"),
+                           new PImage[]{ loadImage(section.getPath() + "four/image1.png"),
+                                         loadImage(section.getPath() + "four/image2.png") },
+                           new String[] { txtToString(section.getPath() + "four/small1.txt"),
+                                          txtToString(section.getPath() + "four/small2.txt") });
+  pages.add(p);
   
   // WAVE
   img = loadImage(section.getPath() + "wave/image.png");
