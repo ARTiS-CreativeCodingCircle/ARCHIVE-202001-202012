@@ -38,7 +38,7 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   ArrayList<Page> pages = new ArrayList<Page>();
   
   Page p;
-  PImage img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
+  PImage img1, img2, img3, img4, img5, img6, img7, img8;
   
   // ジェネラティブトランプ見開き1ページ
   p = new DescriptionPage(txtToString(section.getPath() + "generative/title.txt"),
@@ -138,318 +138,122 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   pages.add(p);
   
   // Prism Scope
-  img1 = loadImage(section.getPath() + "prism/image1.png");
-  img2 = loadImage(section.getPath() + "prism/image2.png");
-  img3 = loadImage(section.getPath() + "prism/image3.png");
-  img4 = loadImage(section.getPath() + "prism/image4.png");
-  img5 = loadImage(section.getPath() + "prism/image5.png");
-  img6 = loadImage(section.getPath() + "prism/image6.png");
-  img7 = loadImage(section.getPath() + "prism/image7.png");
-  img8 = loadImage(section.getPath() + "prism/image8.png");
-  img9 = loadImage(section.getPath() + "prism/image9.png");
-  img10 = loadImage(section.getPath() + "prism/image10.png");
-  img11 = loadImage(section.getPath() + "prism/image11.png");
-  img12 = loadImage(section.getPath() + "prism/image12.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "prism/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
-                          new SmallTextBlock(txtToString(section.getPath() + "prism/small.txt"),
-                                                         marginHorizontal, height-marginVertical-24,
-                                                         areaWidth, 32));
+  p = new DescriptionPage12(txtToString(section.getPath() + "prism/title.txt"),
+                            new PImage[]{ loadImage(section.getPath() + "prism/image1.png"),
+                                          loadImage(section.getPath() + "prism/image2.png"),
+                                          loadImage(section.getPath() + "prism/image3.png"),
+                                          loadImage(section.getPath() + "prism/image4.png"),
+                                          loadImage(section.getPath() + "prism/image5.png"),
+                                          loadImage(section.getPath() + "prism/image6.png"),
+                                          loadImage(section.getPath() + "prism/image7.png"),
+                                          loadImage(section.getPath() + "prism/image8.png"),
+                                          loadImage(section.getPath() + "prism/image9.png"),
+                                          loadImage(section.getPath() + "prism/image10.png"),
+                                          loadImage(section.getPath() + "prism/image11.png"),
+                                          loadImage(section.getPath() + "prism/image12.png") },
+                            txtToString(section.getPath() + "prism/small.txt"));
   pages.add(p);
   
   // Prism Scope (Overwrite)
-  img1 = loadImage(section.getPath() + "prism_over/image1.png");
-  img2 = loadImage(section.getPath() + "prism_over/image2.png");
-  img3 = loadImage(section.getPath() + "prism_over/image3.png");
-  img4 = loadImage(section.getPath() + "prism_over/image4.png");
-  img5 = loadImage(section.getPath() + "prism_over/image5.png");
-  img6 = loadImage(section.getPath() + "prism_over/image6.png");
-  img7 = loadImage(section.getPath() + "prism_over/image7.png");
-  img8 = loadImage(section.getPath() + "prism_over/image8.png");
-  img9 = loadImage(section.getPath() + "prism_over/image9.png");
-  img10 = loadImage(section.getPath() + "prism_over/image10.png");
-  img11 = loadImage(section.getPath() + "prism_over/image11.png");
-  img12 = loadImage(section.getPath() + "prism_over/image12.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "prism_over/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
-                          new SmallTextBlock(txtToString(section.getPath() + "prism_over/small.txt"),
-                                                         marginHorizontal, height-marginVertical-24,
-                                                         areaWidth, 32));
+  p = new DescriptionPage12(txtToString(section.getPath() + "prism_over/title.txt"),
+                            new PImage[]{ loadImage(section.getPath() + "prism_over/image1.png"),
+                                          loadImage(section.getPath() + "prism_over/image2.png"),
+                                          loadImage(section.getPath() + "prism_over/image3.png"),
+                                          loadImage(section.getPath() + "prism_over/image4.png"),
+                                          loadImage(section.getPath() + "prism_over/image5.png"),
+                                          loadImage(section.getPath() + "prism_over/image6.png"),
+                                          loadImage(section.getPath() + "prism_over/image7.png"),
+                                          loadImage(section.getPath() + "prism_over/image8.png"),
+                                          loadImage(section.getPath() + "prism_over/image9.png"),
+                                          loadImage(section.getPath() + "prism_over/image10.png"),
+                                          loadImage(section.getPath() + "prism_over/image11.png"),
+                                          loadImage(section.getPath() + "prism_over/image12.png") },
+                            txtToString(section.getPath() + "prism_over/small.txt"));
   pages.add(p);
   
   // 遠ざかる
-  img1 = loadImage(section.getPath() + "goaway/image1.png");
-  img2 = loadImage(section.getPath() + "goaway/image2.png");
-  img3 = loadImage(section.getPath() + "goaway/image3.png");
-  img4 = loadImage(section.getPath() + "goaway/image4.png");
-  img5 = loadImage(section.getPath() + "goaway/image5.png");
-  img6 = loadImage(section.getPath() + "goaway/image6.png");
-  img7 = loadImage(section.getPath() + "goaway/image7.png");
-  img8 = loadImage(section.getPath() + "goaway/image8.png");
-  img9 = loadImage(section.getPath() + "goaway/image9.png");
-  img10 = loadImage(section.getPath() + "goaway/image10.png");
-  img11 = loadImage(section.getPath() + "goaway/image11.png");
-  img12 = loadImage(section.getPath() + "goaway/image12.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "goaway/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
-                          new SmallTextBlock(txtToString(section.getPath() + "goaway/small.txt"),
-                                                         marginHorizontal, height-marginVertical-24,
-                                                         areaWidth, 32));
+  p = new DescriptionPage12(txtToString(section.getPath() + "goaway/title.txt"),
+                            new PImage[]{ loadImage(section.getPath() + "goaway/image1.png"),
+                                          loadImage(section.getPath() + "goaway/image2.png"),
+                                          loadImage(section.getPath() + "goaway/image3.png"),
+                                          loadImage(section.getPath() + "goaway/image4.png"),
+                                          loadImage(section.getPath() + "goaway/image5.png"),
+                                          loadImage(section.getPath() + "goaway/image6.png"),
+                                          loadImage(section.getPath() + "goaway/image7.png"),
+                                          loadImage(section.getPath() + "goaway/image8.png"),
+                                          loadImage(section.getPath() + "goaway/image9.png"),
+                                          loadImage(section.getPath() + "goaway/image10.png"),
+                                          loadImage(section.getPath() + "goaway/image11.png"),
+                                          loadImage(section.getPath() + "goaway/image12.png") },
+                            txtToString(section.getPath() + "goaway/small.txt"));
   pages.add(p);
   
   // リアルタイム
-  img1 = loadImage(section.getPath() + "real/image1.png");
-  img2 = loadImage(section.getPath() + "real/image2.png");
-  img3 = loadImage(section.getPath() + "real/image3.png");
-  img4 = loadImage(section.getPath() + "real/image4.png");
-  img5 = loadImage(section.getPath() + "real/image5.png");
-  img6 = loadImage(section.getPath() + "real/image6.png");
-  img7 = loadImage(section.getPath() + "real/image7.png");
-  img8 = loadImage(section.getPath() + "real/image8.png");
-  img9 = loadImage(section.getPath() + "real/image9.png");
-  img10 = loadImage(section.getPath() + "real/image10.png");
-  img11 = loadImage(section.getPath() + "real/image11.png");
-  img12 = loadImage(section.getPath() + "real/image12.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "real/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
-                          new SmallTextBlock(txtToString(section.getPath() + "real/small.txt"),
-                                                         marginHorizontal, height-marginVertical-24,
-                                                         areaWidth, 32));
+  p = new DescriptionPage12(txtToString(section.getPath() + "real/title.txt"),
+                            new PImage[]{ loadImage(section.getPath() + "real/image1.png"),
+                                          loadImage(section.getPath() + "real/image2.png"),
+                                          loadImage(section.getPath() + "real/image3.png"),
+                                          loadImage(section.getPath() + "real/image4.png"),
+                                          loadImage(section.getPath() + "real/image5.png"),
+                                          loadImage(section.getPath() + "real/image6.png"),
+                                          loadImage(section.getPath() + "real/image7.png"),
+                                          loadImage(section.getPath() + "real/image8.png"),
+                                          loadImage(section.getPath() + "real/image9.png"),
+                                          loadImage(section.getPath() + "real/image10.png"),
+                                          loadImage(section.getPath() + "real/image11.png"),
+                                          loadImage(section.getPath() + "real/image12.png") },
+                            txtToString(section.getPath() + "real/small.txt"));
   pages.add(p);
   
   // 破裂
-  img1 = loadImage(section.getPath() + "rupture/image1.png");
-  img2 = loadImage(section.getPath() + "rupture/image2.png");
-  img3 = loadImage(section.getPath() + "rupture/image3.png");
-  img4 = loadImage(section.getPath() + "rupture/image4.png");
-  img5 = loadImage(section.getPath() + "rupture/image5.png");
-  img6 = loadImage(section.getPath() + "rupture/image6.png");
-  img7 = loadImage(section.getPath() + "rupture/image7.png");
-  img8 = loadImage(section.getPath() + "rupture/image8.png");
-  img9 = loadImage(section.getPath() + "rupture/image9.png");
-  img10 = loadImage(section.getPath() + "rupture/image10.png");
-  img11 = loadImage(section.getPath() + "rupture/image11.png");
-  img12 = loadImage(section.getPath() + "rupture/image12.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "rupture/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
-                          new SmallTextBlock(txtToString(section.getPath() + "rupture/small.txt"),
-                                                         marginHorizontal, height-marginVertical-24,
-                                                         areaWidth, 32));
+  p = new DescriptionPage12(txtToString(section.getPath() + "rupture/title.txt"),
+                            new PImage[]{ loadImage(section.getPath() + "rupture/image1.png"),
+                                          loadImage(section.getPath() + "rupture/image2.png"),
+                                          loadImage(section.getPath() + "rupture/image3.png"),
+                                          loadImage(section.getPath() + "rupture/image4.png"),
+                                          loadImage(section.getPath() + "rupture/image5.png"),
+                                          loadImage(section.getPath() + "rupture/image6.png"),
+                                          loadImage(section.getPath() + "rupture/image7.png"),
+                                          loadImage(section.getPath() + "rupture/image8.png"),
+                                          loadImage(section.getPath() + "rupture/image9.png"),
+                                          loadImage(section.getPath() + "rupture/image10.png"),
+                                          loadImage(section.getPath() + "rupture/image11.png"),
+                                          loadImage(section.getPath() + "rupture/image12.png") },
+                            txtToString(section.getPath() + "rupture/small.txt"));
   pages.add(p);
   
   // 虹吹雪
-  img1 = loadImage(section.getPath() + "rainbow/image1.png");
-  img2 = loadImage(section.getPath() + "rainbow/image2.png");
-  img3 = loadImage(section.getPath() + "rainbow/image3.png");
-  img4 = loadImage(section.getPath() + "rainbow/image4.png");
-  img5 = loadImage(section.getPath() + "rainbow/image5.png");
-  img6 = loadImage(section.getPath() + "rainbow/image6.png");
-  img7 = loadImage(section.getPath() + "rainbow/image7.png");
-  img8 = loadImage(section.getPath() + "rainbow/image8.png");
-  img9 = loadImage(section.getPath() + "rainbow/image9.png");
-  img10 = loadImage(section.getPath() + "rainbow/image10.png");
-  img11 = loadImage(section.getPath() + "rainbow/image11.png");
-  img12 = loadImage(section.getPath() + "rainbow/image12.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "rainbow/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
-                          new SmallTextBlock(txtToString(section.getPath() + "rainbow/small.txt"),
-                                                         marginHorizontal, height-marginVertical-24,
-                                                         areaWidth, 32));
+  p = new DescriptionPage12(txtToString(section.getPath() + "rainbow/title.txt"),
+                            new PImage[]{ loadImage(section.getPath() + "rainbow/image1.png"),
+                                          loadImage(section.getPath() + "rainbow/image2.png"),
+                                          loadImage(section.getPath() + "rainbow/image3.png"),
+                                          loadImage(section.getPath() + "rainbow/image4.png"),
+                                          loadImage(section.getPath() + "rainbow/image5.png"),
+                                          loadImage(section.getPath() + "rainbow/image6.png"),
+                                          loadImage(section.getPath() + "rainbow/image7.png"),
+                                          loadImage(section.getPath() + "rainbow/image8.png"),
+                                          loadImage(section.getPath() + "rainbow/image9.png"),
+                                          loadImage(section.getPath() + "rainbow/image10.png"),
+                                          loadImage(section.getPath() + "rainbow/image11.png"),
+                                          loadImage(section.getPath() + "rainbow/image12.png") },
+                            txtToString(section.getPath() + "rainbow/small.txt"));
   pages.add(p);
   
   // DIFFERENCE
-  img1 = loadImage(section.getPath() + "diff/image1.png");
-  img2 = loadImage(section.getPath() + "diff/image2.png");
-  img3 = loadImage(section.getPath() + "diff/image3.png");
-  img4 = loadImage(section.getPath() + "diff/image4.png");
-  img5 = loadImage(section.getPath() + "diff/image5.png");
-  img6 = loadImage(section.getPath() + "diff/image6.png");
-  img7 = loadImage(section.getPath() + "diff/image7.png");
-  img8 = loadImage(section.getPath() + "diff/image8.png");
-  img9 = loadImage(section.getPath() + "diff/image9.png");
-  img10 = loadImage(section.getPath() + "diff/image10.png");
-  img11 = loadImage(section.getPath() + "diff/image11.png");
-  img12 = loadImage(section.getPath() + "diff/image12.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "diff/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
-                          new SmallTextBlock(txtToString(section.getPath() + "diff/small.txt"),
-                                                         marginHorizontal, height-marginVertical-24,
-                                                         areaWidth, 32));
+  p = new DescriptionPage12(txtToString(section.getPath() + "diff/title.txt"),
+                            new PImage[]{ loadImage(section.getPath() + "diff/image1.png"),
+                                          loadImage(section.getPath() + "diff/image2.png"),
+                                          loadImage(section.getPath() + "diff/image3.png"),
+                                          loadImage(section.getPath() + "diff/image4.png"),
+                                          loadImage(section.getPath() + "diff/image5.png"),
+                                          loadImage(section.getPath() + "diff/image6.png"),
+                                          loadImage(section.getPath() + "diff/image7.png"),
+                                          loadImage(section.getPath() + "diff/image8.png"),
+                                          loadImage(section.getPath() + "diff/image9.png"),
+                                          loadImage(section.getPath() + "diff/image10.png"),
+                                          loadImage(section.getPath() + "diff/image11.png"),
+                                          loadImage(section.getPath() + "diff/image12.png") },
+                            txtToString(section.getPath() + "diff/small.txt"));
   pages.add(p);
   
   // 今日と過去の風
@@ -629,45 +433,20 @@ ArrayList<Page> generateAkitchWorks(Section section) {
   pages.add(p);
   
   // 炎
-  img1 = loadImage(section.getPath() + "fire12/image1.png");
-  img2 = loadImage(section.getPath() + "fire12/image2.png");
-  img3 = loadImage(section.getPath() + "fire12/image3.png");
-  img4 = loadImage(section.getPath() + "fire12/image4.png");
-  img5 = loadImage(section.getPath() + "fire12/image5.png");
-  img6 = loadImage(section.getPath() + "fire12/image6.png");
-  img7 = loadImage(section.getPath() + "fire12/image7.png");
-  img8 = loadImage(section.getPath() + "fire12/image8.png");
-  img9 = loadImage(section.getPath() + "fire12/image9.png");
-  img10 = loadImage(section.getPath() + "fire12/image10.png");
-  img11 = loadImage(section.getPath() + "fire12/image11.png");
-  img12 = loadImage(section.getPath() + "fire12/image12.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "fire12/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
-                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))) });
+  p = new DescriptionPage12(txtToString(section.getPath() + "fire12/title.txt"),
+                            new PImage[]{ loadImage(section.getPath() + "fire12/image1.png"),
+                                          loadImage(section.getPath() + "fire12/image2.png"),
+                                          loadImage(section.getPath() + "fire12/image3.png"),
+                                          loadImage(section.getPath() + "fire12/image4.png"),
+                                          loadImage(section.getPath() + "fire12/image5.png"),
+                                          loadImage(section.getPath() + "fire12/image6.png"),
+                                          loadImage(section.getPath() + "fire12/image7.png"),
+                                          loadImage(section.getPath() + "fire12/image8.png"),
+                                          loadImage(section.getPath() + "fire12/image9.png"),
+                                          loadImage(section.getPath() + "fire12/image10.png"),
+                                          loadImage(section.getPath() + "fire12/image11.png"),
+                                          loadImage(section.getPath() + "fire12/image12.png") },
+                            txtToString(section.getPath() + "fire12/small.txt"));
   pages.add(p);
   
   // 詰め合わせ

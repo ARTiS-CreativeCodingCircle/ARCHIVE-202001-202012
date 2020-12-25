@@ -1,6 +1,6 @@
 import processing.pdf.*;
 
-boolean isExportPDF = false;
+boolean isExportPDF = true;
 boolean isVisibleGrid = true;
 
 PImage grid;
@@ -23,7 +23,6 @@ void setup() {
   areaHeight = height - marginVertical*2;
   
   grid = loadImage("grid.png");
-  
   allPages = generatePages();
   
   if (isExportPDF) {
