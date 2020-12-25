@@ -1,0 +1,1 @@
+　Workshop#6は、「様々なcolorModeやblendModeを使って作品を作ってみよう」という内容のワークショップでした。指定できるcolorModeの種類、色の基本、配色について学びました。サンプルプログラムでは、blendModeの指定を変えることで、各blendModeの特徴を見ることができます。

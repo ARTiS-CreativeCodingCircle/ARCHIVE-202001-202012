@@ -1,0 +1,16 @@
+//省略 : void setup 内でarc_fractalを連続的に並べている
+void arc_fractal(float x, float y, float r) { //arcを利用したフラクタルを作成する
+  strokeWeight(2*map(r, R, r_min, 2, 0.1)); 
+  noFill();
+  arc(x, y, r, r, 0, 3*PI/2);
+  r*=scale;
+  if (r>=r_min) {
+    for (float i=PI; i<=2*PI; i+=PI) {
+      push();
+      translate(scale*r*cos(i)+x, scale*r*sin(i)+y);
+      rotate(PI/2);
+      arc_fractal(0, 0, r);
+      pop();
+    }
+  }
+}

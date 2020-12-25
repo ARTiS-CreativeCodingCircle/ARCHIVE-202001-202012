@@ -1,0 +1,20 @@
+class Square {
+  int x, y;
+  Square(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+  boolean isHover() {
+    boolean isHoverX = x < mouseX && mouseX < x+width/4;
+    boolean isHoverY = y < mouseY && mouseY < y+height/4;
+    return isHoverX && isHoverY;
+  }
+  void draw() {
+    if (isHover()) {
+      fill(0, 0, 100);
+    } else {
+      fill(0, 0, 50);
+    }
+    rect(x, y, width/4, height/4);
+  }
+}

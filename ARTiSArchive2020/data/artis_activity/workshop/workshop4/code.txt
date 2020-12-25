@@ -1,0 +1,20 @@
+PGraphics backLayer, artLayer;
+void setup() { // Draw only once
+  size(960, 540);
+  rectMode(CENTER); imageMode(CENTER);
+  textAlign(CENTER, CENTER);
+  textFont(createFont("Avenir-Black", 40));
+  artLayer = createGraphics(400, 400);
+  // 省略：artLayerで表示する画像を読み込み、描画
+  backLayer = createGraphics(width, height);
+  // 省略：artLayerの影として、ぼかした黒四角を描画
+}
+void draw() { // Draw 60 frames per second
+  // 省略：カーソルの位置でartLayerに図形を描画
+  push(); // Save previous axis
+  translate(width/2, height/2);
+  image(backLayer, 0, 0);
+  image(artLayer, 0, 0);
+  text(frameCount, 0, 0);
+  pop(); // Revert to the previous axis
+}

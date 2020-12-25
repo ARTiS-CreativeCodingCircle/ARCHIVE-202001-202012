@@ -89,5 +89,22 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
 ArrayList<Page> generateActivityWorkshopPages(Section section) {
   ArrayList<Page> pages = new ArrayList<Page>();
   
+  PImage img;
+  Page p;
+  
+  img = loadImage(section.getPath() + "workshop1/image.png");
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "workshop1/title.txt"),
+                          txtToString(section.getPath() + "workshop1/main.txt"),
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
+                                    areaWidth, convertImageHeight(img, areaWidth) ),
+                          new CodeBlock(txtToString(section.getPath() + "workshop1/code.txt"),
+                                        marginHorizontal, 538, int(areaWidth*(1.99/3.0)), areaHeight-(538-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "workshop1/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 538,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(538-marginVertical)));
+  pages.add(p);
+  
   return pages;
 }
