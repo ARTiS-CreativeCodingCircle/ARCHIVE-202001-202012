@@ -102,3 +102,8 @@ String txtToString(String path) {
   }
   return text;
 }
+
+int convertImageHeight(PImage image, float afterImageWidth) {
+  float afterImageHeight = image.height*(afterImageWidth/(float)image.width);
+  return int(afterImageHeight);
+}

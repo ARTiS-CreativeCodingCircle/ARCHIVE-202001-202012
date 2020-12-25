@@ -25,8 +25,8 @@ ArrayList<Page> generateActivityLogoPages(Section section) {
   Page p = new DescriptionPage(section,
                                txtToString(section.getPath() + "title.txt"),
                                txtToString(section.getPath() + "main.txt"),
-                               marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
-                               new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                               marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                               new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth) ));
   pages.add(p);
   
   return pages;
@@ -59,8 +59,8 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "unity/title.txt"),
                           txtToString(section.getPath() + "unity/main.txt"),
-                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
-                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth)));
   pages.add(p);
   
   // STYLY
@@ -69,8 +69,8 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "styly/title.txt"),
                           txtToString(section.getPath() + "styly/main.txt"),
-                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img1.width)) + 24,
-                          new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img1.height*(areaWidth/(float)img1.width))));
+                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + 24,
+                          new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img1, areaWidth)));
   pages.add(p);
   
   // Mozilla Hubs
@@ -78,8 +78,8 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "mozilla/title.txt"),
                           txtToString(section.getPath() + "mozilla/main.txt"),
-                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
-                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth) ));
   pages.add(p);
   
   return pages;

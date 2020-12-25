@@ -58,13 +58,13 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "glass/title.txt"),
                           txtToString(section.getPath() + "glass/main.txt"),
-                          marginVertical+titleBottomPadding + int(img1.height*(areaWidth/(float)img1.width)) + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img1.height*(areaWidth/(float)img1.width))),
-                                       new Image(img2, marginHorizontal, height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
-                                                 int(areaWidth*(1.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))) },
+                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img1, areaWidth) ),
+                                       new Image(img2, marginHorizontal, height-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0)),
+                                                 int(areaWidth*(1.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0)) ) },
                           new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "glass/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
-                                             int(areaWidth*(0.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))));
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), height-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0)),
+                                             int(areaWidth*(0.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0))));
   pages.add(p);
   
   // Silk
@@ -73,13 +73,13 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "silk/title.txt"),
                           txtToString(section.getPath() + "silk/main.txt"),
-                          marginVertical+titleBottomPadding + int(img1.height*(areaWidth/(float)img1.width)) + 16,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img1.height*(areaWidth/(float)img1.width))),
+                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + 16,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img1, areaWidth) ),
                                        new Image(img2, marginHorizontal, height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
-                                                 int(areaWidth*(1.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))) },
+                                                 int(areaWidth*(1.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0)) ) },
                           new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "silk/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
-                                             int(areaWidth*(0.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))));
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), height-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0)),
+                                             int(areaWidth*(0.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0))));
   pages.add(p);
   
   // Clear Triangle & Cyan and Magenta
@@ -105,28 +105,28 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
                           txtToString(section.getPath() + "flag/main.txt"),
                           new Image[]{ new Image(img1, marginHorizontal,
                                                  marginVertical+titleBottomPadding+148,
-                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                                 int(areaWidth*(0.985/2.0)), convertImageHeight(img1, areaWidth*(0.985/2.0)) ),
                                        new Image(img2, marginHorizontal+int(areaWidth*(1.015/2.0)),
                                                  marginVertical+titleBottomPadding+148,
-                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                                 int(areaWidth*(0.985/2.0)), convertImageHeight(img1, areaWidth*(0.985/2.0)) ),
                                        new Image(img3, marginHorizontal,
-                                                 marginVertical+titleBottomPadding+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
-                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                                 marginVertical+titleBottomPadding+148 + convertImageHeight(img1, areaWidth*(1.015/2.0)),
+                                                 int(areaWidth*(0.985/2.0)), convertImageHeight(img1, areaWidth*(0.985/2.0)) ),
                                        new Image(img4, marginHorizontal+int(areaWidth*(1.015/2.0)),
-                                                 marginVertical+titleBottomPadding+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
-                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                                 marginVertical+titleBottomPadding+148 + convertImageHeight(img1, areaWidth*(1.015/2.0)),
+                                                 int(areaWidth*(0.985/2.0)), convertImageHeight(img1, areaWidth*(0.985/2.0)) ),
                                        new Image(img5, marginHorizontal,
-                                                 marginVertical+titleBottomPadding+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
-                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                                 marginVertical+titleBottomPadding+148 + 2*convertImageHeight(img1, areaWidth*(1.015/2.0)),
+                                                 int(areaWidth*(0.985/2.0)), convertImageHeight(img1, areaWidth*(0.985/2.0)) ),
                                        new Image(img6, marginHorizontal+int(areaWidth*(1.015/2.0)),
-                                                 marginVertical+titleBottomPadding+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
-                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                                 marginVertical+titleBottomPadding+148 + 2*convertImageHeight(img1, areaWidth*(1.015/2.0)),
+                                                 int(areaWidth*(0.985/2.0)), convertImageHeight(img1, areaWidth*(0.985/2.0)) ),
                                        new Image(img7, marginHorizontal,
-                                                 marginVertical+titleBottomPadding+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
-                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                                 marginVertical+titleBottomPadding+148 + 3*convertImageHeight(img1, areaWidth*(1.015/2.0)),
+                                                 int(areaWidth*(0.985/2.0)), convertImageHeight(img1, areaWidth*(0.985/2.0)) ),
                                        new Image(img8, marginHorizontal+int(areaWidth*(1.015/2.0)),
-                                                 marginVertical+titleBottomPadding+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
-                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))) },
+                                                 marginVertical+titleBottomPadding+148 + 3*convertImageHeight(img1, areaWidth*(1.015/2.0)),
+                                                 int(areaWidth*(0.985/2.0)), convertImageHeight(img1, areaWidth*(0.985/2.0)) ) },
                           new SmallTextBlock(txtToString(section.getPath() + "flag/small.txt"),
                                              marginHorizontal, height-marginVertical-24,
                                              areaWidth, 32));
@@ -267,25 +267,25 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
                           txtToString(section.getPath() + "wind/main.txt"),
                           new Image[]{ new Image(img1, marginHorizontal+int(areaWidth*(1.01/3.0)),
                                                  marginVertical+titleBottomPadding + 104,
-                                                 int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                                 int(areaWidth*(1.99/3.0)), convertImageHeight(img1, areaWidth*(1.99/3.0)) ),
                                        new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)),
-                                                 marginVertical+titleBottomPadding + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
-                                                 int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                                 marginVertical+titleBottomPadding + 104 + convertImageHeight(img1, areaWidth*(2.11/3.0)),
+                                                 int(areaWidth*(1.99/3.0)), convertImageHeight(img1, areaWidth*(1.99/3.0))),
                                        new Image(img3, marginHorizontal+int(areaWidth*(1.01/3.0)),
-                                                 marginVertical+titleBottomPadding + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
-                                                 int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))) },
+                                                 marginVertical+titleBottomPadding + 104 + 2*convertImageHeight(img1, areaWidth*(2.11/3.0)),
+                                                 int(areaWidth*(1.99/3.0)), convertImageHeight(img1, areaWidth*(1.99/3.0))) },
                           new TextBlock[] { new SmallTextBlock(txtToString(section.getPath() + "wind/small1.txt"),
                                                                marginHorizontal,
                                                                marginVertical+titleBottomPadding + 104,
-                                                               int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                                               int(areaWidth*(0.99/3.0)), convertImageHeight(img1, areaWidth*(1.99/3.0))),
                                             new SmallTextBlock(txtToString(section.getPath() + "wind/small2.txt"),
                                                                marginHorizontal,
-                                                               marginVertical+titleBottomPadding + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
-                                                               int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                                               marginVertical+titleBottomPadding + 104 + convertImageHeight(img1, areaWidth*(2.11/3.0)),
+                                                               int(areaWidth*(0.99/3.0)), convertImageHeight(img1, areaWidth*(1.99/3.0)) ),
                                             new SmallTextBlock(txtToString(section.getPath() + "wind/small3.txt"),
                                                                marginHorizontal,
-                                                               marginVertical+titleBottomPadding + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
-                                                               int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))) });
+                                                               marginVertical+titleBottomPadding + 104 + 2*convertImageHeight(img1, areaWidth*(2.11/3.0)),
+                                                               int(areaWidth*(0.99/3.0)), convertImageHeight(img1, areaWidth*(1.99/3.0)) ) });
   pages.add(p);
   
   return pages;
@@ -307,8 +307,8 @@ ArrayList<Page> generateTomokaWorks(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "wave/title.txt"),
                           txtToString(section.getPath() + "wave/main.txt"),
-                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
-                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth) ));
   pages.add(p);
   
   return pages;
@@ -477,8 +477,8 @@ ArrayList<Page> generateAkitchWorks(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "cat/title.txt"),
                           txtToString(section.getPath() + "cat/main.txt"),
-                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
-                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth) ));
   pages.add(p);
   
   return pages;
