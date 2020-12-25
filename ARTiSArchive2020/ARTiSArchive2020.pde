@@ -125,6 +125,44 @@ void generatePages() {
   pages.add(p);
   
   // Flag
+  img1 = loadImage(Section.works_ohayota.getPath() + "flag/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "flag/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "flag/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "flag/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "flag/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "flag/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "flag/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "flag/image8.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "flag/title.txt"),
+                          txtToString(Section.works_ohayota.getPath() + "flag/main.txt"),
+                          new Image[]{ new Image(img1, marginHorizontal,
+                                                 marginVertical+56+148,
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.015/2.0)),
+                                                 marginVertical+56+148,
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img3, marginHorizontal,
+                                                 marginVertical+56+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img4, marginHorizontal+int(areaWidth*(1.015/2.0)),
+                                                 marginVertical+56+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img5, marginHorizontal,
+                                                 marginVertical+56+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(1.015/2.0)),
+                                                 marginVertical+56+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img7, marginHorizontal,
+                                                 marginVertical+56+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.015/2.0)),
+                                                 marginVertical+56+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))) },
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "flag/small.txt"),
+                                             marginHorizontal, height-marginVertical-24,
+                                             areaWidth, 32));
+  pages.add(p);
   
   // Prism Scope
   img1 = loadImage(Section.works_ohayota.getPath() + "prism/image1.png");
