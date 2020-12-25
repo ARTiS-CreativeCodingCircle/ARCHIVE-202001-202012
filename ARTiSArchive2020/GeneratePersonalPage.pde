@@ -333,21 +333,12 @@ ArrayList<Page> generateAkitchWorks(Section section) {
   pages.add(p);
   
   // 200（格子状に4枚）
-  img1 = loadImage(section.getPath() + "200/image1.png");
-  img2 = loadImage(section.getPath() + "200/image2.png");
-  img3 = loadImage(section.getPath() + "200/image3.png");
-  img4 = loadImage(section.getPath() + "200/image4.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "200/title.txt"),
-                          txtToString(section.getPath() + "200/main.txt"),
-                          marginVertical+titleBottomPadding + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding,
-                                                 int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.015/2.0)), marginVertical+titleBottomPadding,
-                                                 int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))),
-                                       new Image(img3, marginHorizontal, marginVertical+titleBottomPadding+int(areaWidth*(1.015/2.0)),
-                                                 int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))),
-                                       new Image(img4, marginHorizontal+int(areaWidth*(1.015/2.0)), marginVertical+titleBottomPadding+int(areaWidth*(1.015/2.0)),
-                                                 int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))) });
+  p = new DescriptionPage4(txtToString(section.getPath() + "200/title.txt"),
+                           new PImage[]{ loadImage(section.getPath() + "200/image1.png"),
+                                         loadImage(section.getPath() + "200/image2.png"),
+                                         loadImage(section.getPath() + "200/image3.png"),
+                                         loadImage(section.getPath() + "200/image4.png") },
+                           txtToString(section.getPath() + "200/small.txt"));
   pages.add(p);
   
   // 蕾 (#つぶやきProcessing) / 凝視

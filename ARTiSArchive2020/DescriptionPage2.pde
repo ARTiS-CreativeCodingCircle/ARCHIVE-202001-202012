@@ -8,6 +8,7 @@ public class DescriptionPage2 extends Page {
   private SmallTextBlock[] smallTextBlocks;
   
   public DescriptionPage2(String title, PImage[] pimages, String[] paths) {
+    super();
     this.title = title;
     this.images = new Image[]{ new Image(pimages[0], marginHorizontal, marginVertical+titleBottomPadding,
                                          int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
@@ -22,10 +23,7 @@ public class DescriptionPage2 extends Page {
   }
   
   public void draw() {
-    if (isVisibleGrid) {
-      imageMode(CENTER);
-      image(grid, width/2, height/2, areaWidth, areaHeight);
-    }
+    super.draw();
     
     // タイトル部分の表示
     textType = TextType.title;
@@ -38,7 +36,7 @@ public class DescriptionPage2 extends Page {
       image.draw();
     }
     
-    // ページ下部の説明文1行表示
+    // 作品説明文
     if (smallTextBlocks != null) {
       for (SmallTextBlock stb: smallTextBlocks)
         stb.draw();

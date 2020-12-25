@@ -12,6 +12,7 @@ public class DescriptionPage extends Page {
   private TextBlock[] textBlocks;
   
   public DescriptionPage(String title, String mainText) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.mainTextCornerY = marginVertical+titleBottomPadding;
@@ -20,6 +21,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, CodeBlock codeBlock, TextBlock textBlock) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.codeBlock = codeBlock;
@@ -30,6 +32,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, Image[] images) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -38,6 +41,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, Image[] images, CodeBlock codeBlock, TextBlock textBlock) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -48,6 +52,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, Image image) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
@@ -56,6 +61,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, Image image, CodeBlock codeBlock, TextBlock textBlock) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
@@ -66,6 +72,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, int mainTextCornerY, Image image, CodeBlock codeBlock, TextBlock textBlock) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
@@ -76,6 +83,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -84,6 +92,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, TextBlock textBlock) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -93,6 +102,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, Image[] images, TextBlock textBlock) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -102,6 +112,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, TextBlock[] textBlocks) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -111,6 +122,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, Image[] images, TextBlock[] textBlocks) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -120,6 +132,7 @@ public class DescriptionPage extends Page {
   
   // Overload
   public DescriptionPage(String title, String mainText, int mainTextCornerY, Image image) {
+    super();
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
@@ -127,10 +140,7 @@ public class DescriptionPage extends Page {
   }
   
   public void draw() {
-    if (isVisibleGrid) {
-      imageMode(CENTER);
-      image(grid, width/2, height/2, areaWidth, areaHeight);
-    }
+    super.draw();
     
     // タイトル部分の表示
     textType = TextType.title;
