@@ -230,8 +230,42 @@ void generatePages() {
   pages.add(p);
   
   // 夏色 / 標的 (#つぶやきProcessing)
+  img1 = loadImage(Section.works_akitch.getPath() + "natsu/image1.png");
+  img2 = loadImage(Section.works_akitch.getPath() + "natsu/image2.png");
+  p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "natsu/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
+                          new SmallTextBlock[] { new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "natsu/small1.txt"),
+                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
+                                                 new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "natsu/small2.txt"),
+                                                                    marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  pages.add(p);
   
   // 炎 / 羽
+  img1 = loadImage(Section.works_akitch.getPath() + "fire/image1.png");
+  img2 = loadImage(Section.works_akitch.getPath() + "fire/image2.png");
+  p = new DescriptionPage(txtToString(Section.works_akitch.getPath() + "fire/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
+                          new SmallTextBlock[] { new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "fire/small1.txt"),
+                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
+                                                 new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "fire/small2.txt"),
+                                                                    marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  pages.add(p);
+  
+  // 炎
   
   // 詰め合わせ
   
@@ -242,9 +276,6 @@ void generatePages() {
                           marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
                           new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
   pages.add(p);
-  
-  // 炎
-  
   
   /* -------- 個人作品（eboshidori） -------- */
   

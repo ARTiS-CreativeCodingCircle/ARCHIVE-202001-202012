@@ -1,0 +1,1 @@
+float[] d={300, 200, 100};void setup() {size(900, 900);}void draw(){}void mouseReleased() {noStroke();fill(0,50);circle(mouseX+9, mouseY+9, 300); for (int i=0; i<3; i++) {fill((i+1)*80, 255, 50);circle(mouseX, mouseY, d[i]);}} #つぶやきprocessing
