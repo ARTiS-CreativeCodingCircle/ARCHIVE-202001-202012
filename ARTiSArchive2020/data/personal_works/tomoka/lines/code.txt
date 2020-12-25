@@ -1,0 +1,26 @@
+void draw() {
+  // Generate a random value
+  float random_w = random(0, width);
+  float random_h = random(0, height);
+  
+  noStroke();
+  fill(#292f36, 30);
+  rect(0, 0, width, height);
+  
+  // Draw
+  stroke(#00b7cc);
+  strokeWeight(weights[int
+	(random(weights.length))]);
+  line(random_w, 0, random_w, height);
+  line(0, random_h, width, random_h);
+  
+  stroke(#00b7cc, 10);
+  strokeWeight(weights[int
+	(random(weights.length))]+2);
+  line(random_w+1, 0, random_w+1, height);
+  line(0, random_h+1, width, random_h+1);
+  
+  fill(#00b7cc);
+  noStroke();
+  circle(random_w, random_h, 12);
+}
