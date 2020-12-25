@@ -338,11 +338,24 @@ ArrayList<Page> generateIkanoWorks(Section section) {
   ArrayList<Page> pages = new ArrayList<Page>();
   
   Page p;
-  PImage img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
   
   // LoopLiner & rollingBoll
+  p = new DescriptionPage2(section,
+                           txtToString(section.getPath() + "loop/title.txt"),
+                           new PImage[]{ loadImage(section.getPath() + "loop/image1.png"),
+                                         loadImage(section.getPath() + "loop/image2.png") },
+                           new String[] { txtToString(section.getPath() + "loop/small1.txt"),
+                                          txtToString(section.getPath() + "loop/small2.txt") });
+  pages.add(p);
   
   // circuit & CLIもどきライブラリ
+  p = new DescriptionPage2(section,
+                           txtToString(section.getPath() + "circuit/title.txt"),
+                           new PImage[]{ loadImage(section.getPath() + "circuit/image1.png"),
+                                         loadImage(section.getPath() + "circuit/image2.png") },
+                           new String[] { txtToString(section.getPath() + "circuit/small1.txt"),
+                                          txtToString(section.getPath() + "circuit/small2.txt") });
+  pages.add(p);
   
   return pages;
 }
@@ -352,7 +365,7 @@ ArrayList<Page> generateAkitchWorks(Section section) {
   ArrayList<Page> pages = new ArrayList<Page>();
   
   Page p;
-  PImage img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
+  PImage img, img1, img2, img3, img4, img5, img6, img7, img8, img9;
   
   // 「200」見開き1ページ（200_all）
   p = new DescriptionPage(section,
