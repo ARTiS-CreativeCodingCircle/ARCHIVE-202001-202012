@@ -1,7 +1,9 @@
 public class Page {
+  
+  Section section;
 
-  public Page() {
-    
+  public Page(Section section) {
+    this.section = section;
   }
   
   public void draw() {

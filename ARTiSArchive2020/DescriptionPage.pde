@@ -11,8 +11,8 @@ public class DescriptionPage extends Page {
   private CodeBlock codeBlock;
   private TextBlock[] textBlocks;
   
-  public DescriptionPage(String title, String mainText) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.mainTextCornerY = marginVertical+titleBottomPadding;
@@ -20,8 +20,8 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, CodeBlock codeBlock, TextBlock textBlock) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, CodeBlock codeBlock, TextBlock textBlock) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.codeBlock = codeBlock;
@@ -31,8 +31,8 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, Image[] images) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, Image[] images) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -40,8 +40,8 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, Image[] images, CodeBlock codeBlock, TextBlock textBlock) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, Image[] images, CodeBlock codeBlock, TextBlock textBlock) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -51,8 +51,8 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, Image image) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, Image image) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
@@ -60,30 +60,30 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, Image image, CodeBlock codeBlock, TextBlock textBlock) {
-    super();
-    this.title = title;
-    this.mainText = mainText;
-    this.images = new Image[]{ image };
-    this.codeBlock = codeBlock;
-    this.textBlocks = new TextBlock[]{ textBlock };
-    this.mainTextCornerY = marginVertical+titleBottomPadding;
-  }
-  
-  // Overload
-  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image image, CodeBlock codeBlock, TextBlock textBlock) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, Image image, CodeBlock codeBlock, TextBlock textBlock) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
     this.codeBlock = codeBlock;
     this.textBlocks = new TextBlock[]{ textBlock };
+    this.mainTextCornerY = marginVertical+titleBottomPadding;
+  }
+  
+  // Overload
+  public DescriptionPage(Section section, String title, String mainText, int mainTextCornerY, Image image, CodeBlock codeBlock, TextBlock textBlock) {
+    super(section);
+    this.title = title;
+    this.mainText = mainText;
+    this.images = new Image[]{ image };
+    this.codeBlock = codeBlock;
+    this.textBlocks = new TextBlock[]{ textBlock };
     this.mainTextCornerY = mainTextCornerY;
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, int mainTextCornerY, Image[] images) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -91,8 +91,8 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, TextBlock textBlock) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, int mainTextCornerY, Image[] images, TextBlock textBlock) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -101,8 +101,8 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, Image[] images, TextBlock textBlock) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, Image[] images, TextBlock textBlock) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -111,8 +111,8 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image[] images, TextBlock[] textBlocks) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, int mainTextCornerY, Image[] images, TextBlock[] textBlocks) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -121,8 +121,8 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, Image[] images, TextBlock[] textBlocks) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, Image[] images, TextBlock[] textBlocks) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = images;
@@ -131,8 +131,8 @@ public class DescriptionPage extends Page {
   }
   
   // Overload
-  public DescriptionPage(String title, String mainText, int mainTextCornerY, Image image) {
-    super();
+  public DescriptionPage(Section section, String title, String mainText, int mainTextCornerY, Image image) {
+    super(section);
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };

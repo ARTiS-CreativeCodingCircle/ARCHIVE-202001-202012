@@ -7,8 +7,8 @@ public class DescriptionPage12 extends Page {
   
   private SmallTextBlock smallTextBlock;
   
-  public DescriptionPage12(String title, PImage[] pimages, String path) {
-    super();
+  public DescriptionPage12(Section section, String title, PImage[] pimages, String path) {
+    super(section);
     this.title = title;
     this.images = new Image[]{ new Image(pimages[0], marginHorizontal, marginVertical+titleBottomPadding,
                                          int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
