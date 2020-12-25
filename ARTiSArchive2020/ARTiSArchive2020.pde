@@ -127,6 +127,49 @@ void generatePages() {
   // Flag
   
   // Prism Scope
+  img1 = loadImage(Section.works_ohayota.getPath() + "prism/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "prism/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "prism/image3.png");
+  img4 = loadImage(Section.works_ohayota.getPath() + "prism/image4.png");
+  img5 = loadImage(Section.works_ohayota.getPath() + "prism/image5.png");
+  img6 = loadImage(Section.works_ohayota.getPath() + "prism/image6.png");
+  img7 = loadImage(Section.works_ohayota.getPath() + "prism/image7.png");
+  img8 = loadImage(Section.works_ohayota.getPath() + "prism/image8.png");
+  img9 = loadImage(Section.works_ohayota.getPath() + "prism/image9.png");
+  img10 = loadImage(Section.works_ohayota.getPath() + "prism/image10.png");
+  img11 = loadImage(Section.works_ohayota.getPath() + "prism/image11.png");
+  img12 = loadImage(Section.works_ohayota.getPath() + "prism/image12.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "prism/title.txt"),
+                          "", // 本文なし
+                          marginVertical+56 + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img10, marginHorizontal, marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img11, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
+                                       new Image(img12, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.02/3.0)),
+                                                 int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0)))},
+                          new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "prism/small.txt"),
+                                                         marginHorizontal, height-marginVertical-24,
+                                                         areaWidth, 32));
+  pages.add(p);
   
   // Prism Scope (Overwrite)
   
