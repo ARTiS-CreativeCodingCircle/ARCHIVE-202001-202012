@@ -480,7 +480,33 @@ void generatePages() {
   pages.add(p);
   
   // 今日と過去の風
-  
+  img1 = loadImage(Section.works_ohayota.getPath() + "wind/image1.png");
+  img2 = loadImage(Section.works_ohayota.getPath() + "wind/image2.png");
+  img3 = loadImage(Section.works_ohayota.getPath() + "wind/image3.png");
+  p = new DescriptionPage(txtToString(Section.works_ohayota.getPath() + "wind/title.txt"),
+                          txtToString(Section.works_ohayota.getPath() + "wind/main.txt"),
+                          new Image[]{ new Image(img1, marginHorizontal+int(areaWidth*(1.01/3.0)),
+                                                 marginVertical+56 + 104,
+                                                 int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)),
+                                                 marginVertical+56 + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                 int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                       new Image(img3, marginHorizontal+int(areaWidth*(1.01/3.0)),
+                                                 marginVertical+56 + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                 int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))) },
+                          new TextBlock[] { new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "wind/small1.txt"),
+                                                               marginHorizontal,
+                                                               marginVertical+56 + 104,
+                                                               int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                            new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "wind/small2.txt"),
+                                                               marginHorizontal,
+                                                               marginVertical+56 + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                               int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
+                                            new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "wind/small3.txt"),
+                                                               marginHorizontal,
+                                                               marginVertical+56 + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                               int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))) });
+  pages.add(p);
   
   /* -------- 個人作品（Tomoka） -------- */
   
@@ -626,9 +652,9 @@ void generatePages() {
                           new TextBlock[] { new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "fire/small1.txt"),
                                                                     width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
                                                                     int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
-                                                 new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "fire/small2.txt"),
-                                                                    marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+                                            new SmallTextBlock(txtToString(Section.works_akitch.getPath() + "fire/small2.txt"),
+                                                               marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                               int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
   pages.add(p);
   
   // 炎
