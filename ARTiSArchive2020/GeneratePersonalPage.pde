@@ -508,13 +508,46 @@ ArrayList<Page> generateEboshiWorks(Section section) {
   ArrayList<Page> pages = new ArrayList<Page>();
   
   Page p;
-  PImage img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
   
-  // 作品名不明
+  // 遠くから眺めた凝縮
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "far/title.txt"),
+                          txtToString(section.getPath() + "far/main.txt"),
+                          new CodeBlock(txtToString(section.getPath() + "far/code.txt"),
+                                        marginHorizontal, 388, int(areaWidth*(1.99/3.0)), areaHeight-(388-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "far/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 388, int(areaWidth*(0.99/3.0)), areaHeight-(388-marginVertical)));
+  pages.add(p);
+  p = new LargeImagePage2(section,
+                          new PImage[]{ loadImage(section.getPath() + "far/image1.png"),
+                                        loadImage(section.getPath() + "far/image2.png") });
   
   // Rose
+  p = new DescriptionPage2(section,
+                           txtToString(section.getPath() + "rose/title.txt"),
+                           new PImage[]{ loadImage(section.getPath() + "rose/image1.png"),
+                                         loadImage(section.getPath() + "rose/image2.png") },
+                           new String[] { txtToString(section.getPath() + "rose/small1.txt"),
+                                          txtToString(section.getPath() + "rose/small2.txt") });
+  pages.add(p);
   
   // Movie
+  p = new DescriptionPage12(section,
+                            txtToString(section.getPath() + "movie/title.txt"),
+                            new PImage[]{ loadImage(section.getPath() + "movie/image1.png"),
+                                          loadImage(section.getPath() + "movie/image2.png"),
+                                          loadImage(section.getPath() + "movie/image3.png"),
+                                          loadImage(section.getPath() + "movie/image4.png"),
+                                          loadImage(section.getPath() + "movie/image5.png"),
+                                          loadImage(section.getPath() + "movie/image6.png"),
+                                          loadImage(section.getPath() + "movie/image7.png"),
+                                          loadImage(section.getPath() + "movie/image8.png"),
+                                          loadImage(section.getPath() + "movie/image9.png"),
+                                          loadImage(section.getPath() + "movie/image10.png"),
+                                          loadImage(section.getPath() + "movie/image11.png"),
+                                          loadImage(section.getPath() + "movie/image12.png") },
+                            txtToString(section.getPath() + "movie/small.txt"));
+  pages.add(p);
   
   return pages;
 }
