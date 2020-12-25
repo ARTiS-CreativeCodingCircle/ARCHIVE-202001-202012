@@ -26,7 +26,6 @@ void setup() {
   grid = loadImage("grid.png");
   
   pages = new ArrayList<Page>(); // これ以降はページをここに追加していく
-  
   generatePages();
 }
 
