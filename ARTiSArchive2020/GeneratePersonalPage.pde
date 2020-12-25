@@ -56,8 +56,8 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   img2 = loadImage(section.getPath() + "glass/image2.png");
   p = new DescriptionPage(txtToString(section.getPath() + "glass/title.txt"),
                           txtToString(section.getPath() + "glass/main.txt"),
-                          marginVertical+56 + int(img1.height*(areaWidth/(float)img1.width)) + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56, areaWidth, int(img1.height*(areaWidth/(float)img1.width))),
+                          marginVertical+titleBottomPadding + int(img1.height*(areaWidth/(float)img1.width)) + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img1.height*(areaWidth/(float)img1.width))),
                                        new Image(img2, marginHorizontal, height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
                                                  int(areaWidth*(1.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))) },
                           new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "glass/small.txt"),
@@ -70,8 +70,8 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   img2 = loadImage(section.getPath() + "silk/image2.png");
   p = new DescriptionPage(txtToString(section.getPath() + "silk/title.txt"),
                           txtToString(section.getPath() + "silk/main.txt"),
-                          marginVertical+56 + int(img1.height*(areaWidth/(float)img1.width)) + 16,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56, areaWidth, int(img1.height*(areaWidth/(float)img1.width))),
+                          marginVertical+titleBottomPadding + int(img1.height*(areaWidth/(float)img1.width)) + 16,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img1.height*(areaWidth/(float)img1.width))),
                                        new Image(img2, marginHorizontal, height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
                                                  int(areaWidth*(1.99/3.0)), int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))) },
                           new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "silk/small.txt"),
@@ -80,21 +80,11 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   pages.add(p);
   
   // Clear Triangle & Cyan and Magenta
-  img1 = loadImage(section.getPath() + "clear/image1.png");
-  img2 = loadImage(section.getPath() + "clear/image2.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "clear/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
-                          new TextBlock[] { new SmallTextBlock(txtToString(section.getPath() + "clear/small1.txt"),
-                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
-                                            new SmallTextBlock(txtToString(section.getPath() + "clear/small2.txt"),
-                                                               marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                               int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  p = new DescriptionPage2(txtToString(section.getPath() + "clear/title.txt"),
+                          new PImage[]{ loadImage(section.getPath() + "clear/image1.png"),
+                                        loadImage(section.getPath() + "clear/image2.png") },
+                          new String[] { txtToString(section.getPath() + "clear/small1.txt"),
+                                         txtToString(section.getPath() + "clear/small2.txt") });
   pages.add(p);
   
   // Flag
@@ -109,28 +99,28 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   p = new DescriptionPage(txtToString(section.getPath() + "flag/title.txt"),
                           txtToString(section.getPath() + "flag/main.txt"),
                           new Image[]{ new Image(img1, marginHorizontal,
-                                                 marginVertical+56+148,
+                                                 marginVertical+titleBottomPadding+148,
                                                  int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
                                        new Image(img2, marginHorizontal+int(areaWidth*(1.015/2.0)),
-                                                 marginVertical+56+148,
+                                                 marginVertical+titleBottomPadding+148,
                                                  int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
                                        new Image(img3, marginHorizontal,
-                                                 marginVertical+56+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 marginVertical+titleBottomPadding+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
                                                  int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
                                        new Image(img4, marginHorizontal+int(areaWidth*(1.015/2.0)),
-                                                 marginVertical+56+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 marginVertical+titleBottomPadding+148 + int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
                                                  int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
                                        new Image(img5, marginHorizontal,
-                                                 marginVertical+56+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 marginVertical+titleBottomPadding+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
                                                  int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
                                        new Image(img6, marginHorizontal+int(areaWidth*(1.015/2.0)),
-                                                 marginVertical+56+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 marginVertical+titleBottomPadding+148 + 2*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
                                                  int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
                                        new Image(img7, marginHorizontal,
-                                                 marginVertical+56+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 marginVertical+titleBottomPadding+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
                                                  int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))),
                                        new Image(img8, marginHorizontal+int(areaWidth*(1.015/2.0)),
-                                                 marginVertical+56+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
+                                                 marginVertical+titleBottomPadding+148 + 3*int(img1.height*(areaWidth*(1.015/2.0)/(float)img1.width)),
                                                  int(areaWidth*(0.985/2.0)), int(img1.height*(areaWidth*(0.985/2.0)/(float)img1.width))) },
                           new SmallTextBlock(txtToString(section.getPath() + "flag/small.txt"),
                                              marginHorizontal, height-marginVertical-24,
@@ -263,25 +253,25 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   p = new DescriptionPage(txtToString(section.getPath() + "wind/title.txt"),
                           txtToString(section.getPath() + "wind/main.txt"),
                           new Image[]{ new Image(img1, marginHorizontal+int(areaWidth*(1.01/3.0)),
-                                                 marginVertical+56 + 104,
+                                                 marginVertical+titleBottomPadding + 104,
                                                  int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
                                        new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)),
-                                                 marginVertical+56 + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                 marginVertical+titleBottomPadding + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
                                                  int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
                                        new Image(img3, marginHorizontal+int(areaWidth*(1.01/3.0)),
-                                                 marginVertical+56 + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                 marginVertical+titleBottomPadding + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
                                                  int(areaWidth*(1.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))) },
                           new TextBlock[] { new SmallTextBlock(txtToString(section.getPath() + "wind/small1.txt"),
                                                                marginHorizontal,
-                                                               marginVertical+56 + 104,
+                                                               marginVertical+titleBottomPadding + 104,
                                                                int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
                                             new SmallTextBlock(txtToString(section.getPath() + "wind/small2.txt"),
                                                                marginHorizontal,
-                                                               marginVertical+56 + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                               marginVertical+titleBottomPadding + 104 + int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
                                                                int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))),
                                             new SmallTextBlock(txtToString(section.getPath() + "wind/small3.txt"),
                                                                marginHorizontal,
-                                                               marginVertical+56 + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
+                                                               marginVertical+titleBottomPadding + 104 + 2*int(img1.height*(areaWidth*(2.11/3.0)/(float)img1.width)),
                                                                int(areaWidth*(0.99/3.0)), int(img1.height*(areaWidth*(1.99/3.0)/(float)img1.width))) });
   pages.add(p);
   
@@ -303,8 +293,8 @@ ArrayList<Page> generateTomokaWorks(Section section) {
   img = loadImage(section.getPath() + "wave/image.png");
   p = new DescriptionPage(txtToString(section.getPath() + "wave/title.txt"),
                           txtToString(section.getPath() + "wave/main.txt"),
-                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
-                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
   pages.add(p);
   
   return pages;
@@ -349,87 +339,47 @@ ArrayList<Page> generateAkitchWorks(Section section) {
   img4 = loadImage(section.getPath() + "200/image4.png");
   p = new DescriptionPage(txtToString(section.getPath() + "200/title.txt"),
                           txtToString(section.getPath() + "200/main.txt"),
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                          marginVertical+titleBottomPadding + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding,
                                                  int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.015/2.0)), marginVertical+56,
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.015/2.0)), marginVertical+titleBottomPadding,
                                                  int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))),
-                                       new Image(img3, marginHorizontal, marginVertical+56+int(areaWidth*(1.015/2.0)),
+                                       new Image(img3, marginHorizontal, marginVertical+titleBottomPadding+int(areaWidth*(1.015/2.0)),
                                                  int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))),
-                                       new Image(img4, marginHorizontal+int(areaWidth*(1.015/2.0)), marginVertical+56+int(areaWidth*(1.015/2.0)),
+                                       new Image(img4, marginHorizontal+int(areaWidth*(1.015/2.0)), marginVertical+titleBottomPadding+int(areaWidth*(1.015/2.0)),
                                                  int(areaWidth*(0.985/2.0)), int(areaWidth*(0.985/2.0))) });
   pages.add(p);
   
   // 蕾 (#つぶやきProcessing) / 凝視
-  img1 = loadImage(section.getPath() + "tsubomi/image1.png");
-  img2 = loadImage(section.getPath() + "tsubomi/image2.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "tsubomi/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
-                          new TextBlock[] { new SmallTextBlock(txtToString(section.getPath() + "tsubomi/small1.txt"),
-                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
-                                                 new SmallTextBlock(txtToString(section.getPath() + "tsubomi/small2.txt"),
-                                                                    marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  p = new DescriptionPage2(txtToString(section.getPath() + "tsubomi/title.txt"),
+                          new PImage[]{ loadImage(section.getPath() + "tsubomi/image1.png"),
+                                        loadImage(section.getPath() + "tsubomi/image2.png") },
+                          new String[] { txtToString(section.getPath() + "tsubomi/small1.txt"),
+                                         txtToString(section.getPath() + "tsubomi/small2.txt") });
   pages.add(p);
   
   // 色雫 / 銀菊
-  img1 = loadImage(section.getPath() + "iro/image1.png");
-  img2 = loadImage(section.getPath() + "iro/image2.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "iro/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
-                          new TextBlock[] { new SmallTextBlock(txtToString(section.getPath() + "iro/small1.txt"),
-                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
-                                                 new SmallTextBlock(txtToString(section.getPath() + "iro/small2.txt"),
-                                                                    marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  p = new DescriptionPage2(txtToString(section.getPath() + "iro/title.txt"),
+                          new PImage[]{ loadImage(section.getPath() + "iro/image1.png"),
+                                        loadImage(section.getPath() + "iro/image2.png") },
+                          new String[] { txtToString(section.getPath() + "iro/small1.txt"),
+                                         txtToString(section.getPath() + "iro/small2.txt") });
   pages.add(p);
   
   // 夏色 / 標的 (#つぶやきProcessing)
-  img1 = loadImage(section.getPath() + "natsu/image1.png");
-  img2 = loadImage(section.getPath() + "natsu/image2.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "natsu/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
-                          new TextBlock[] { new SmallTextBlock(txtToString(section.getPath() + "natsu/small1.txt"),
-                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
-                                                 new SmallTextBlock(txtToString(section.getPath() + "natsu/small2.txt"),
-                                                                    marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  p = new DescriptionPage2(txtToString(section.getPath() + "natsu/title.txt"),
+                          new PImage[]{ loadImage(section.getPath() + "natsu/image1.png"),
+                                        loadImage(section.getPath() + "natsu/image2.png") },
+                          new String[] { txtToString(section.getPath() + "natsu/small1.txt"),
+                                         txtToString(section.getPath() + "natsu/small2.txt") });
   pages.add(p);
   
   // 炎 / 羽
-  img1 = loadImage(section.getPath() + "fire/image1.png");
-  img2 = loadImage(section.getPath() + "fire/image2.png");
-  p = new DescriptionPage(txtToString(section.getPath() + "fire/title.txt"),
-                          "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                 int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) },
-                          new TextBlock[] { new SmallTextBlock(txtToString(section.getPath() + "fire/small1.txt"),
-                                                                    width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+56,
-                                                                    int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)),
-                                            new SmallTextBlock(txtToString(section.getPath() + "fire/small2.txt"),
-                                                               marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
-                                                               int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)) });
+  p = new DescriptionPage2(txtToString(section.getPath() + "fire/title.txt"),
+                          new PImage[]{ loadImage(section.getPath() + "fire/image1.png"),
+                                        loadImage(section.getPath() + "fire/image2.png") },
+                          new String[] { txtToString(section.getPath() + "fire/small1.txt"),
+                                         txtToString(section.getPath() + "fire/small2.txt") });
   pages.add(p);
   
   // 炎
@@ -461,51 +411,51 @@ ArrayList<Page> generateAkitchWorks(Section section) {
   img9 = loadImage(section.getPath() + "assort/image9.png");
   p = new DescriptionPage(txtToString(section.getPath() + "assort/title.txt"),
                           "", // 本文なし
-                          marginVertical+56 + areaWidth + 24,
-                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+56,
+                          marginVertical+titleBottomPadding + areaWidth + 24,
+                          new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding,
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56,
+                                       new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+titleBottomPadding,
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56,
+                                       new Image(img3, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+titleBottomPadding,
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img4, marginHorizontal, marginVertical+56+int(areaWidth*(1.42/3.0)),
+                                       new Image(img4, marginHorizontal, marginVertical+titleBottomPadding+int(areaWidth*(1.42/3.0)),
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.42/3.0)),
+                                       new Image(img5, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(1.42/3.0)),
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.42/3.0)),
+                                       new Image(img6, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(1.42/3.0)),
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img7, marginHorizontal, marginVertical+56+int(areaWidth*(2.82/3.0)),
+                                       new Image(img7, marginHorizontal, marginVertical+titleBottomPadding+int(areaWidth*(2.82/3.0)),
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.82/3.0)),
+                                       new Image(img8, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(2.82/3.0)),
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
-                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.82/3.0)),
+                                       new Image(img9, marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(2.82/3.0)),
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))) },
                           new TextBlock[] { new CaptionTextBlock(txtToString(section.getPath() + "assort/small1.txt"),
-                                                                 marginHorizontal, marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                                 marginHorizontal, marginVertical+titleBottomPadding+int(areaWidth*(1.02/3.0)),
                                                                  int(areaWidth*(0.99/3.0)), 36),
                                             new CaptionTextBlock(txtToString(section.getPath() + "assort/small2.txt"),
-                                                                 marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                                 marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(1.02/3.0)),
                                                                  int(areaWidth*(0.99/3.0)), 36),
                                             new CaptionTextBlock(txtToString(section.getPath() + "assort/small3.txt"),
-                                                                 marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(1.02/3.0)),
+                                                                 marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(1.02/3.0)),
                                                                  int(areaWidth*(0.99/3.0)), 36),
                                             new CaptionTextBlock(txtToString(section.getPath() + "assort/small4.txt"),
-                                                                 marginHorizontal, marginVertical+56+int(areaWidth*(2.42/3.0)),
+                                                                 marginHorizontal, marginVertical+titleBottomPadding+int(areaWidth*(2.42/3.0)),
                                                                  int(areaWidth*(0.99/3.0)), 36),
                                             new CaptionTextBlock(txtToString(section.getPath() + "assort/small5.txt"),
-                                                                 marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(2.42/3.0)),
+                                                                 marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(2.42/3.0)),
                                                                  int(areaWidth*(0.99/3.0)), 36),
                                             new CaptionTextBlock(txtToString(section.getPath() + "assort/small6.txt"),
-                                                                 marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(2.42/3.0)),
+                                                                 marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(2.42/3.0)),
                                                                  int(areaWidth*(0.99/3.0)), 36),
                                             new CaptionTextBlock(txtToString(section.getPath() + "assort/small7.txt"),
-                                                                 marginHorizontal, marginVertical+56+int(areaWidth*(3.82/3.0)),
+                                                                 marginHorizontal, marginVertical+titleBottomPadding+int(areaWidth*(3.82/3.0)),
                                                                  int(areaWidth*(0.99/3.0)), 36),
                                             new CaptionTextBlock(txtToString(section.getPath() + "assort/small8.txt"),
-                                                                 marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+56+int(areaWidth*(3.82/3.0)),
+                                                                 marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(3.82/3.0)),
                                                                  int(areaWidth*(0.99/3.0)), 36),
                                             new CaptionTextBlock(txtToString(section.getPath() + "assort/small9.txt"),
-                                                                 marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+56+int(areaWidth*(3.82/3.0)),
+                                                                 marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(3.82/3.0)),
                                                                  int(areaWidth*(0.99/3.0)), 36) });
   pages.add(p);
   
@@ -513,8 +463,8 @@ ArrayList<Page> generateAkitchWorks(Section section) {
   img = loadImage(section.getPath() + "cat/image.png");
   p = new DescriptionPage(txtToString(section.getPath() + "cat/title.txt"),
                           txtToString(section.getPath() + "cat/main.txt"),
-                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
-                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
   pages.add(p);
   
   return pages;

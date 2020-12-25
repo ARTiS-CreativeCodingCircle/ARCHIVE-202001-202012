@@ -9,6 +9,7 @@ ArrayList<Page> allPages;
 // 上下（垂直：Vertical）と左右（水平：Horizontal）のマージン
 int marginVertical = 74; // (72dpi) 26.2mm = 74px
 int marginHorizontal = 68; // (72dpi) 24mm = 68px
+int titleBottomPadding = 56;
 
 // マージンを除く描画エリア
 int areaWidth;

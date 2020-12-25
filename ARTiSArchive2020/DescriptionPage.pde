@@ -14,7 +14,7 @@ public class DescriptionPage extends Page {
   public DescriptionPage(String title, String mainText) {
     this.title = title;
     this.mainText = mainText;
-    this.mainTextCornerY = marginVertical+56;
+    this.mainTextCornerY = marginVertical+titleBottomPadding;
     this.images = new Image[]{};
   }
   
@@ -24,7 +24,7 @@ public class DescriptionPage extends Page {
     this.mainText = mainText;
     this.codeBlock = codeBlock;
     this.textBlocks = new TextBlock[]{ textBlock };
-    this.mainTextCornerY = marginVertical+56;
+    this.mainTextCornerY = marginVertical+titleBottomPadding;
     this.images = new Image[]{};
   }
   
@@ -33,7 +33,7 @@ public class DescriptionPage extends Page {
     this.title = title;
     this.mainText = mainText;
     this.images = images;
-    this.mainTextCornerY = marginVertical+56;
+    this.mainTextCornerY = marginVertical+titleBottomPadding;
   }
   
   // Overload
@@ -43,7 +43,7 @@ public class DescriptionPage extends Page {
     this.images = images;
     this.codeBlock = codeBlock;
     this.textBlocks = new TextBlock[]{ textBlock };
-    this.mainTextCornerY = marginVertical+56;
+    this.mainTextCornerY = marginVertical+titleBottomPadding;
   }
   
   // Overload
@@ -51,7 +51,7 @@ public class DescriptionPage extends Page {
     this.title = title;
     this.mainText = mainText;
     this.images = new Image[]{ image };
-    this.mainTextCornerY = marginVertical+56;
+    this.mainTextCornerY = marginVertical+titleBottomPadding;
   }
   
   // Overload
@@ -61,7 +61,7 @@ public class DescriptionPage extends Page {
     this.images = new Image[]{ image };
     this.codeBlock = codeBlock;
     this.textBlocks = new TextBlock[]{ textBlock };
-    this.mainTextCornerY = marginVertical+56;
+    this.mainTextCornerY = marginVertical+titleBottomPadding;
   }
   
   // Overload
@@ -96,7 +96,7 @@ public class DescriptionPage extends Page {
     this.title = title;
     this.mainText = mainText;
     this.images = images;
-    this.mainTextCornerY = marginVertical+56;
+    this.mainTextCornerY = marginVertical+titleBottomPadding;
     this.textBlocks = new TextBlock[]{ textBlock };
   }
   
@@ -114,7 +114,7 @@ public class DescriptionPage extends Page {
     this.title = title;
     this.mainText = mainText;
     this.images = images;
-    this.mainTextCornerY = marginVertical+56;
+    this.mainTextCornerY = marginVertical+titleBottomPadding;
     this.textBlocks = textBlocks;
   }
   

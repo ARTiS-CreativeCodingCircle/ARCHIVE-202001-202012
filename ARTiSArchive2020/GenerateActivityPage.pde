@@ -24,8 +24,8 @@ ArrayList<Page> generateActivityLogoPages(Section section) {
   
   Page p = new DescriptionPage(txtToString(section.getPath() + "title.txt"),
                           txtToString(section.getPath() + "main.txt"),
-                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
-                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
   pages.add(p);
   
   return pages;
@@ -56,8 +56,8 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
   img = loadImage(section.getPath() + "unity/image.png");
   p = new DescriptionPage(txtToString(section.getPath() + "unity/title.txt"),
                           txtToString(section.getPath() + "unity/main.txt"),
-                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
-                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
   pages.add(p);
   
   // STYLY
@@ -65,16 +65,16 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
   //img2 = loadImage(section.getPath() + "styly/image2.png");
   p = new DescriptionPage(txtToString(section.getPath() + "styly/title.txt"),
                           txtToString(section.getPath() + "styly/main.txt"),
-                          marginVertical+56 + int(img.height*(areaWidth/(float)img1.width)) + 24,
-                          new Image(img1, marginHorizontal, marginVertical+56, areaWidth, int(img1.height*(areaWidth/(float)img1.width))));
+                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img1.width)) + 24,
+                          new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img1.height*(areaWidth/(float)img1.width))));
   pages.add(p);
   
   // Mozilla Hubs
   img = loadImage(section.getPath() + "mozilla/image.png");
   p = new DescriptionPage(txtToString(section.getPath() + "mozilla/title.txt"),
                           txtToString(section.getPath() + "mozilla/main.txt"),
-                          marginVertical+56 + int(img.height*(areaWidth/(float)img.width)) + 24,
-                          new Image(img, marginHorizontal, marginVertical+56, areaWidth, int(img.height*(areaWidth/(float)img.width))));
+                          marginVertical+titleBottomPadding + int(img.height*(areaWidth/(float)img.width)) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, int(img.height*(areaWidth/(float)img.width))));
   pages.add(p);
   
   return pages;
