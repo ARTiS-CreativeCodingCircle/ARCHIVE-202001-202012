@@ -12,13 +12,13 @@ public class DescriptionPage2 extends Page {
     this.title = title;
     this.images = new Image[]{ new Image(pimages[0], marginHorizontal, marginVertical+titleBottomPadding,
                                          int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))),
-                               new Image(pimages[1], marginHorizontal+int(areaWidth*(1.01/3.0)), height-marginVertical-int(areaWidth*(1.99/3.0)),
+                               new Image(pimages[1], marginHorizontal+int(areaWidth*(1.01/3.0)), int(HEIGHT-marginVertical-int(areaWidth*(1.99/3.0))),
                                          int(areaWidth*(1.99/3.0)), int(areaWidth*(1.99/3.0))) };
     this.smallTextBlocks = new SmallTextBlock[] { new SmallTextBlock(paths[0],
-                                                                     width-marginHorizontal-int(areaWidth*(0.99/3.0)), marginVertical+titleBottomPadding,
+                                                                     int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), marginVertical+titleBottomPadding,
                                                                      int(areaWidth*(0.99/3.0)), int(areaWidth*(1.99/3.0))),
                                                   new SmallTextBlock(paths[1],
-                                                                     marginHorizontal, height-marginVertical-int(areaWidth*(1.99/3.0)),
+                                                                     marginHorizontal, int(HEIGHT-marginVertical-int(areaWidth*(1.99/3.0))),
                                                                      int(areaWidth*(0.99/3.0)), int(areaWidth*(1.99/3.0))) };
   }
   

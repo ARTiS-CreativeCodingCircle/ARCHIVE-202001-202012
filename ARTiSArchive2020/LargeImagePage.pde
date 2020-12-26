@@ -5,7 +5,7 @@ public class LargeImagePage extends Page {
   public LargeImagePage(Section section, PImage largeImage) {
     super(section);
     float ratio = largeImage.width/(float)largeImage.height;
-    this.largeImage = new Image(largeImage, width/2-int(areaHeight*ratio)/2, height/2-areaHeight/2, int(areaHeight*ratio), areaHeight);
+    this.largeImage = new Image(largeImage, int(WIDTH/2-int(areaHeight*ratio)/2), int(HEIGHT/2-areaHeight/2), int(areaHeight*ratio), areaHeight);
   }
   
   public void draw() {

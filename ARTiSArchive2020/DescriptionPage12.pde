@@ -34,7 +34,7 @@ public class DescriptionPage12 extends Page {
                                          int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
                                new Image(pimages[11], marginHorizontal+int(areaWidth*(2.02/3.0)), marginVertical+titleBottomPadding+int(areaWidth*(3.02/3.0)),
                                          int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))) };
-    this.smallTextBlock = new SmallTextBlock(path, marginHorizontal, height-marginVertical-24, areaWidth, 32);
+    this.smallTextBlock = new SmallTextBlock(path, marginHorizontal, int(HEIGHT-marginVertical-24), areaWidth, 32);
   }
   
   public void draw() {

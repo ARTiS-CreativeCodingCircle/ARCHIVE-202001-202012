@@ -10,8 +10,8 @@ public class Image {
     this.image = image;
     this.imageCornerX = 0;
     this.imageCornerY = 0;
-    this.imageWidth = width;
-    this.imageHeight = height;
+    this.imageWidth = int(WIDTH);
+    this.imageHeight = int(HEIGHT);
   }
   
   // Overload

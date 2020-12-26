@@ -18,7 +18,7 @@ public class PersonalCoverLeft extends Page {
     textFont(createFont(TextType.section.getFontName(), TextType.section.getFontSize()));
     textAlign(RIGHT);
     fill(textColor);
-    text(sectionNumber, width-100, 290);
+    text(sectionNumber, WIDTH-100, 290);
   }
   
 }

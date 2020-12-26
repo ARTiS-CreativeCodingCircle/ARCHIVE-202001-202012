@@ -2,6 +2,7 @@ import processing.pdf.*;
 
 boolean isExportPDF = true;
 boolean isVisibleGrid = false;
+boolean isTwoSheets = false; // 2ページを横に並べて，見開き1ページとして表示する
 
 PImage grid;
 ArrayList<Page> allPages;
@@ -16,13 +17,25 @@ int mainTopPadding = 12;
 int areaWidth;
 int areaHeight;
 
+// 1枚のサイズ (A4, 72dpi)
+final float WIDTH = 595.0;
+final float HEIGHT = 842.0;
+
+void settings() {
+  if (isTwoSheets) {
+    size(int(WIDTH)*2, int(HEIGHT));
+  } else {
+    size(int(WIDTH), int(HEIGHT));
+  }
+}
+
 void setup() {
   size(595, 842); // Screen: A4 72dpi
   
   textAlign(LEFT, TOP);
   
-  areaWidth = width - marginHorizontal*2;
-  areaHeight = height - marginVertical*2;
+  areaWidth = int(WIDTH - marginHorizontal*2);
+  areaHeight = int(HEIGHT - marginVertical*2);
   
   grid = loadImage("grid.png");
   allPages = generatePages();
@@ -64,13 +77,13 @@ ArrayList<Page> generatePages() {
   
   /* -------- 個人作品（Ikanoshiokara） -------- */
   pages.addAll( generatePersonalCover(Section.works_ikano_cover, color(#00B0F0),
-                                      new ClearRect[] { new ClearRect(82, 594, width-82*2, 132, color(#FFFFFF, 200)),
-                                                        new ClearRect(82, 232, width-82*2, 129, color(#FFFFFF, 200)) }) ); // Ikanoshiokara個人表紙
+                                      new ClearRect[] { new ClearRect(82, 594, int(WIDTH-82*2), 132, color(#FFFFFF, 200)),
+                                                        new ClearRect(82, 232, int(HEIGHT-82*2), 129, color(#FFFFFF, 200)) }) ); // Ikanoshiokara個人表紙
   pages.addAll( generatePersonalWorks(Section.works_ikano) ); // Ikanoshiokara個人作品ページ
   
   /* -------- 個人作品（あきっち） -------- */
   pages.addAll( generatePersonalCover(Section.works_akitch_cover, color(#FFFFFF),
-                                      new ClearRect[] { new ClearRect(82, 594, width-82*2, 88, color(#000000, 120)) }) ); // あきっち個人表紙
+                                      new ClearRect[] { new ClearRect(82, 594, int(WIDTH-82*2), 88, color(#000000, 120)) }) ); // あきっち個人表紙
   pages.addAll( generatePersonalWorks(Section.works_akitch) ); // あきっち個人作品ページ
   
   /* -------- 個人作品（eboshidori） -------- */
