@@ -65,12 +65,15 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
   
   // STYLY
   img1 = loadImage(section.getPath() + "styly/image1.png");
-  //img2 = loadImage(section.getPath() + "styly/image2.png");
+  img2 = loadImage(section.getPath() + "styly/image2.png");
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "styly/title.txt"),
                           txtToString(section.getPath() + "styly/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + mainTopPadding,
-                          new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img1, areaWidth)));
+                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth)+4+convertImageHeight(img2, areaWidth) + mainTopPadding,
+                          new Image[] { new Image(img1, marginHorizontal, marginVertical+titleBottomPadding,
+                                                  areaWidth, convertImageHeight(img1, areaWidth)),
+                                        new Image(img2, marginHorizontal, marginVertical+titleBottomPadding+convertImageHeight(img1, areaWidth)+4,
+                                                  areaWidth, convertImageHeight(img2, areaWidth)) });
   pages.add(p);
   
   // Mozilla Hubs
