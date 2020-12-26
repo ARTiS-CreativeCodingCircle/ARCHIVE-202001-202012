@@ -2,7 +2,7 @@ import processing.pdf.*;
 
 boolean isExportPDF = true;
 boolean isVisibleGrid = false;
-boolean isTwoSheets = false; // 2ページを横に並べて，見開き1ページとして表示する
+boolean isTwoSheets = true; // 2ページを横に並べて，見開き1ページとして表示する
 
 PImage grid;
 ArrayList<Page> allPages;
@@ -30,8 +30,6 @@ void settings() {
 }
 
 void setup() {
-  size(595, 842); // Screen: A4 72dpi
-  
   textAlign(LEFT, TOP);
   
   areaWidth = int(WIDTH - marginHorizontal*2);
@@ -41,12 +39,27 @@ void setup() {
   allPages = generatePages();
   
   if (isExportPDF) {
-    for (int i = 0; i < allPages.size(); i++) {
-      beginRecord(PDF, "output/Page" + i + ".pdf");
-      background(255);
-      allPages.get(i).draw();
-      endRecord();
-      clear();
+    if (isTwoSheets) {
+      int pageCount = (allPages.size()+1)/2;
+      for (int i = 0; i < pageCount; i++) {
+        beginRecord(PDF, "output/Page" + i + ".pdf");
+        background(255);
+        allPages.get(2*i).draw();
+        translate(WIDTH, 0);
+        if ((2*i+1) != allPages.size()) allPages.get(2*i+1).draw();
+        stroke(200, 50);
+        line(0, 0, 0, HEIGHT);
+        endRecord();
+        clear();
+      }
+    } else {
+      for (int i = 0; i < allPages.size(); i++) {
+        beginRecord(PDF, "output/Page" + i + ".pdf");
+        background(255);
+        allPages.get(i).draw();
+        endRecord();
+        clear();
+      }
     }
   }
   exit();
@@ -90,6 +103,9 @@ ArrayList<Page> generatePages() {
   pages.addAll( generatePersonalCover(Section.works_eboshi_cover, color(#FFFFFF), null) ); // eboshidori個人表紙
   pages.addAll( generatePersonalWorks(Section.works_eboshi) ); // eboshidori個人作品ページ
   
+  // ページ合わせの空白ページ
+  pages.add(new Page(Section.empty));
+  
   /* -------- 活動アーカイブ（ロゴ）-------- */
   pages.addAll( generateActivityPages(Section.artis_logo) );
   
@@ -98,6 +114,9 @@ ArrayList<Page> generatePages() {
   
   /* -------- 活動アーカイブ（作品展）-------- */
   pages.addAll( generateActivityPages(Section.artis_exhibition) );
+  
+  // ページ合わせの空白ページ
+  pages.add(new Page(Section.empty));
   
   /* -------- 活動アーカイブ（ワークショップ）-------- */
   pages.addAll( generateActivityPages(Section.artis_workshop) );
