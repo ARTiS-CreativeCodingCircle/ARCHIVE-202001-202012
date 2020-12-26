@@ -18,7 +18,7 @@ public class PersonalCoverLeft extends Page {
   
   public void draw() {
     // 画面いっぱいに背景画像を表示する
-    image(backImage.image, backImage.imageCornerX, backImage.imageCornerY, backImage.imageWidth, backImage.imageHeight);
+    image(backImage.image, backImage.imageCornerX-1, backImage.imageCornerY-1, backImage.imageWidth+2, backImage.imageHeight+2);
     
     textFont(createFont(TextType.section.getFontName(), TextType.section.getFontSize()));
     textAlign(RIGHT);
@@ -49,7 +49,7 @@ public class PersonalCoverRight extends Page {
   
   public void draw() {
     // 画面いっぱいに背景画像を表示する
-    image(backImage.image, backImage.imageCornerX, backImage.imageCornerY, backImage.imageWidth, backImage.imageHeight);
+    image(backImage.image, backImage.imageCornerX-1, backImage.imageCornerY-1, backImage.imageWidth+2, backImage.imageHeight+2);
     
     textFont(createFont(TextType.author.getFontName(), TextType.author.getFontSize()));
     text(author.getName(), 100, 290);
