@@ -25,7 +25,7 @@ ArrayList<Page> generateActivityLogoPages(Section section) {
   Page p = new DescriptionPage(section,
                                txtToString(section.getPath() + "title.txt"),
                                txtToString(section.getPath() + "main.txt"),
-                               marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                               marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                                new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth) ));
   pages.add(p);
   
@@ -59,7 +59,7 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "unity/title.txt"),
                           txtToString(section.getPath() + "unity/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth)));
   pages.add(p);
   
@@ -69,7 +69,7 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "styly/title.txt"),
                           txtToString(section.getPath() + "styly/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + mainTopPadding,
                           new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img1, areaWidth)));
   pages.add(p);
   
@@ -78,7 +78,7 @@ ArrayList<Page> generateActivityExhibitionPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "mozilla/title.txt"),
                           txtToString(section.getPath() + "mozilla/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth) ));
   pages.add(p);
   
@@ -97,7 +97,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "workshop1/title.txt"),
                           txtToString(section.getPath() + "workshop1/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
                                     areaWidth, convertImageHeight(img, areaWidth) ),
                           new CodeBlock(txtToString(section.getPath() + "workshop1/code.txt"),
@@ -112,7 +112,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "workshop2/title.txt"),
                           txtToString(section.getPath() + "workshop2/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
                                     areaWidth, convertImageHeight(img, areaWidth) ),
                           new CodeBlock(txtToString(section.getPath() + "workshop2/code.txt"),
@@ -127,7 +127,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "workshop3/title.txt"),
                           txtToString(section.getPath() + "workshop3/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
                                     areaWidth, convertImageHeight(img, areaWidth) ),
                           new CodeBlock(txtToString(section.getPath() + "workshop3/code.txt"),
@@ -142,7 +142,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "workshop4/title.txt"),
                           txtToString(section.getPath() + "workshop4/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
                                     areaWidth, convertImageHeight(img, areaWidth) ),
                           new CodeBlock(txtToString(section.getPath() + "workshop4/code.txt"),
@@ -157,7 +157,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "workshop5/title.txt"),
                           txtToString(section.getPath() + "workshop5/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
                                     areaWidth, convertImageHeight(img, areaWidth) ),
                           new CodeBlock(txtToString(section.getPath() + "workshop5/code.txt"),
@@ -172,7 +172,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "workshop6/title.txt"),
                           txtToString(section.getPath() + "workshop6/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
                                     areaWidth, convertImageHeight(img, areaWidth) ),
                           new CodeBlock(txtToString(section.getPath() + "workshop6/code.txt"),
@@ -187,7 +187,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "workshop7/title.txt"),
                           txtToString(section.getPath() + "workshop7/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
                                     areaWidth, convertImageHeight(img, areaWidth) ),
                           new CodeBlock(txtToString(section.getPath() + "workshop7/code.txt"),
@@ -202,7 +202,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "workshop8/title.txt"),
                           txtToString(section.getPath() + "workshop8/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
                                     areaWidth, convertImageHeight(img, areaWidth) ),
                           new CodeBlock(txtToString(section.getPath() + "workshop8/code.txt"),

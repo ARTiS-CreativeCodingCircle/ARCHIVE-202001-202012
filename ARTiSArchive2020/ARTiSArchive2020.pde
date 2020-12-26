@@ -1,7 +1,7 @@
 import processing.pdf.*;
 
 boolean isExportPDF = true;
-boolean isVisibleGrid = true;
+boolean isVisibleGrid = false;
 
 PImage grid;
 ArrayList<Page> allPages;
@@ -10,6 +10,7 @@ ArrayList<Page> allPages;
 int marginVertical = 74; // (72dpi) 26.2mm = 74px
 int marginHorizontal = 68; // (72dpi) 24mm = 68px
 int titleBottomPadding = 56;
+int mainTopPadding = 12;
 
 // マージンを除く描画エリア
 int areaWidth;
