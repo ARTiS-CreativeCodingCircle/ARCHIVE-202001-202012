@@ -58,7 +58,7 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "glass/title.txt"),
                           txtToString(section.getPath() + "glass/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + mainTopPadding,
                           new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img1, areaWidth) ),
                                        new Image(img2, marginHorizontal, height-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0)),
                                                  int(areaWidth*(1.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0)) ) },
@@ -73,7 +73,7 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "silk/title.txt"),
                           txtToString(section.getPath() + "silk/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + 16,
+                          marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + mainTopPadding,
                           new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img1, areaWidth) ),
                                        new Image(img2, marginHorizontal, height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
                                                  int(areaWidth*(1.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0)) ) },
@@ -326,7 +326,7 @@ ArrayList<Page> generateTomokaWorks(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "wave/title.txt"),
                           txtToString(section.getPath() + "wave/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth) ));
   pages.add(p);
   
@@ -456,7 +456,7 @@ ArrayList<Page> generateAkitchWorks(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "assort/title.txt"),
                           "", // 本文なし
-                          marginVertical+titleBottomPadding + areaWidth + 24,
+                          marginVertical+titleBottomPadding + areaWidth + mainTopPadding,
                           new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding,
                                                  int(areaWidth*(0.98/3.0)), int(areaWidth*(0.98/3.0))),
                                        new Image(img2, marginHorizontal+int(areaWidth*(1.02/3.0)), marginVertical+titleBottomPadding,
@@ -509,7 +509,7 @@ ArrayList<Page> generateAkitchWorks(Section section) {
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "cat/title.txt"),
                           txtToString(section.getPath() + "cat/main.txt"),
-                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + mainTopPadding,
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img, areaWidth) ));
   pages.add(p);
   
@@ -534,6 +534,7 @@ ArrayList<Page> generateEboshiWorks(Section section) {
   p = new LargeImagePage2(section,
                           new PImage[]{ loadImage(section.getPath() + "far/image1.png"),
                                         loadImage(section.getPath() + "far/image2.png") });
+  pages.add(p);
   
   // Rose
   p = new DescriptionPage2(section,

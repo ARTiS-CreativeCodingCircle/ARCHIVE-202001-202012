@@ -1,0 +1,17 @@
+// ARTiS Creative Coding Workshop #1 "Random"
+
+void setup() { // Draw only once
+  size(900, 900); // or fullScreen();
+  fill(255); // or noFill();
+  stroke(255); // or noStroke();  
+  background(0);
+}
+
+void draw() { // Draw 60 frames per second 
+float random = random(0, width);
+  line(random, 0, random, height);
+}
+
+void keyPressed() {
+  if (key == ENTER) saveFrame("output.png");
+}

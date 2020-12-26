@@ -1,0 +1,19 @@
+String modeText;
+void setup() {
+  size(900, 900);
+  blendMode(BLEND);
+  modeText = "BLEND";
+  noStroke();
+  textAlign(CENTER, BOTTOM);
+  textSize(36);
+}
+void draw() {
+  background(150);
+  fill(0);
+  text(modeText, width/2, height-50);
+  fill(255);
+  text(modeText, width/2, height-50);
+  for (int i = 0; i < 3; i++) {
+    // 省略：赤緑青の3つの円を、ベン図のように描画
+  }
+}
