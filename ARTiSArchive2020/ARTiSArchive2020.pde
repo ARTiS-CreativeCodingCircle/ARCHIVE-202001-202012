@@ -45,10 +45,12 @@ void setup() {
         beginRecord(PDF, "output/Page" + i + ".pdf");
         background(255);
         allPages.get(2*i).draw();
+        push();
         translate(WIDTH, 0);
         if ((2*i+1) != allPages.size()) allPages.get(2*i+1).draw();
         stroke(200, 50);
         line(0, 0, 0, HEIGHT);
+        pop();
         endRecord();
         clear();
       }

@@ -60,10 +60,10 @@ public class PersonalCoverRight extends Page {
     }
     
     fill(textColor);
-    textAlign(LEFT, TOP);
+    textAlign(LEFT);
     
     textFont(createFont(TextType.author.getFontName(), TextType.author.getFontSize()));
-    text(author.getName(), 100, 250);
+    text(author.getName(), 100, 290);
     textFont(createFont(TextType.belonging.getFontName(), TextType.belonging.getFontSize()));
     text(author.getBelonging(), 100, 340);
     
