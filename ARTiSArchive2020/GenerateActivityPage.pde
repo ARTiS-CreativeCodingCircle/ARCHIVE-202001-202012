@@ -92,6 +92,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
   PImage img;
   Page p;
   
+  // Workshop#1 "Random"
   img = loadImage(section.getPath() + "workshop1/image.png");
   p = new DescriptionPage(section,
                           txtToString(section.getPath() + "workshop1/title.txt"),
@@ -102,6 +103,111 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "workshop1/code.txt"),
                                         marginHorizontal, 538, int(areaWidth*(1.99/3.0)), areaHeight-(538-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop1/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 538,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(538-marginVertical)));
+  pages.add(p);
+  
+  // Workshop#2 "Noise"
+  img = loadImage(section.getPath() + "workshop2/image.png");
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "workshop2/title.txt"),
+                          txtToString(section.getPath() + "workshop2/main.txt"),
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
+                                    areaWidth, convertImageHeight(img, areaWidth) ),
+                          new CodeBlock(txtToString(section.getPath() + "workshop2/code.txt"),
+                                        marginHorizontal, 480, int(areaWidth*(1.99/3.0)), areaHeight-(480-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "workshop2/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 480,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(480-marginVertical)));
+  pages.add(p);
+  
+  // Workshop#3 "Noise"
+  img = loadImage(section.getPath() + "workshop3/image.png");
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "workshop3/title.txt"),
+                          txtToString(section.getPath() + "workshop3/main.txt"),
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
+                                    areaWidth, convertImageHeight(img, areaWidth) ),
+                          new CodeBlock(txtToString(section.getPath() + "workshop3/code.txt"),
+                                        marginHorizontal, 476, int(areaWidth*(1.99/3.0)), areaHeight-(476-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "workshop3/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 476,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(476-marginVertical)));
+  pages.add(p);
+  
+  // Workshop#4 "Image"
+  img = loadImage(section.getPath() + "workshop4/image.png");
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "workshop4/title.txt"),
+                          txtToString(section.getPath() + "workshop4/main.txt"),
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
+                                    areaWidth, convertImageHeight(img, areaWidth) ),
+                          new CodeBlock(txtToString(section.getPath() + "workshop4/code.txt"),
+                                        marginHorizontal, 538, int(areaWidth*(1.99/3.0)), areaHeight-(538-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "workshop4/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 538,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(538-marginVertical)));
+  pages.add(p);
+  
+  // Workshop#5 "Renderer"
+  img = loadImage(section.getPath() + "workshop5/image.png");
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "workshop5/title.txt"),
+                          txtToString(section.getPath() + "workshop5/main.txt"),
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
+                                    areaWidth, convertImageHeight(img, areaWidth) ),
+                          new CodeBlock(txtToString(section.getPath() + "workshop5/code.txt"),
+                                        marginHorizontal, 450, int(areaWidth*(1.99/3.0)), areaHeight-(450-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "workshop5/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 450,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(450-marginVertical)));
+  pages.add(p);
+  
+  // Workshop#6 "Color"
+  img = loadImage(section.getPath() + "workshop6/image.png");
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "workshop6/title.txt"),
+                          txtToString(section.getPath() + "workshop6/main.txt"),
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
+                                    areaWidth, convertImageHeight(img, areaWidth) ),
+                          new CodeBlock(txtToString(section.getPath() + "workshop6/code.txt"),
+                                        marginHorizontal, 538, int(areaWidth*(1.99/3.0)), areaHeight-(538-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "workshop6/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 538,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(538-marginVertical)));
+  pages.add(p);
+  
+  // Workshop#7 "Recursive"
+  img = loadImage(section.getPath() + "workshop7/image.png");
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "workshop7/title.txt"),
+                          txtToString(section.getPath() + "workshop7/main.txt"),
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
+                                    areaWidth, convertImageHeight(img, areaWidth) ),
+                          new CodeBlock(txtToString(section.getPath() + "workshop7/code.txt"),
+                                        marginHorizontal, 538, int(areaWidth*(1.99/3.0)), areaHeight-(538-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "workshop7/small.txt"),
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 538,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(538-marginVertical)));
+  pages.add(p);
+  
+  // Workshop#8 "Attractor"
+  img = loadImage(section.getPath() + "workshop8/image.png");
+  p = new DescriptionPage(section,
+                          txtToString(section.getPath() + "workshop8/title.txt"),
+                          txtToString(section.getPath() + "workshop8/main.txt"),
+                          marginVertical+titleBottomPadding + convertImageHeight(img, areaWidth) + 24,
+                          new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
+                                    areaWidth, convertImageHeight(img, areaWidth) ),
+                          new CodeBlock(txtToString(section.getPath() + "workshop8/code.txt"),
+                                        marginHorizontal, 538, int(areaWidth*(1.99/3.0)), areaHeight-(538-marginVertical)),
+                          new SmallTextBlock(txtToString(section.getPath() + "workshop8/small.txt"),
                                              width-marginHorizontal-int(areaWidth*(0.99/3.0)), 538,
                                              int(areaWidth*(0.99/3.0)), areaHeight-(538-marginVertical)));
   pages.add(p);
