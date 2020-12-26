@@ -30,6 +30,8 @@ public class PersonalCoverRight extends Page {
   Image backImage;
   color textColor;
   
+  ClearRect[] clearRects;
+  
   public PersonalCoverRight(Section section, PImage backImage, String text, color textColor) {
     super(section);
     this.author = section.getPrimaryAuthor();
@@ -38,9 +40,24 @@ public class PersonalCoverRight extends Page {
     this.textColor = textColor;
   }
   
+  public PersonalCoverRight(Section section, PImage backImage, String text, color textColor, ClearRect[] clearRects) {
+    super(section);
+    this.author = section.getPrimaryAuthor();
+    this.backImage = new Image(backImage);
+    this.text = text;
+    this.textColor = textColor;
+    this.clearRects = clearRects;
+  }
+  
   public void draw() {
     // 画面いっぱいに背景画像を表示する
     image(backImage.image, backImage.imageCornerX-1, backImage.imageCornerY-1, backImage.imageWidth+2, backImage.imageHeight+2);
+    
+    if (clearRects != null) {
+      for (ClearRect clearRect: clearRects) {
+        clearRect.draw();
+      }
+    }
     
     fill(textColor);
     
