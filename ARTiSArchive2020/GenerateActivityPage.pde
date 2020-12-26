@@ -176,10 +176,10 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new Image(img, marginHorizontal, marginVertical+titleBottomPadding,
                                     areaWidth, convertImageHeight(img, areaWidth) ),
                           new CodeBlock(txtToString(section.getPath() + "workshop6/code.txt"),
-                                        marginHorizontal, 538, int(areaWidth*(1.99/3.0)), areaHeight-(538-marginVertical)),
+                                        marginHorizontal, 514, int(areaWidth*(1.99/3.0)), areaHeight-(514-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop6/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 538,
-                                             int(areaWidth*(0.99/3.0)), areaHeight-(538-marginVertical)));
+                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 514,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(514-marginVertical)));
   pages.add(p);
   
   // Workshop#7 "Recursive"
