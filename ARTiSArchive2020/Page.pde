@@ -9,7 +9,7 @@ public class Page {
   public void draw() {
     if (isVisibleGrid) {
       imageMode(CENTER);
-      image(grid, width/2, height/2, areaWidth, areaHeight);
+      image(grid, WIDTH/2, HEIGHT/2, areaWidth, areaHeight);
     }
   }
   

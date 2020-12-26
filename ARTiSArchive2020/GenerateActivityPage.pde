@@ -106,7 +106,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "workshop1/code.txt"),
                                         marginHorizontal, 538, int(areaWidth*(1.99/3.0)), areaHeight-(538-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop1/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 538,
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 538,
                                              int(areaWidth*(0.99/3.0)), areaHeight-(538-marginVertical)));
   pages.add(p);
   
@@ -121,7 +121,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "workshop2/code.txt"),
                                         marginHorizontal, 500, int(areaWidth*(1.99/3.0)), areaHeight-(500-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop2/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 500,
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 500,
                                              int(areaWidth*(0.99/3.0)), areaHeight-(500-marginVertical)));
   pages.add(p);
   
@@ -136,7 +136,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "workshop3/code.txt"),
                                         marginHorizontal, 476, int(areaWidth*(1.99/3.0)), areaHeight-(476-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop3/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 476,
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 476,
                                              int(areaWidth*(0.99/3.0)), areaHeight-(476-marginVertical)));
   pages.add(p);
   
@@ -151,7 +151,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "workshop4/code.txt"),
                                         marginHorizontal, 500, int(areaWidth*(1.99/3.0)), areaHeight-(500-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop4/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 500,
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 500,
                                              int(areaWidth*(0.99/3.0)), areaHeight-(500-marginVertical)));
   pages.add(p);
   
@@ -166,7 +166,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "workshop5/code.txt"),
                                         marginHorizontal, 500, int(areaWidth*(1.99/3.0)), areaHeight-(500-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop5/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 500,
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 500,
                                              int(areaWidth*(0.99/3.0)), areaHeight-(500-marginVertical)));
   pages.add(p);
   
@@ -181,7 +181,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "workshop6/code.txt"),
                                         marginHorizontal, 514, int(areaWidth*(1.99/3.0)), areaHeight-(514-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop6/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 514,
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 514,
                                              int(areaWidth*(0.99/3.0)), areaHeight-(514-marginVertical)));
   pages.add(p);
   
@@ -196,7 +196,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "workshop7/code.txt"),
                                         marginHorizontal, 514, int(areaWidth*(1.99/3.0)), areaHeight-(514-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop7/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 514,
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 514,
                                              int(areaWidth*(0.99/3.0)), areaHeight-(514-marginVertical)));
   pages.add(p);
   
@@ -211,7 +211,7 @@ ArrayList<Page> generateActivityWorkshopPages(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "workshop8/code.txt"),
                                         marginHorizontal, 488, int(areaWidth*(1.99/3.0)), areaHeight-(488-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "workshop8/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 488,
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 488,
                                              int(areaWidth*(0.99/3.0)), areaHeight-(488-marginVertical)));
   pages.add(p);
   

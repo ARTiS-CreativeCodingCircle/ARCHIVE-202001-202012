@@ -17,7 +17,8 @@ enum Section {
   artis_exhibition("artis_activity/exhibition/", "", new Author[]{Author.ikano, Author.eboshi}),
   artis_workshop("artis_activity/workshop/", "", new Author[]{Author.ohayota, Author.akitch}),
   afterword("foreafter/afterword/", "", new Author[]{Author.ohayota, Author.tomoka, Author.ikano, Author.akitch, Author.eboshi, Author.lowene}),
-  backcover("cover/backcover.png", "", new Author[]{Author.ohayota});
+  backcover("cover/backcover.png", "", new Author[]{Author.ohayota}),
+  empty("", "", new Author[]{});
   
   private Section(String path, String sectionNumber, Author[] authors) {
     this.path = path;

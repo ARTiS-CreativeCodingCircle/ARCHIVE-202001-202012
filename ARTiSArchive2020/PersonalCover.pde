@@ -13,12 +13,12 @@ public class PersonalCoverLeft extends Page {
   
   public void draw() {
     // 画面いっぱいに背景画像を表示する
-    image(backImage.image, backImage.imageCornerX-1, backImage.imageCornerY-1, backImage.imageWidth+2, backImage.imageHeight+2);
+    image(backImage.image, backImage.imageCornerX, backImage.imageCornerY, backImage.imageWidth+1, backImage.imageHeight+1);
     
     textFont(createFont(TextType.section.getFontName(), TextType.section.getFontSize()));
     textAlign(RIGHT);
     fill(textColor);
-    text(sectionNumber, width-100, 290);
+    text(sectionNumber, WIDTH-100, 290);
   }
   
 }
@@ -51,7 +51,7 @@ public class PersonalCoverRight extends Page {
   
   public void draw() {
     // 画面いっぱいに背景画像を表示する
-    image(backImage.image, backImage.imageCornerX-1, backImage.imageCornerY-1, backImage.imageWidth+2, backImage.imageHeight+2);
+    image(backImage.image, backImage.imageCornerX, backImage.imageCornerY, backImage.imageWidth+1, backImage.imageHeight+1);
     
     if (clearRects != null) {
       for (ClearRect clearRect: clearRects) {
@@ -60,6 +60,7 @@ public class PersonalCoverRight extends Page {
     }
     
     fill(textColor);
+    textAlign(LEFT);
     
     textFont(createFont(TextType.author.getFontName(), TextType.author.getFontSize()));
     text(author.getName(), 100, 290);

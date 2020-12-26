@@ -47,7 +47,7 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "generative/code.txt"),
                                         marginHorizontal, 262, int(areaWidth*(1.99/3.0)), areaHeight-(262-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "generative/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 262, int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)));
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 262, int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)));
   pages.add(p);
   p = new LargeImagePage(section, loadImage(section.getPath() + "generative/image.png"));
   pages.add(p);
@@ -60,10 +60,11 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
                           txtToString(section.getPath() + "glass/main.txt"),
                           marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + mainTopPadding,
                           new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img1, areaWidth) ),
-                                       new Image(img2, marginHorizontal, height-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0)),
+                                       new Image(img2, marginHorizontal, int(HEIGHT-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0))),
                                                  int(areaWidth*(1.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0)) ) },
                           new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "glass/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), height-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0)),
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))),
+                                             int(HEIGHT-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0))),
                                              int(areaWidth*(0.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0))));
   pages.add(p);
   
@@ -75,10 +76,11 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
                           txtToString(section.getPath() + "silk/main.txt"),
                           marginVertical+titleBottomPadding + convertImageHeight(img1, areaWidth) + mainTopPadding,
                           new Image[]{ new Image(img1, marginHorizontal, marginVertical+titleBottomPadding, areaWidth, convertImageHeight(img1, areaWidth) ),
-                                       new Image(img2, marginHorizontal, height-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width)),
+                                       new Image(img2, marginHorizontal, int(HEIGHT-marginVertical-int(img2.height*(areaWidth*(1.99/3.0)/(float)img2.width))),
                                                  int(areaWidth*(1.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0)) ) },
                           new SmallTextBlock(txtToString(Section.works_ohayota.getPath() + "silk/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), height-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0)),
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))),
+                                             int(HEIGHT-marginVertical-convertImageHeight(img2, areaWidth*(1.99/3.0))),
                                              int(areaWidth*(0.99/3.0)), convertImageHeight(img2, areaWidth*(1.99/3.0))));
   pages.add(p);
   
@@ -128,7 +130,7 @@ ArrayList<Page> generateOhayotaWorks(Section section) {
                                                  marginVertical+titleBottomPadding+148 + 3*convertImageHeight(img1, areaWidth*(1.015/2.0)),
                                                  int(areaWidth*(0.985/2.0)), convertImageHeight(img1, areaWidth*(0.985/2.0)) ) },
                           new SmallTextBlock(txtToString(section.getPath() + "flag/small.txt"),
-                                             marginHorizontal, height-marginVertical-24,
+                                             marginHorizontal, int(HEIGHT-marginVertical-24),
                                              areaWidth, 32));
   pages.add(p);
   
@@ -305,7 +307,8 @@ ArrayList<Page> generateTomokaWorks(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "lines/code.txt"),
                                         marginHorizontal, 424, int(areaWidth*(1.99/3.0)), areaHeight-(424-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "lines/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 424, int(areaWidth*(0.99/3.0)), areaHeight-(424-marginVertical)));
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 424,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(424-marginVertical)));
   pages.add(p);
   p = new LargeImagePage2(section,
                           new PImage[]{ loadImage(section.getPath() + "lines/image1.png"),
@@ -374,7 +377,8 @@ ArrayList<Page> generateAkitchWorks(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "200_all/code.txt"),
                                         marginHorizontal, 262, int(areaWidth*(1.99/3.0)), areaHeight-(262-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "200_all/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 262, int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)));
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 262,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(262-marginVertical)));
   pages.add(p);
   p = new LargeImagePage(section, loadImage(section.getPath() + "200_all/image.png"));
   pages.add(p);
@@ -529,7 +533,8 @@ ArrayList<Page> generateEboshiWorks(Section section) {
                           new CodeBlock(txtToString(section.getPath() + "far/code.txt"),
                                         marginHorizontal, 388, int(areaWidth*(1.99/3.0)), areaHeight-(388-marginVertical)),
                           new SmallTextBlock(txtToString(section.getPath() + "far/small.txt"),
-                                             width-marginHorizontal-int(areaWidth*(0.99/3.0)), 388, int(areaWidth*(0.99/3.0)), areaHeight-(388-marginVertical)));
+                                             int(WIDTH-marginHorizontal-int(areaWidth*(0.99/3.0))), 388,
+                                             int(areaWidth*(0.99/3.0)), areaHeight-(388-marginVertical)));
   pages.add(p);
   p = new LargeImagePage2(section,
                           new PImage[]{ loadImage(section.getPath() + "far/image1.png"),
