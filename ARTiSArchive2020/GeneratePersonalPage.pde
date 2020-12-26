@@ -19,15 +19,15 @@ ArrayList<Page> generatePersonalWorks(Section section) {
 
 
 // 個人表紙生成
-ArrayList<Page> generatePersonalCover(Section section) {
+ArrayList<Page> generatePersonalCover(Section section, color textColor, ClearRect[] clearRects) {
   ArrayList<Page> pages = new ArrayList<Page>();
   
   // 個人表紙左
-  Page pL = new PersonalCoverLeft(section, loadImage(section.getPath() + "left.png"));
+  Page pL = new PersonalCoverLeft(section, loadImage(section.getPath() + "left.png"), textColor);
   pages.add(pL);
   // 個人表紙右
   String path = section.getPath() + "selfintro.txt";
-  Page pR = new PersonalCoverRight(section, loadImage(section.getPath() + "right.png"), txtToString(path));
+  Page pR = new PersonalCoverRight(section, loadImage(section.getPath() + "right.png"), txtToString(path), textColor, clearRects);
   pages.add(pR);
   
   return pages;

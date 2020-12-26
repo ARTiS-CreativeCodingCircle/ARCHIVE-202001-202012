@@ -55,23 +55,26 @@ ArrayList<Page> generatePages() {
   
   
   /* -------- 個人作品（ohayota） -------- */
-  pages.addAll( generatePersonalCover(Section.works_ohayota_cover) ); // ohayota個人表紙
+  pages.addAll( generatePersonalCover(Section.works_ohayota_cover, color(#000000), null) ); // ohayota個人表紙
   pages.addAll( generatePersonalWorks(Section.works_ohayota) ); // ohayota個人作品ページ
   
   /* -------- 個人作品（Tomoka） -------- */
-  pages.addAll( generatePersonalCover(Section.works_tomoka_cover) ); // Tomoka個人表紙
+  pages.addAll( generatePersonalCover(Section.works_tomoka_cover, color(#FFFFFF), null) ); // Tomoka個人表紙
   pages.addAll( generatePersonalWorks(Section.works_tomoka) ); // Tomoka個人作品ページ
   
   /* -------- 個人作品（Ikanoshiokara） -------- */
-  pages.addAll( generatePersonalCover(Section.works_ikano_cover) ); // Ikanoshiokara個人表紙
+  pages.addAll( generatePersonalCover(Section.works_ikano_cover, color(#00B0F0),
+                                      new ClearRect[] { new ClearRect(82, 594, width-82*2, 132, color(#FFFFFF, 200)),
+                                                        new ClearRect(82, 232, width-82*2, 129, color(#FFFFFF, 200)) }) ); // Ikanoshiokara個人表紙
   pages.addAll( generatePersonalWorks(Section.works_ikano) ); // Ikanoshiokara個人作品ページ
   
   /* -------- 個人作品（あきっち） -------- */
-  pages.addAll( generatePersonalCover(Section.works_akitch_cover) ); // あきっち個人表紙
+  pages.addAll( generatePersonalCover(Section.works_akitch_cover, color(#FFFFFF),
+                                      new ClearRect[] { new ClearRect(82, 594, width-82*2, 88, color(#000000, 120)) }) ); // あきっち個人表紙
   pages.addAll( generatePersonalWorks(Section.works_akitch) ); // あきっち個人作品ページ
   
   /* -------- 個人作品（eboshidori） -------- */
-  pages.addAll( generatePersonalCover(Section.works_eboshi_cover) ); // eboshidori個人表紙
+  pages.addAll( generatePersonalCover(Section.works_eboshi_cover, color(#FFFFFF), null) ); // eboshidori個人表紙
   pages.addAll( generatePersonalWorks(Section.works_eboshi) ); // eboshidori個人作品ページ
   
   /* -------- 活動アーカイブ（ロゴ）-------- */
