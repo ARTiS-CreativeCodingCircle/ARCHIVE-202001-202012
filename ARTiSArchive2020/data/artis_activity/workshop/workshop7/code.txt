@@ -1,4 +1,4 @@
-//省略 : void setup 内でarc_fractalを連続的に並べている
+// 省略：void setup内でarc_fractalを連続的に並べている
 void arc_fractal(float x, float y, float r) { //arcを利用したフラクタルを作成する
   strokeWeight(2*map(r, R, r_min, 2, 0.1)); 
   noFill();
