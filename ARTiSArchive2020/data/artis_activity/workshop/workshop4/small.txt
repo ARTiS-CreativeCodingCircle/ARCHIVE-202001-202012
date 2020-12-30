@@ -1,3 +1,8 @@
-読み込んだ画像を表示するartLayerと、artLayerで表示した画像が落とした影を表現するために、黒い四角を少しずらして描画するbackLayerを作ります。
+読み込んだ画像を表示する
+artLayerと、artLayerで表示した画像が落とした影とし
+て、黒い四角をずらして描画するbackLayerを作ります。
 
-関数draw内で、artLayer上にカーソルが乗るときに図形（円など）を描画します。artLayerの状態が維持され、frameCountの数字が更新されていきます。
+関数draw内で、artLayer上にカーソルが乗るときに図形
+（円など）を描画します。
+artLayerの状態が維持され、
+frameCountの数字が更新されていきます。
