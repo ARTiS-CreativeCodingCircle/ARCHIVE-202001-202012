@@ -2,7 +2,8 @@ import processing.pdf.*;
 
 boolean isExportPDF = true;
 boolean isVisibleGrid = false;
-boolean isTwoSheets = true; // 2ページを横に並べて，見開き1ページとして表示する
+boolean isTwoSheets = false; // 2ページを横に並べて，見開き1ページとして表示する
+boolean isCover = false;
 
 PImage grid;
 ArrayList<Page> allPages;
@@ -74,7 +75,9 @@ ArrayList<Page> generatePages() {
   ArrayList<Page> pages = new ArrayList<Page>();
   
   /* -------- 表紙 -------- */
-  
+  //pages.add( new Page(Section.empty) );
+  pages.add( new Cover(Section.cover) );
+  pages.add( new BackCover(Section.backcover) );
   
   /* -------- まえがき -------- */
   
@@ -106,7 +109,7 @@ ArrayList<Page> generatePages() {
   pages.addAll( generatePersonalWorks(Section.works_eboshi) ); // eboshidori個人作品ページ
   
   // ページ合わせの空白ページ
-  pages.add(new Page(Section.empty));
+  pages.add( new Page(Section.empty) );
   
   /* -------- 活動アーカイブ（ロゴ）-------- */
   pages.addAll( generateActivityPages(Section.artis_logo) );
@@ -118,7 +121,7 @@ ArrayList<Page> generatePages() {
   pages.addAll( generateActivityPages(Section.artis_exhibition) );
   
   // ページ合わせの空白ページ
-  pages.add(new Page(Section.empty));
+  pages.add( new Page(Section.empty) );
   
   /* -------- 活動アーカイブ（ワークショップ）-------- */
   pages.addAll( generateActivityPages(Section.artis_workshop) );
@@ -127,7 +130,7 @@ ArrayList<Page> generatePages() {
   
   
   /* -------- 裏表紙 -------- */
-  
+  //pages.add( new BackCover(Section.backcover) );
   
   return pages;
 }
@@ -139,6 +142,11 @@ String txtToString(String path) {
     text += lines[i] + "\n";
   }
   return text;
+}
+
+int convertImageWidth(PImage image, float afterImageHeight) {
+  float afterImageWidth = image.width*(afterImageHeight/(float)image.height);
+  return int(afterImageWidth);
 }
 
 int convertImageHeight(PImage image, float afterImageWidth) {
