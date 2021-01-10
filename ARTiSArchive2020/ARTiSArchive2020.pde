@@ -3,6 +3,7 @@ import processing.pdf.*;
 boolean isExportPDF = true;
 boolean isVisibleGrid = false;
 boolean isTwoSheets = true; // 2ページを横に並べて，見開き1ページとして表示する
+boolean isCover = false;
 
 PImage grid;
 ArrayList<Page> allPages;
@@ -44,6 +45,16 @@ void setup() {
       for (int i = 0; i < pageCount; i++) {
         beginRecord(PDF, "output/Page" + i + ".pdf");
         background(255);
+        // ページ番号とセクションタイトル
+        String authors = "";
+        for (Author author: allPages.get(2*i).section.getAuthors()) {
+          if (authors != "") authors += ", ";
+          authors += author.getName();
+        }
+        textFont(createFont(TextType.section.getFontName(), 10));
+        fill(0);
+        text(((2*i)+1) + " - " + ((2*i+1)+1) + "  |  " + allPages.get(2*i).section.getSectionNumber() + " - " + authors, marginHorizontal, HEIGHT-marginVertical/2);
+        // ページ描画
         allPages.get(2*i).draw();
         push();
         translate(WIDTH, 0);
@@ -74,60 +85,67 @@ ArrayList<Page> generatePages() {
   ArrayList<Page> pages = new ArrayList<Page>();
   
   /* -------- 表紙 -------- */
+  if (isCover) {
+    pages.add( new Cover(Section.cover) );
+  }
   
-  
-  /* -------- まえがき -------- */
-  
-  
-  /* -------- 目次 -------- */
-  
-  
-  /* -------- 個人作品（ohayota） -------- */
-  pages.addAll( generatePersonalCover(Section.works_ohayota_cover, color(#000000), null) ); // ohayota個人表紙
-  pages.addAll( generatePersonalWorks(Section.works_ohayota) ); // ohayota個人作品ページ
-  
-  /* -------- 個人作品（Tomoka） -------- */
-  pages.addAll( generatePersonalCover(Section.works_tomoka_cover, color(#FFFFFF), null) ); // Tomoka個人表紙
-  pages.addAll( generatePersonalWorks(Section.works_tomoka) ); // Tomoka個人作品ページ
-  
-  /* -------- 個人作品（Ikanoshiokara） -------- */
-  pages.addAll( generatePersonalCover(Section.works_ikano_cover, color(#00B0F0),
-                                      new ClearRect[] { new ClearRect(82, 594, int(WIDTH-82*2), 132, color(#FFFFFF, 200)),
-                                                        new ClearRect(82, 232, int(HEIGHT-82*2), 129, color(#FFFFFF, 200)) }) ); // Ikanoshiokara個人表紙
-  pages.addAll( generatePersonalWorks(Section.works_ikano) ); // Ikanoshiokara個人作品ページ
-  
-  /* -------- 個人作品（あきっち） -------- */
-  pages.addAll( generatePersonalCover(Section.works_akitch_cover, color(#FFFFFF),
-                                      new ClearRect[] { new ClearRect(82, 594, int(WIDTH-82*2), 88, color(#000000, 120)) }) ); // あきっち個人表紙
-  pages.addAll( generatePersonalWorks(Section.works_akitch) ); // あきっち個人作品ページ
-  
-  /* -------- 個人作品（eboshidori） -------- */
-  pages.addAll( generatePersonalCover(Section.works_eboshi_cover, color(#FFFFFF), null) ); // eboshidori個人表紙
-  pages.addAll( generatePersonalWorks(Section.works_eboshi) ); // eboshidori個人作品ページ
-  
-  // ページ合わせの空白ページ
-  pages.add(new Page(Section.empty));
-  
-  /* -------- 活動アーカイブ（ロゴ）-------- */
-  pages.addAll( generateActivityPages(Section.artis_logo) );
-  
-  /* -------- 活動アーカイブ（サイト）-------- */
-  pages.addAll( generateActivityPages(Section.artis_website) );
-  
-  /* -------- 活動アーカイブ（作品展）-------- */
-  pages.addAll( generateActivityPages(Section.artis_exhibition) );
-  
-  // ページ合わせの空白ページ
-  pages.add(new Page(Section.empty));
-  
-  /* -------- 活動アーカイブ（ワークショップ）-------- */
-  pages.addAll( generateActivityPages(Section.artis_workshop) );
-  
-  /* -------- あとがき -------- */
-  
+  if (!isCover) {
+    /* -------- まえがき -------- */
+    
+    
+    /* -------- 目次 -------- */
+    
+    
+    /* -------- 個人作品（ohayota） -------- */
+    pages.addAll( generatePersonalCover(Section.works_ohayota_cover, color(#000000), null) ); // ohayota個人表紙
+    pages.addAll( generatePersonalWorks(Section.works_ohayota) ); // ohayota個人作品ページ
+    
+    /* -------- 個人作品（Tomoka） -------- */
+    pages.addAll( generatePersonalCover(Section.works_tomoka_cover, color(#FFFFFF), null) ); // Tomoka個人表紙
+    pages.addAll( generatePersonalWorks(Section.works_tomoka) ); // Tomoka個人作品ページ
+    
+    /* -------- 個人作品（Ikanoshiokara） -------- */
+    pages.addAll( generatePersonalCover(Section.works_ikano_cover, color(#00B0F0),
+                                        new ClearRect[] { new ClearRect(82, 594, int(WIDTH-82*2), 132, color(#FFFFFF, 200)),
+                                                          new ClearRect(82, 232, int(HEIGHT-82*2), 129, color(#FFFFFF, 200)) }) ); // Ikanoshiokara個人表紙
+    pages.addAll( generatePersonalWorks(Section.works_ikano) ); // Ikanoshiokara個人作品ページ
+    
+    /* -------- 個人作品（あきっち） -------- */
+    pages.addAll( generatePersonalCover(Section.works_akitch_cover, color(#FFFFFF),
+                                        new ClearRect[] { new ClearRect(82, 594, int(WIDTH-82*2), 88, color(#000000, 120)) }) ); // あきっち個人表紙
+    pages.addAll( generatePersonalWorks(Section.works_akitch) ); // あきっち個人作品ページ
+    
+    /* -------- 個人作品（eboshidori） -------- */
+    pages.addAll( generatePersonalCover(Section.works_eboshi_cover, color(#FFFFFF), null) ); // eboshidori個人表紙
+    pages.addAll( generatePersonalWorks(Section.works_eboshi) ); // eboshidori個人作品ページ
+    
+    // ページ合わせの空白ページ
+    pages.add( new Page(Section.empty) );
+    
+    /* -------- 活動アーカイブ（ロゴ）-------- */
+    pages.addAll( generateActivityPages(Section.artis_logo) );
+    
+    /* -------- 活動アーカイブ（サイト）-------- */
+    pages.addAll( generateActivityPages(Section.artis_website) );
+    
+    /* -------- 活動アーカイブ（作品展）-------- */
+    pages.addAll( generateActivityPages(Section.artis_exhibition) );
+    
+    // ページ合わせの空白ページ
+    pages.add( new Page(Section.empty) );
+    
+    /* -------- 活動アーカイブ（ワークショップ）-------- */
+    pages.addAll( generateActivityPages(Section.artis_workshop) );
+    
+    /* -------- あとがき -------- */
+    
+    
+  }
   
   /* -------- 裏表紙 -------- */
-  
+  if (isCover) {
+    pages.add( new BackCover(Section.backcover) );
+  }
   
   return pages;
 }
@@ -139,6 +157,11 @@ String txtToString(String path) {
     text += lines[i] + "\n";
   }
   return text;
+}
+
+int convertImageWidth(PImage image, float afterImageHeight) {
+  float afterImageWidth = image.width*(afterImageHeight/(float)image.height);
+  return int(afterImageWidth);
 }
 
 int convertImageHeight(PImage image, float afterImageWidth) {
