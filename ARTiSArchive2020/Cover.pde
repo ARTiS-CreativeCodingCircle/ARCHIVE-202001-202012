@@ -15,7 +15,7 @@ public class Cover extends Page {
     cpg = createGraphics(int(WIDTH), int(HEIGHT));
     cpg.beginDraw();
     //cpg.blendMode(DIFFERENCE);
-    cpg.background(0, 120);
+    cpg.background(0, 130);
     cpg.fill(255);
     cpg.textFont(createFont("Bahnschrift", 220));
     cpg.textSize(220);
@@ -32,7 +32,7 @@ public class Cover extends Page {
     cpg.rect(478, 257, WIDTH, 23);
     cpg.text("2020.01", 172, 258);
     cpg.text("2020.12", 388, 314);
-    //cpg.shape(logo, WIDTH-(WIDTH-360), HEIGHT-(WIDTH-360)/2, WIDTH-360, (WIDTH-360)/2);
+    cpg.shape(logo, WIDTH-(WIDTH-360), HEIGHT-(WIDTH-360)/2, WIDTH-360, (WIDTH-360)/2);
     cpg.endDraw();
     pg = createGraphics(int(WIDTH), int(HEIGHT));
     pg.beginDraw();
@@ -64,12 +64,12 @@ public class BackCover extends Page {
     this.logo = loadShape(section.getPath() + "logo.svg");
     cpg = createGraphics(int(WIDTH), int(HEIGHT));
     cpg.beginDraw();
-    cpg.background(0, 120);
+    cpg.background(0, 130);
     cpg.fill(255);
     cpg.noStroke();
     cpg.rect(-1, 257, WIDTH+2, 23);
     //cpg.shape(logo, 0, HEIGHT/2-((WIDTH-360)/2)/2, WIDTH-360, (WIDTH-360)/2);
-    cpg.shape(logo, WIDTH/2-(WIDTH-300)/2, HEIGHT/2-((WIDTH-300)/2)/2, WIDTH-300, (WIDTH-300)/2);
+    //cpg.shape(logo, WIDTH/2-(WIDTH-240)/2, HEIGHT/2-((WIDTH-240)/2)/2, WIDTH-240, (WIDTH-240)/2);
     cpg.endDraw();
     pg = createGraphics(int(WIDTH), int(HEIGHT));
     pg.beginDraw();
