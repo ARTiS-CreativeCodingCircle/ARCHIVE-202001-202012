@@ -91,10 +91,14 @@ ArrayList<Page> generatePages() {
   
   if (!isCover) {
     /* -------- まえがき -------- */
-    
+    pages.add( new DescriptionPage(Section.foreword,
+                                   txtToString(Section.foreword.getPath() + "title.txt"),
+                                   txtToString(Section.foreword.getPath() + "main.txt")) );
     
     /* -------- 目次 -------- */
-    
+    pages.add( new DescriptionPage(Section.contents,
+                                   txtToString(Section.contents.getPath() + "title.txt"),
+                                   txtToString(Section.contents.getPath() + "main.txt")) );
     
     /* -------- 個人作品（ohayota） -------- */
     pages.addAll( generatePersonalCover(Section.works_ohayota_cover, color(#000000), null) ); // ohayota個人表紙
