@@ -156,9 +156,7 @@ ArrayList<Page> generatePages() {
     pages.addAll( generateActivityPages(Section.artis_workshop) );
     
     /* -------- あとがき -------- */
-    pages.add( new DescriptionPage(Section.afterword,
-                                   txtToString(Section.afterword.getPath() + "title.txt"),
-                                   txtToString(Section.afterword.getPath() + "main.txt")) );
+    pages.add( new AfterwordPage() );
   }
   
   /* -------- 裏表紙 -------- */
