@@ -53,12 +53,25 @@ void setup() {
         }
         textFont(createFont(TextType.section.getFontName(), 10));
         fill(0);
-        text(((2*i)+1) + " - " + ((2*i+1)+1) + "  |  " + allPages.get(2*i).section.getSectionNumber() + " - " + authors, marginHorizontal, HEIGHT-marginVertical/2);
+        textAlign(LEFT);
+        text(((2*i)+1) + "  |  " + allPages.get(2*i).section.getSectionNumber() + " - " + authors, marginHorizontal, HEIGHT-marginVertical/2);
         // ページ描画
         allPages.get(2*i).draw();
         push();
         translate(WIDTH, 0);
-        if ((2*i+1) != allPages.size()) allPages.get(2*i+1).draw();
+        if ((2*i+1) != allPages.size()) {
+          // ページ番号とセクションタイトル
+          authors = "";
+          for (Author author: allPages.get(2*i+1).section.getAuthors()) {
+            if (authors != "") authors += ", ";
+            authors += author.getName();
+          }
+          textFont(createFont(TextType.section.getFontName(), 10));
+          fill(0);
+          textAlign(RIGHT);
+          text(allPages.get(2*i+1).section.getSectionNumber() + " - " + authors + "  |  " + ((2*i+1)+1), WIDTH-marginHorizontal, HEIGHT-marginVertical/2);
+          allPages.get(2*i+1).draw();
+        }
         stroke(200, 50);
         line(0, 0, 0, HEIGHT);
         pop();
@@ -91,14 +104,15 @@ ArrayList<Page> generatePages() {
   
   if (!isCover) {
     /* -------- まえがき -------- */
+    // ページ合わせの空白ページ
+    pages.add( new Page(Section.empty) );
     pages.add( new DescriptionPage(Section.foreword,
                                    txtToString(Section.foreword.getPath() + "title.txt"),
                                    txtToString(Section.foreword.getPath() + "main.txt")) );
     
     /* -------- 目次 -------- */
-    pages.add( new DescriptionPage(Section.contents,
-                                   txtToString(Section.contents.getPath() + "title.txt"),
-                                   txtToString(Section.contents.getPath() + "main.txt")) );
+    pages.add( new ContentsTable(loadImage(Section.contents.getPath() + "left.png"), #000000) );
+    pages.add( new ContentsTable(loadImage(Section.contents.getPath() + "right.png"), #000000) );
     
     /* -------- 個人作品（ohayota） -------- */
     pages.addAll( generatePersonalCover(Section.works_ohayota_cover, color(#000000), null) ); // ohayota個人表紙
@@ -142,8 +156,9 @@ ArrayList<Page> generatePages() {
     pages.addAll( generateActivityPages(Section.artis_workshop) );
     
     /* -------- あとがき -------- */
-    
-    
+    pages.add( new DescriptionPage(Section.afterword,
+                                   txtToString(Section.afterword.getPath() + "title.txt"),
+                                   txtToString(Section.afterword.getPath() + "main.txt")) );
   }
   
   /* -------- 裏表紙 -------- */
