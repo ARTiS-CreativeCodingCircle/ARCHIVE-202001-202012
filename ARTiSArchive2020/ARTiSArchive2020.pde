@@ -39,6 +39,8 @@ void setup() {
   grid = loadImage("grid.png");
   allPages = generatePages();
   
+  int pageNumber = 1;
+  
   if (isExportPDF) {
     if (isTwoSheets) {
       int pageCount = (allPages.size()+1)/2;
@@ -51,14 +53,28 @@ void setup() {
           if (authors != "") authors += ", ";
           authors += author.getName();
         }
-        textFont(createFont(TextType.section.getFontName(), 10));
-        fill(0);
-        textAlign(LEFT);
-        text(((2*i)+1) + "  |  " + allPages.get(2*i).section.getSectionNumber() + " - " + authors, marginHorizontal, HEIGHT-marginVertical/2);
-        // ページ描画
+        // ページ番号描画
+        switch (allPages.get(2*i).section) {
+          case foreword:
+          case contents:
+          case afterword:
+          case cover:
+          case backcover:
+            // まえがき，目次，あとがきではページ番号を表示しない
+            break;
+          default:
+            textFont(createFont(TextType.section.getFontName(), 10));
+            fill(0);
+            textAlign(LEFT);
+            text(pageNumber + "  |  " + allPages.get(2*i).section.getSectionNumber() + " - " + authors, marginHorizontal, HEIGHT-marginVertical/2);
+            pageNumber++;
+        }
+        // 左ページ描画
         allPages.get(2*i).draw();
+        
         push();
         translate(WIDTH, 0);
+        // 右ページが存在するとき
         if ((2*i+1) != allPages.size()) {
           // ページ番号とセクションタイトル
           authors = "";
@@ -66,10 +82,23 @@ void setup() {
             if (authors != "") authors += ", ";
             authors += author.getName();
           }
-          textFont(createFont(TextType.section.getFontName(), 10));
-          fill(0);
-          textAlign(RIGHT);
-          text(allPages.get(2*i+1).section.getSectionNumber() + " - " + authors + "  |  " + ((2*i+1)+1), WIDTH-marginHorizontal, HEIGHT-marginVertical/2);
+          // 右ページ番号描画
+          switch (allPages.get(2*i+1).section) {
+            case foreword:
+            case contents:
+            case afterword:
+            case cover:
+            case backcover:
+              // まえがき，目次，あとがきではページ番号を表示しない
+              break;
+            default:
+              textFont(createFont(TextType.section.getFontName(), 10));
+              fill(0);
+              textAlign(RIGHT);
+              text(allPages.get(2*i+1).section.getSectionNumber() + " - " + authors + "  |  " + pageNumber, WIDTH-marginHorizontal, HEIGHT-marginVertical/2);
+              pageNumber++;
+          }
+          // 右ページ描画
           allPages.get(2*i+1).draw();
         }
         stroke(200, 50);
@@ -98,14 +127,14 @@ ArrayList<Page> generatePages() {
   ArrayList<Page> pages = new ArrayList<Page>();
   
   /* -------- 表紙 -------- */
-  if (isCover) {
+  //if (isCover) {
     pages.add( new Cover(Section.cover) );
-  }
+  //}
   
   if (!isCover) {
     /* -------- まえがき -------- */
     // ページ合わせの空白ページ
-    pages.add( new Page(Section.empty) );
+    //pages.add( new Page(Section.empty) );
     pages.add( new DescriptionPage(Section.foreword,
                                    txtToString(Section.foreword.getPath() + "title.txt"),
                                    txtToString(Section.foreword.getPath() + "main.txt")) );
@@ -160,9 +189,9 @@ ArrayList<Page> generatePages() {
   }
   
   /* -------- 裏表紙 -------- */
-  if (isCover) {
+  //if (isCover) {
     pages.add( new BackCover(Section.backcover) );
-  }
+  //}
   
   return pages;
 }
