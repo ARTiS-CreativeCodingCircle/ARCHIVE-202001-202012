@@ -13,18 +13,18 @@ public class AfterwordPage extends Page {
   
   AuthorBlock[] generateAuthorBlocks() {
     // 1列目1人目
-    AuthorBlock ohayota = new AuthorBlock(section, Author.ohayota, marginHorizontal, marginVertical+titleBottomPadding);
+    AuthorBlock ohayota = new AuthorBlock(section, Author.ohayota, marginHorizontal, marginVertical+titleBottomPadding, 166, 206);
     // 1列目2人目
-    AuthorBlock akitch = new AuthorBlock(section, Author.akitch, marginHorizontal, marginVertical+titleBottomPadding+180);
+    AuthorBlock akitch = new AuthorBlock(section, Author.akitch, marginHorizontal, marginVertical+titleBottomPadding+260, 94, 134);
     // 1列目3人目
-    AuthorBlock ikano = new AuthorBlock(section, Author.ikano, marginHorizontal, marginVertical+titleBottomPadding+300);
+    AuthorBlock ikano = new AuthorBlock(section, Author.ikano, marginHorizontal, marginVertical+titleBottomPadding+430, 140, 162);
     // 2列目1人目
-    AuthorBlock tomoka = new AuthorBlock(section, Author.tomoka, int(WIDTH/2+marginHorizontal*0.2), marginVertical+titleBottomPadding);
+    AuthorBlock tomoka = new AuthorBlock(section, Author.tomoka, int(WIDTH/2+marginHorizontal*0.2), marginVertical+titleBottomPadding, 166, 206);
     // 2列目2人目
-    AuthorBlock eboshi = new AuthorBlock(section, Author.eboshi, int(WIDTH/2+marginHorizontal*0.2), marginVertical+titleBottomPadding+180);
+    AuthorBlock eboshi = new AuthorBlock(section, Author.eboshi, int(WIDTH/2+marginHorizontal*0.2), marginVertical+titleBottomPadding+260, 94, 116);
     // 2列目3人目
-    AuthorBlock lowene = new AuthorBlock(section, Author.lowene, int(WIDTH/2+marginHorizontal*0.2), marginVertical+titleBottomPadding+300);
-    return new AuthorBlock[]{ ohayota, eboshi, akitch, tomoka, ikano, lowene };
+    AuthorBlock lowene = new AuthorBlock(section, Author.lowene, int(WIDTH/2+marginHorizontal*0.2), marginVertical+titleBottomPadding+430, 140, 180);
+    return new AuthorBlock[]{ ohayota, tomoka, ikano, akitch, eboshi, tomoka, lowene };
   }
   
   public void draw() {
@@ -53,13 +53,17 @@ class AuthorBlock {
   String authorName;
   String comment;
   String page; // 担当したページ一覧
+  String account;
   PImage image;
   TextBlock textBlock; // 各種アカウントを表示する部分
   TextType textType;
   
+  int accountOffsetY;
+  int pageOffsetY;
+  
   PGraphics pg;
   
-  public AuthorBlock(Section section, Author author, int cornerX, int cornerY) {
+  public AuthorBlock(Section section, Author author, int cornerX, int cornerY, int accountOffsetY, int pageOffsetY) {
     this.cornerX = cornerX;
     this.cornerY = cornerY;
     this.authorName = author.getName();
@@ -67,6 +71,9 @@ class AuthorBlock {
     this.image = loadImage(section.getPath() + author.getNameLower() + ".png");
     this.comment = txtToString(section.getPath() + author.getNameLower() + ".txt");
     this.page = txtToString(section.getPath() + author.getNameLower() + "_page.txt");
+    this.account = txtToString(section.getPath() + author.getNameLower() + "_account.txt");
+    this.accountOffsetY = accountOffsetY;
+    this.pageOffsetY = pageOffsetY;
   }
   
   public void draw() {
@@ -99,11 +106,17 @@ class AuthorBlock {
     fill(0);
     text(comment, cornerX, cornerY+68, WIDTH/2-int(marginHorizontal*1.2), 120);
     
+    // アカウントの表示
+    textType = TextType.section;
+    textFont(createFont(textType.getFontName(), 12));
+    fill(0);
+    text(account, cornerX, cornerY+accountOffsetY, WIDTH/2-int(marginHorizontal*1.2), 120);
+    
     // 担当ページの表示
     textType = TextType.section;
     textFont(createFont(textType.getFontName(), 10));
     fill(0);
-    text(page, cornerX, cornerY+150, WIDTH/2-int(marginHorizontal*1.2), 120);
+    text(page, cornerX, cornerY+pageOffsetY, WIDTH/2-int(marginHorizontal*1.2), 120);
     
     // 各種アカウントの表示
     if (textBlock != null) {
