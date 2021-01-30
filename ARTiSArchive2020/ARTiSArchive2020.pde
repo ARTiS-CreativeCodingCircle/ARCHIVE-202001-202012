@@ -59,7 +59,8 @@ void setup() {
           case afterword:
           case cover:
           case backcover:
-            // まえがき，目次，あとがきではページ番号を表示しない
+          case colophon:
+              // 表紙／裏表紙，まえがき，目次，あとがき，奥付ではページ番号を表示しない
             break;
           default:
             textFont(createFont(TextType.section.getFontName(), 10));
@@ -88,7 +89,8 @@ void setup() {
             case afterword:
             case cover:
             case backcover:
-              // まえがき，目次，あとがきではページ番号を表示しない
+            case colophon:
+              // 表紙／裏表紙，まえがき，目次，あとがき，奥付ではページ番号を表示しない
               break;
             default:
               textFont(createFont(TextType.section.getFontName(), 10));

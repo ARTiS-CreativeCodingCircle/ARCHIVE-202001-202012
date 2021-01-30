@@ -1,1 +1,14 @@
-奥付を書く
+2021年2月1日　初版
+
+発行者　クリエイティブコーディングサークル「ARTiS」
+　　　　https://artis-creativecodingcircle.github.io
+責任者　ohayota
+著　者　ohayota, Tomoka, あきっち, eboshidori, Ikanoshiokara, ろうえね
+　　　　※各著者名は2021年2月1日時点のもの
+
+連絡先
+E-mail 　artis.creative.coding@gmail.com
+Twitter　@ARTiS_CCC
+
+本書に関するご意見・ご感想等はお気軽にお寄せください．
+本書を無断で転載、データ配信、改変等することを固く禁じます。
