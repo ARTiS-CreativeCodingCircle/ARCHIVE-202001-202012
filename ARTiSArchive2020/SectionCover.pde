@@ -38,9 +38,9 @@ public class SectionCover extends Page {
     textAlign(LEFT);
     
     textFont(createFont(TextType.author.getFontName(), TextType.author.getFontSize()));
-    text(author.getName(), 100, 290);
-    textFont(createFont(TextType.belonging.getFontName(), TextType.belonging.getFontSize()));
-    text(author.getBelonging(), 100, 340);
+    text(section.getSectionNumber(), 100, 290);
+    //textFont(createFont(TextType.belonging.getFontName(), TextType.belonging.getFontSize()));
+    //text(author.getBelonging(), 100, 340);
     
     textFont(createFont(TextType.main.getFontName(), TextType.main.getFontSize()));
     text(text, 100, 620);

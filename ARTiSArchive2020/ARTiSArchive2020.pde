@@ -143,6 +143,16 @@ ArrayList<Page> generatePages() {
     pages.add( new ContentsTable(loadImage(Section.contents.getPath() + "left.png"), #000000) );
     pages.add( new ContentsTable(loadImage(Section.contents.getPath() + "right.png"), #000000) );
     
+    pages.add( new Page(Section.empty) );
+    
+    /* -------- 個人作品の章表紙 -------- */
+    String worksPath = Section.works_cover.getPath() + "description.txt";
+    PGraphics worksBack = createGraphics(595, 842);
+    worksBack.beginDraw();
+    worksBack.background(#500000);
+    worksBack.endDraw();
+    pages.add( new SectionCover(Section.works_cover, worksBack, txtToString(worksPath), color(#FFFFFF)) );
+    
     /* -------- 個人作品（ohayota） -------- */
     pages.addAll( generatePersonalCover(Section.works_ohayota_cover, color(#000000), null) ); // ohayota個人表紙
     pages.addAll( generatePersonalWorks(Section.works_ohayota) ); // ohayota個人作品ページ
@@ -167,7 +177,15 @@ ArrayList<Page> generatePages() {
     pages.addAll( generatePersonalWorks(Section.works_eboshi) ); // eboshidori個人作品ページ
     
     // ページ合わせの空白ページ
-    pages.add( new Page(Section.empty) );
+    //pages.add( new Page(Section.empty) );
+    
+    /* -------- 活動アーカイブの章表紙 -------- */
+    String activityPath = Section.artis_activity_cover.getPath() + "description.txt";
+    PGraphics activityBack = createGraphics(595, 842);
+    activityBack.beginDraw();
+    activityBack.background(#500000);
+    activityBack.endDraw();
+    pages.add( new SectionCover(Section.artis_activity_cover, activityBack, txtToString(activityPath), color(#FFFFFF)) );
     
     /* -------- 活動アーカイブ（ロゴ）-------- */
     pages.addAll( generateActivityPages(Section.artis_logo) );
