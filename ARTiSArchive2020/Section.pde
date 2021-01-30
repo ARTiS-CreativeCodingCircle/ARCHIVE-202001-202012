@@ -16,9 +16,12 @@ enum Section {
   artis_activity_cover("artis_activity/cover/", "活動アーカイブ", new Author[]{ Author.ohayota, Author.tomoka, Author.ikano, Author.akitch, Author.eboshi }),
   artis_logo("artis_activity/logo/", "活動アーカイブ / ARTiSロゴ", new Author[]{ Author.ohayota }),
   artis_website("artis_activity/website/", "活動アーカイブ / ARTiS公式サイト", new Author[]{ Author.tomoka }),
+  artis_exhibition_cover("artis_activity/exhibition/cover/", "クリエイティブ\nコーディング\n作品展 #01", new Author[]{ Author.ikano, Author.eboshi }),
   artis_exhibition("artis_activity/exhibition/", "活動アーカイブ / クリエイティブコーディング作品展 #01", new Author[]{ Author.ikano, Author.eboshi }),
+  artis_workshop_cover("artis_activity/workshop/cover/", "クリエイティブ\nコーディング\nワークショップ", new Author[]{ Author.ohayota, Author.akitch }),
   artis_workshop("artis_activity/workshop/", "活動アーカイブ / クリエイティブコーディングワークショップ", new Author[]{ Author.ohayota, Author.akitch }),
   afterword("foreafter/afterword/", "あとがき", new Author[]{ Author.ohayota, Author.tomoka, Author.ikano, Author.akitch, Author.eboshi, Author.lowene }),
+  colophon("colophon/", "奥付", new Author[]{ Author.ohayota }),
   backcover("backcover/", "", new Author[]{ Author.ohayota }),
   empty("", "", new Author[]{});
   
