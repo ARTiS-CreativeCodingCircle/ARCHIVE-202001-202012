@@ -1,2 +1,4 @@
-# zine-archive2020-processing
-2020年活動アーカイブ原稿をWordで調整するのがめんどくさいので，Processingでの書き出しを試みる
+# ARCHIVE-202001-202012
+
+クリエイティブコーディングサークル「ARTiS」2020年部誌のソースコード．
+PDFはすべてProcessingで書き出し．
