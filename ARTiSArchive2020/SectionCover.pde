@@ -43,7 +43,7 @@ public class SectionCover extends Page {
     //text(author.getBelonging(), 100, 340);
     
     textFont(createFont(TextType.main.getFontName(), TextType.main.getFontSize()));
-    text(text, 100, 620);
+    text(text, 100, 620, WIDTH-200, 500);
   }
   
 }

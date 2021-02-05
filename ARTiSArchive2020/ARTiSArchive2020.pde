@@ -60,7 +60,8 @@ void setup() {
           case cover:
           case backcover:
           case colophon:
-              // 表紙／裏表紙，まえがき，目次，あとがき，奥付ではページ番号を表示しない
+          case empty:
+              // 表紙／裏表紙，まえがき，目次，あとがき，奥付，空白ではページ番号を表示しない
             break;
           default:
             textFont(createFont(TextType.section.getFontName(), 10));
@@ -90,7 +91,8 @@ void setup() {
             case cover:
             case backcover:
             case colophon:
-              // 表紙／裏表紙，まえがき，目次，あとがき，奥付ではページ番号を表示しない
+            case empty:
+              // 表紙／裏表紙，まえがき，目次，あとがき，奥付，空白ではページ番号を表示しない
               break;
             default:
               textFont(createFont(TextType.section.getFontName(), 10));
@@ -193,7 +195,9 @@ ArrayList<Page> generatePages() {
   String exhibitionPath = Section.artis_exhibition_cover.getPath() + "description.txt";
   PGraphics exhibitionBack = createGraphics(595, 842);
   exhibitionBack.beginDraw();
-  exhibitionBack.background(#500000);
+  exhibitionBack.background(#000000);
+  PImage poster = loadImage(Section.artis_exhibition_cover.getPath()+"image.png");
+  exhibitionBack.image(poster, 0, 100, WIDTH, convertImageHeight(poster, WIDTH));
   exhibitionBack.endDraw();
   pages.add( new SectionCover(Section.artis_exhibition_cover, exhibitionBack, txtToString(exhibitionPath), color(#FFFFFF)) );
   
@@ -204,7 +208,7 @@ ArrayList<Page> generatePages() {
   String workshopPath = Section.artis_workshop_cover.getPath() + "description.txt";
   PGraphics workshopBack = createGraphics(595, 842);
   workshopBack.beginDraw();
-  workshopBack.background(#500000);
+  workshopBack.background(#000000);
   workshopBack.endDraw();
   pages.add( new SectionCover(Section.artis_workshop_cover, workshopBack, txtToString(workshopPath), color(#FFFFFF)) );
   
